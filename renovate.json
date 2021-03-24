@@ -1,0 +1,3 @@
+{
+  "extends": ["@busybox/renovate-config"]
+}

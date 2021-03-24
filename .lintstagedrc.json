@@ -1,0 +1,8 @@
+{
+  "*.{js,ts,json}": ["yarn prettier --write", "yarn eslint --fix"],
+  "package.json": [
+    "yarn eslint --fix",
+    "yarn prettier --write",
+    "yarn npmPkgJsonLint"
+  ]
+}
