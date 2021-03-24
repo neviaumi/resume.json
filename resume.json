@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "email": "david.ng.dev@gmail.com",
-    "label": "Senior Software Engineer",
+    "label": "Software Engineer",
     "location": {
       "countryCode": "HK",
       "region": "Hong Kong"
@@ -54,7 +54,7 @@
       "language": "Chinese"
     }
   ],
-  "meta": { "theme": "kendall" },
+  "meta": { "theme": "material" },
   "projects": [
     {
       "description": "Web Music Player for playing spotify music",
@@ -67,6 +67,15 @@
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
       "url": "https://github.com/davidNHK/spotify-music-player"
+    },
+    {
+      "description": "My resume in JSON format",
+      "highlights": [],
+      "keywords": ["JSON Resume"],
+      "name": "resume.json",
+      "roles": ["Maintainer", "Code Owner"],
+      "type": "project",
+      "url": "https://github.com/davidNHK/resume.json"
     }
   ],
   "references": [],
@@ -90,8 +99,15 @@
       "name": "Web BackEnd Development"
     },
     {
-      "keywords": ["Unit Test", "Integration Test", "Jest"],
-      "level": "Master",
+      "keywords": [
+        "Unit Test",
+        "Integration Test",
+        "Jest",
+        "CI",
+        "GitHub Action",
+        "Travis"
+      ],
+      "level": "Intermediate",
       "name": "Automated testing"
     }
   ],
