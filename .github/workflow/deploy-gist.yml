@@ -1,0 +1,27 @@
+name: deploy-gist-after-push-master
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  CI: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - run: bash ./scripts/setup.sh
+      - run: bash ./scripts/test.sh
+      - name: Deploy
+        uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.DEPLOY_GIST_TOKEN }}
+          gist_id: from_your_gist_url
+          gist_file_name: resume.json
+          file_path: ./resume.json

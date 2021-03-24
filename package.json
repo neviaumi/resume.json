@@ -34,7 +34,7 @@
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
     "prepare": "husky install",
-    "test": "echo 0"
+    "test": "jest"
   },
   "version": "0.0.0"
 }
