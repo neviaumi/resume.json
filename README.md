@@ -1,12 +1,11 @@
-#resume.json
+# resume.json
 
 Repo here contain my personal resume.
 
 Development
 ```
-yarn global add 
 yarn
 yarn dev
 ```
 
-[Live version](https://registry.jsonresume.org/davidnhk)
+[Live version](https://davidnhk.github.io/resume.json/)
