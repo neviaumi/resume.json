@@ -1,4 +1,4 @@
-name: deploy-gist-after-push-master
+name: deploy-github-page-after-push-master
 
 on:
   push:
@@ -20,10 +20,4 @@ jobs:
           node-version: 14.x
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/test.sh
-      - name: Deploy
-        uses: exuanbo/actions-deploy-gist@v1
-        with:
-          token: ${{ secrets.DEPLOY_GIST_TOKEN }}
-          gist_id: f107daee0a49899229a5d8e4d33fa1b6
-          gist_file_name: resume.json
-          file_path: ./resume.json
+      - run: bash ./scripts/build.sh

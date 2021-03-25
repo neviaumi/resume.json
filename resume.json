@@ -2,6 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "email": "david.ng.dev@gmail.com",
+    "image": "https://avatars.githubusercontent.com/u/2247500",
     "label": "Software Engineer",
     "location": {
       "countryCode": "HK",
@@ -36,12 +37,12 @@
   ],
   "interests": [
     {
-      "keywords": ["instruments", "hobby"],
-      "name": "Music"
-    },
-    {
       "keywords": ["media", "music player", "spotify"],
       "name": "OSS"
+    },
+    {
+      "keywords": ["instruments", "hobby"],
+      "name": "Music"
     }
   ],
   "languages": [
@@ -54,7 +55,7 @@
       "language": "Chinese"
     }
   ],
-  "meta": { "theme": "kendall" },
+  "meta": { "theme": "macchiato" },
   "projects": [
     {
       "description": "Web Music Player for playing spotify music",

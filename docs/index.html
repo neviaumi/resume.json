@@ -1,600 +1,656 @@
-<!DOCTYPE html>
-<html lang="en">
-    
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Resume of David Ng</title>
-        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        rel="stylesheet"> -->
-        <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        rel="stylesheet"> -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        rel="stylesheet">
-        <style type="text/css">
-            @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
-        @charset "utf-8";
-        @-webkit-viewport   { width: device-width; }
-        @-moz-viewport      { width: device-width; }
-        @-ms-viewport       { width: device-width; }
-        @-o-viewport        { width: device-width; }
-        @viewport           { width: device-width; }
-        
-        body{
-          font-family: 'Open Sans', Arial, Tahoma;
-          font-weight: 400;
-          color: #363636;
-          background: #334960;
-        }
-        blockquote {
-          font-size: 1em;
-        }
-        
-        .container{
-          margin-top: 80px;
-          margin-bottom: 15px;
-          background: #fff;
-        }
-        
-        #photo-header{
-          margin-top: -75px;
-        }
-        #photo{
-          width: 160px;
-          height: 160px;
-          border-radius: 50%;
-          overflow: hidden;
-          padding: 5px;
-          background: #334960;
-          display: inline-block;
-        }
-        #photo img{
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-        }
-        #text-header h1{
-          margin: 0;
-          padding: 0;
-          font-size: 1.5em;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: -1px;
-        }
-        #text-header h1::first-line{
-          font-size: 1.5em;
-          font-weight: 800;
-          line-height: 1.5em;
-        }
-        #text-header h1 span{
-          color: #334960;
-          opacity: 0.7;
-        }
-        #text-header h1 sup{
-          opacity: 0.5;
-        }
-        #text-header:after{
-          width: 100%;
-          height: 3px;
-          border-bottom: 1px solid #ddd;
-          margin-top: 15px;
-          content: '';
-          display: block;
-        }
-        
-        .box{
-          padding-bottom: 10px;
-          margin-bottom: 25px;
-        }
-        .box h2{
-          color: #227c74;
-          font-size: 1.5em;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-        
-        #awards,
-        #education{
-          margin-top: 20px;
-          margin-bottom: 0;
-          position: relative;
-          padding: 1em 0;
-          list-style: none;
-        }
-        #awards:before,
-        #education:before {
-          width: 5px;
-          height: 100%;
-          position: absolute;
-          left: 35px;
-          top: 0;
-          content: ' ';
-          display: block;
-          background: #32475c;
-          background: -moz-linear-gradient(top,  #ffffff 0%, #32475c 7%, #32475c 89%, #ffffff 100%);
-          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#32475c), color-stop(89%,#32475c), color-stop(100%,#ffffff));
-          background: -webkit-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-          background: -o-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-          background: -ms-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-          background: linear-gradient(to bottom,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
-        }
-        #awards li,
-        #education li{
-          width: 100%;
-          z-index: 2;
-          position: relative;
-          float: left;
-        }
-        #awards .year,
-        #education .year{
-          width: 14%;
-          background: #fff;
-          padding: 10px;
-          font-weight: 700;
-          display: inline-block;
-        }
-        #awards .description,
-        #education .description{
-          width: 83%;
-          display: inline-block;
-          background: #eee;
-          margin-bottom: 10px;
-          position: relative;
-          padding: 10px;
-          border-bottom: 1px solid #ccc;
-          border-right: 1px solid #ccc;
-        }
-        #awards .description:after,
-        #education .description:after {
-          content: '';
-          position: absolute;
-          top: 15px;
-          right: 0;
-          left: -16px;
-          height: 0;
-          width: 0;
-          border: solid transparent;
-          border-right-color: #eee;
-          border-width: 8px;
-          pointer-events: none;
-        }
-        #awards .description h3,
-        #education .description h3{
-          font-size: 1.2em;
-          margin: 0;
-          padding: 0;
-          font-weight: 700;
-        }
-        #awards .description p,
-        #education .description p{
-          margin-top: 5px;
-          padding: 0;
-        }
-        
-        .job{
-          margin-bottom: 15px;
-        }
-        .job .details {
-          margin-left: 3%;
-          width: 95%;
-          padding: 10px;
-          margin-bottom: 10px;
-          background: #eee;
-          border-bottom: 1px solid #ccc;
-          border-right: 1px solid #ccc;
-        }
-        .job .where{
-          font-size: 1.2em;
-          font-weight: bold;
-        }
-        .job .year{
-          opacity: 0.7;
-        }
-        .job .profession{
-          font-size: 1.2em;
-          font-weight: bold;
-        }
-        .job .description{
-          line-height: 1.5em;
-        }
-        .job .highlights{
-          padding: 5px 0;
-          font-weight: bold;
-        }
-        .job .job-details {
-          padding-left: 5%;
-          width: 100%;
-        }
-        .publication {
-          margin-bottom: 0;
-        }
-        .publication .name{
-          font-size: 1em;
-          font-weight: bold;
-        }
-        .publication .year{
-            opacity: 0.7;
-        }
-        .publication p{
-          margin: 0;
-          padding-top: 10px;
-        }
-        
-        .contact-item{
-          width: 100%;
-          float: left;
-        }
-        .contact-item .icon{
-          padding: 10px;
-          border-right: 1px solid #ccc;
-          border-bottom: 1px solid #ccc;
-          color: #32475c;
-          background: #eee;
-        }
-        .contact-item:last-child .icon{
-          border-bottom: none;
-        }
-        .contact-item .title{
-          width: 80%;
-          width: calc(100% - 55px);
-          font-weight: 700;
-          opacity: 0.9;
-        }
-        .contact-item .title.only{
-          margin-top: 10px;
-        }
-        .contact-item .description{
-          width: 80%;
-          width: calc(100% - 55px);
-          color: #334960;
-        }
-        
-        .item-interests,
-        .item-skills{
-          height: 30px;
-          color: #334960;
-          padding: 5px 10px;
-          margin-bottom: 5px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 1.1em;
-          font-weight: 600;
-        }
-        .interest,
-        .skill{
-          color: #fff;
-          display: inline-block;
-          margin-right: 5px;
-          margin-bottom: 5px;
-          padding: 5px 10px;
-          background: #32475c;
-          position: relative;
-          font-size: .85em;
-        }
-        .skill-level {
-          background-color: #227c74;
-          border-radius: 4px;
-          color: #fff;
-          padding: 1px 8px;
-          font-size: .75em;
-          position: absolute;
-          margin: 1px 10px;
-        }
-        
-        #language-skills .skill{
-          margin: 10px 0;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #eee;
-        }
-        </style>
-        <style type="text/css" media="print">
-            body {
-          font-size: .95em;
-          -webkit-print-color-adjust: exact;
-        }
-        
-        a[href]:after {
-          content: none !important;
-        }
-        
-        #photo{
-          display: none;
-        }
-        
-        .box {
-          margin-bottom: -10px;
-        }
-        
-        blockquote,
-        #education,
-        #awards,
-        .contact-item,
-        .publication,
-        .skills,
-        .interests {
-          page-break-inside: avoid;
-        }
-        
-        .col-sm-5{
-          width: 40%;
-          padding: 0 15px;
-        }
-        
-        .col-sm-7{
-          width: 60%;
-          padding: 0 15px;
-        }
-        
-        .skills .col-sm-offset-1,
-        .interests .col-sm-offset-1{
-          margin-top: -10px;
-          margin-bottom: 5px;
-        }
-        
-        #education {
-          margin: 0;
-          margin-bottom: -20px;
-        }
-        #awards:before,
-        #education:before {
-          background: none;
-        }
-        
-        #awards .description,
-        #education .description,
-        .job .details {
-          border: 1px solid #eee;
-        }
-        .publication,
-        .publication .panel-heading,
-        .publication .name{
-          margin: 0;
-          padding: 0 5px;
-          border: none;
-        }
-        .publication .panel-body {
-          padding: 0 10px;
-          margin: 0;
-        }
-        
-        .badge {
-          margin: 0;
-        }
-        
-        .list-group-item{
-          border: none;
-          margin: 0;
-          padding: 5px 15px;
-        }
-        .list-group-item:after{
-          content: '';
-          position: absolute;
-          top: 8px;
-          right: 0;
-          left: -1px;
-          height: 0;
-          width: 0;
-          border: solid transparent;
-          border-right-color: #999;
-          border-width: 4px;
-          pointer-events: none;
-         }
-        </style>
-    </head>
-    
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div id="photo-header" class="text-center">
-                        <!-- PHOTO (AVATAR) -->
-                        <div id="photo">
-                            <img src="&#x2F;&#x2F;www.gravatar.com&#x2F;avatar&#x2F;72d3053e49f27ba311822dcda2dffc34?s&#x3D;200&amp;r&#x3D;pg&amp;d&#x3D;mm"
-                            alt="avatar">
-                        </div>
-                        <div id="text-header">
-                             <h1>David Ng<br><span>Software Engineer</span></h1>
+<!doctype html>
+<html>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-7">
-                    <!-- ABOUT ME -->
-                    <div class="box">
-                         <h2><i class="fas fa-user ico"></i> About</h2>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+  <title>David Ng</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>/* Utils */
+/*----- Colors -----*/
+/*----- Fonts -----*/
+/*----- Dimensions and sizes -----*/
+/* Base */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Josefin Sans Light'), local('JosefinSans-Light'), url(https://fonts.gstatic.com/s/josefinsans/v14/Qw3FZQNVED7rKGKxtqIqX5Ecpl5te10k.ttf) format('truetype');
+}
 
-                        <p>I am an innovative natural problem solver, who is passionate and will
-                            always fight for what I believe in, especially when it is best for the
-                            company. I love working in a team and have mentored and helped junior and
-                            new staff members on projects. I am always willing to share knowledge whether
-                            that’s job related or tech news, this is because I always want to help
-                            colleagues to ensure jobs are done to a high quality.</p>
-                    </div>
-                    <!-- WORK EXPERIENCE -->
-                    <div class="box">
-                         <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(https://fonts.gstatic.com/s/josefinsans/v14/Qw3FZQNVED7rKGKxtqIqX5Ectllte10k.ttf) format('truetype');
+}
 
-                        <div class="job clearfix">
-                            <div class="row">
-                                <div class="details">
-                                    <div class="where">HK01
-                                        <div class="pull-right">Hong Kong</div>
-                                    </div>
-                                    <div class="description">Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App
-                                        store and Google Play store.</div>
-                                    <div class="address"> <a href="https:&#x2F;&#x2F;www.hk01.com&#x2F;" target="_blank"><i class="fas fa-globe ico"></i> https:&#x2F;&#x2F;www.hk01.com&#x2F;</a>
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI9w2_Gwfo.ttf) format('truetype');
+}
 
-                                    </div>
-                                    <div class="year">November 2018 – Present</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="job-details col-xs-11">
-                                    <div class="profession">Senior Software Engineer</div>
-                                    <div class="description">Working in a shared service team to provide reusable, shared logic such
-                                        as Authorization, Notification, Content management ..etc. for difference
-                                        products
-                                        <div class="highlights">Highlights</div>
-                                        <ul class="list-group">
-                                            <li class="list-group-item">Signal Sign On (SSO) system for staff cross project login</li>
-                                            <li class="list-group-item">Notification Center for central sending notification like App Push, SMS,
-                                                Email ..etc.</li>
-                                            <li class="list-group-item">Headless CMS for editor easily deploy content</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- PROJECTS -->
-                    <div class="box">
-                         <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-v.ttf) format('truetype');
+}
 
-                        <ul class="list-group">
-                            <li class="list-group-item"> <span style="font-weight:bold">Spotify Music Player</span>: Web Music
-                                Player for playing spotify music</li>
-                            <li class="list-group-item"> <span style="font-weight:bold">resume.json</span>: My resume in JSON format</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-5">
-                    <!-- CONTACT -->
-                    <div class="box clearfix">
-                         <h2><i class="fas fa-bullseye ico"></i> Contact</h2>
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwfo.ttf) format('truetype');
+}
 
-                        <div class="contact-item">
-                            <div class="icon pull-left text-center"><span class="fas fa-map-marker fa-fw"></span>
-                            </div>
-                            <div class="title only  pull-right">, Hong Kong HK</div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon pull-left text-center"><span class="fas fa-envelope fa-fw"></span>
-                            </div>
-                            <div class="title only pull-right"><a href="mailto:david.ng.dev@gmail.com" target="_blank">david.ng.dev@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span>
-                            </div>
-                            <div class="title only pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;davidNHK" target="_blank">https:&#x2F;&#x2F;github.com&#x2F;davidNHK</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon pull-left text-center"><span class="fab fa-github fa-fw"></span>
-                            </div>
-                            <div class="title pull-right">Github</div>
-                            <div class="description pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;davidNHK" target="_blank">davidNHK</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon pull-left text-center"><span class="fab fa-linkedin fa-fw"></span>
-                            </div>
-                            <div class="title pull-right">Linkedin</div>
-                            <div class="description pull-right"><a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;ng-kong-chor-ab251799&#x2F;"
-                                target="_blank">ng-kong-chor</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- EDUCATION -->
-                    <div class="box">
-                         <h2><i class="fas fa-university ico"></i> Education</h2>
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
+}
 
-                        <ul id="education" class="clearfix">
-                            <li>
-                                <div class="year pull-left">2012 2014</div>
-                                <div class="description pull-right">
-                                     <h3>The Open University of Hong Kong</h3>
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
 
-                                    <div class="where"></div>
-                                    <div class="address"> <a href="http:&#x2F;&#x2F;www.ouhk.edu.hk?lang&#x3D;eng" target="_blank"><i class="fas fa-globe ico"></i> http:&#x2F;&#x2F;www.ouhk.edu.hk?lang&#x3D;eng</a>
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+}
 
-                                    </div>
-                                    <p><i class="fas fa-graduation-cap ico"></i> Bachelor</p>
-                                    <p>Information Technology</p>
-                                    <p>Grade: 4.0</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- SKILLS -->
-                    <div class="box">
-                         <h2><i class="fas fa-tasks ico"></i> Skills</h2>
+html {
+  background: white;
+}
 
-                        <div class="skills clearfix">
-                            <div class="item-skills">Web FrontEnd Development <span class="skill-level">Master</span>
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  background: white;
+  margin: 50px 0 100px;
+  letter-spacing: .3px;
+  color: #39424B;
+}
 
-                            </div>
-                            <div class="col-sm-offset-1 col-sm-12 clearfix"> <span class="skill badge">React</span>
- <span class="skill badge">CSS</span>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: none;
+  margin: 0;
+}
 
-                                <span
-                                class="skill badge">JS</span>
-                            </div>
-                        </div>
-                        <div class="skills clearfix">
-                            <div class="item-skills">Web BackEnd Development <span class="skill-level">Master</span>
+h1 {
+  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
 
-                            </div>
-                            <div class="col-sm-offset-1 col-sm-12 clearfix"> <span class="skill badge">MongoDB</span>
- <span class="skill badge">Redis</span>
+h2 {
+  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: .5px;
+}
 
-                                <span
-                                class="skill badge">NodeJS</span> <span class="skill badge">Python</span>
- <span class="skill badge">WebAPI</span>
+h3 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: .4px;
+}
 
-                                    <span
-                                    class="skill badge">Queue</span> <span class="skill badge">RabbitMQ</span>
+h3.bold {
+  font-weight: 700;
+}
 
-                            </div>
-                        </div>
-                        <div class="skills clearfix">
-                            <div class="item-skills">Automated testing <span class="skill-level">Intermediate</span>
+h4 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+}
 
-                            </div>
-                            <div class="col-sm-offset-1 col-sm-12 clearfix"> <span class="skill badge">Unit Test</span>
- <span class="skill badge">Integration Test</span>
+h4.bold {
+  font-weight: 700;
+}
 
-                                <span
-                                class="skill badge">Jest</span> <span class="skill badge">CI</span>
- <span class="skill badge">GitHub Action</span>
+h5 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+}
 
-                                    <span
-                                    class="skill badge">Travis</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- HOBBIES -->
-                    <div class="box">
-                         <h2><i class="fas fa-heart ico"></i> Interests</h2>
+h5.italic {
+  font-style: italic;
+}
 
-                        <div class="interests clearfix">
-                            <div class="item-interests">Music</div>
-                            <div class="col-sm-offset-1 col-sm-12 clearfix"> <span class="interest badge">instruments</span>
- <span class="interest badge">hobby</span>
+h6 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+}
 
-                            </div>
-                        </div>
-                        <div class="interests clearfix">
-                            <div class="item-interests">OSS</div>
-                            <div class="col-sm-offset-1 col-sm-12 clearfix"> <span class="interest badge">media</span>
- <span class="interest badge">music player</span>
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 
-                                <span
-                                class="interest badge">spotify</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+a:hover {
+  color: #2895F1;
+}
+
+a .fa-external-link {
+  font-size: 10px;
+  vertical-align: text-top;
+}
+
+p,
+li {
+  font-size: 11px;
+}
+
+blockquote {
+  font-size: 11px;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin: 10px 25px;
+}
+
+em {
+  color: #999;
+}
+
+ul {
+  margin: 10px 0 0;
+  -webkit-padding-start: 25px;
+}
+
+ul li {
+  padding-left: 10px;
+}
+
+ul.minimal {
+  list-style: none;
+  padding: 0;
+}
+
+ul.minimal li {
+  margin-bottom: 3px;
+  padding-left: 0;
+}
+
+ul.two-column {
+  -webkit-column-count: 2;
+  -webkit-column-gap: 28px;
+  column-count: 2;
+  column-gap: 28px;
+}
+
+ul.two-column li {
+  padding-left: 0;
+}
+
+@page {
+  size: A4;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.keyline {
+  width: 45px;
+  margin: 8px 0 10px;
+  border-top: 1px solid #56817A;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.profile-pic {
+  margin-top: -5px;
+  margin-right: 18px;
+}
+
+.profile-pic img {
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  border: 2px solid #56817A;
+}
+
+.summary {
+  margin: 5px 0 5px;
+}
+
+.sublink {
+  font-size: 70%;
+  font-weight: 200;
+  color: dimgray;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Layouts */
+.page {
+  background: white;
+  width: 612px;
+  min-height: 792px;
+  display: block;
+  margin: 0 auto;
+  border-top: 10px solid #56817A;
+  padding: 36px 22px 30px 34px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.page:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left-column {
+  float: left;
+  width: 160px;
+  margin-right: 20px;
+  word-wrap: break-word;
+}
+
+.right-column {
+  width: auto;
+  overflow: hidden;
+}
+
+.item {
+  margin-bottom: 15px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+
+  .page {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 36px 0 30px;
+    box-shadow: none;
+  }
+
+  .page .resume-header,
+  .page .resume-content {
+    padding: 0 22px 0 34px;
+  }
+
+  .container {
+    page-break-inside: avoid;
+  }
+
+  .work-container .item {
+    page-break-inside: avoid;
+  }
+
+  .fa-external-link {
+    display: none;
+  }
+}
+
+/* Components */
+.info-tag-container {
+  margin-bottom: 5px;
+}
+
+.info-tag-container .fa {
+  font-size: 14px;
+  width: 12px;
+  margin-right: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.info-tag-container .fa.fa-map-marker {
+  font-size: 16px;
+}
+
+.info-tag-container .fa.fa-mobile {
+  font-size: 18px;
+}
+
+.info-tag-container .fa.fa-envelope-o {
+  font-size: 12px;
+}
+
+.info-tag-container .fa.fa-desktop {
+  font-size: 11px;
+}
+
+.info-tag-container .fa.fa-external-link {
+  width: auto;
+  font-size: inherit;
+  vertical-align: text-top;
+}
+
+.info-tag-container .info-text {
+  font-size: 12px;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: 139px;
+}
+
+.references-container .fa {
+  font-size: 14px;
+}
+
+.education-container .location {
+  padding-bottom: 6px;
+  font-weight: 400;
+}
+
+.education-container .specialization {
+  text-transform: none;
+  font-style: italic;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.main-skill {
+  font-size: 80%;
+}
+
+.skill {
+  margin: .15em;
+  padding: .15em;
+  background: ghostwhite;
+  border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+  <main id="resume" class="page">
+    <header class="resume-header clearfix">
+        <div class="profile-header pull-left">
+            <h1>David Ng</h1>
+            <h2>Software Engineer</h2>
         </div>
-    </body>
+        <div class="profile-pic pull-right">
+        </div>
+    </header>
+    <div class="resume-content">
+      <aside class="left-column">
+        <div class="container about-container">
+            <div class="title">
+                <h3>About</h3>
+                <div class="keyline"></div>
+            </div>
+                <div class="info-tag-container">
+                    <i class="fa fa-map-marker"></i>
+                
+                        <h6 class="info-text">  Hong Kong  HK</h6>
+                </div>
+        
+        
+                <div class="info-tag-container">
+                    <i class="fa fa-envelope-o"></i>
+                
+                        <h6 class="info-text">
+                            <a href="mailto:david.ng.dev@gmail.com" target="_blank">
+                                david.ng.dev@gmail.com
+                            </a>
+                        </h6>
+                </div>
+        
+        
+        
+                                 <div class="info-tag-container">
+                                     <i class="fa fa-github"></i>
+                                 
+                                         <h6 class="info-text">
+                                             <a href="https://github.com/davidNHK" target="_blank">
+                                                 davidNHK
+                                             </a>
+                                         </h6>
+                                 </div>
+                                <div class="info-tag-container">
+                                    <i class="fa fa-linkedin-square"></i>
+                                
+                                        <h6 class="info-text">
+                                            <a href="https://www.linkedin.com/in/ng-kong-chor-ab251799/" target="_blank">
+                                                ng-kong-chor
+                                            </a>
+                                        </h6>
+                                </div>
+        </section>
+            <div class="skills-container">
+                    <section class="container">
+                            <div class="title">
+                                <h3>Web FrontEnd Development</h3>
+                                <div class="keyline"></div>
+                            </div>                    <h4 class="bold capitalize">Master</h4>
+                            <div class="minimal flex-container">
+                                    <h6 class="main-skill skill">React</h6>
+                                    <h6 class="main-skill skill">CSS</h6>
+                                    <h6 class="main-skill skill">JS</h6>
+                            </div>
+                    </section>
+                    <section class="container">
+                            <div class="title">
+                                <h3>Web BackEnd Development</h3>
+                                <div class="keyline"></div>
+                            </div>                    <h4 class="bold capitalize">Master</h4>
+                            <div class="minimal flex-container">
+                                    <h6 class="main-skill skill">MongoDB</h6>
+                                    <h6 class="main-skill skill">Redis</h6>
+                                    <h6 class="main-skill skill">NodeJS</h6>
+                                    <h6 class="main-skill skill">Python</h6>
+                                    <h6 class="main-skill skill">WebAPI</h6>
+                                    <h6 class="main-skill skill">Queue</h6>
+                                    <h6 class="main-skill skill">RabbitMQ</h6>
+                            </div>
+                    </section>
+                    <section class="container">
+                            <div class="title">
+                                <h3>Automated testing</h3>
+                                <div class="keyline"></div>
+                            </div>                    <h4 class="bold capitalize">Intermediate</h4>
+                            <div class="minimal flex-container">
+                                    <h6 class="main-skill skill">Unit Test</h6>
+                                    <h6 class="main-skill skill">Integration Test</h6>
+                                    <h6 class="main-skill skill">Jest</h6>
+                                    <h6 class="main-skill skill">CI</h6>
+                                    <h6 class="main-skill skill">GitHub Action</h6>
+                                    <h6 class="main-skill skill">Travis</h6>
+                            </div>
+                    </section>
+            </div>
+            <div class="container languages-container">
+                <div class="title">
+                    <h3>Languages</h3>
+                    <div class="keyline"></div>
+                </div>
+                <ul class="minimal">
+                        <li>
+                            <h6>English <em>(Intermediate)</em></h6>
+                        </li>
+                        <li>
+                            <h6>Chinese <em>(Native)</em></h6>
+                        </li>
+                </ul>
+            </div>
+            <div class="container interests-container">
+                <div class="title">
+                    <h3>Interests</h3>
+                    <div class="keyline"></div>
+                </div>
+                    <section class="item">
+                            <h4 class="bold">OSS</h4>
+                            <ul class="minimal">
+                                    <li>media</li>
+                                    <li>music player</li>
+                                    <li>spotify</li>
+                            </ul>
+                    </section>
+                    <section class="item">
+                            <h4 class="bold">Music</h4>
+                            <ul class="minimal">
+                                    <li>instruments</li>
+                                    <li>hobby</li>
+                            </ul>
+                    </section>
+            </div>
+      </aside>
+      <div class="right-column">
+                <div class="container summary-container">
+                    <div class="title">
+                        <h3>Summary</h3>
+                        <div class="keyline"></div>
+                    </div>            <p class="summary">
+                        I am an innovative natural problem solver, who is passionate and will always fight for what I believe in, especially when it is best for the company. I love working in a team and have mentored and helped junior and new staff members on projects. I am always willing to share knowledge whether that’s job related or tech news, this is because I always want to help colleagues to ensure jobs are done to a high quality.
+                    </p>
+                </div>
+        <div class="container work-container">
+            <div class="title">
+                <h3>Experience</h3>
+                <div class="keyline"></div>
+            </div>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h5 class="italic pull-right">
+                                <span class="startDate">11/2018</span>
+                                <span class="endDate"> - Present</span>
+                        </h5>
+                    </div>
+                      <h4>
+                        Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App store and Google Play store.
+                      </h4>
+        
+                    <h4>Senior Software Engineer</h4>
+        
+        
+                    <p class="summary">Working in a shared service team to provide reusable, shared logic such as Authorization, Notification, Content management ..etc. for difference products</p>
+        
+                    <ul>
+                        <li>Signal Sign On (SSO) system for staff cross project login</li>
+                        <li>Notification Center for central sending notification like App Push, SMS, Email ..etc.</li>
+                        <li>Headless CMS for editor easily deploy content</li>
+                    </ul>
+                </section>
+        </div>
+        <div class="container project-container">
+            <div class="title">
+                <h3>Open Source Projects</h3>
+                <div class="keyline"></div>
+            </div>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="bold pull-left">
+                                <a href="https://github.com/davidNHK/spotify-music-player" target="_blank">
+                                    Spotify Music Player
+                                        <span class="sublink">∙ <a href="https://github.com/davidNHK/spotify-music-player" target="_blank" class="sublink">https://github.com/davidNHK/spotify-music-player</a></span>
+                                </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                        </h5>
+                    </div>
+                      <h4>
+                        Web Music Player for playing spotify music
+                      </h4>
+        
+        
+                    <div class="flex-container">
+                            <h6 class="skill">React</h6>
+                            <h6 class="skill">React Query</h6>
+                            <h6 class="skill">OpenID Client</h6>
+                            <h6 class="skill">React Hook</h6>
+                    </div>
+        
+        
+                    <ul>
+                        <li>Support multi device sync up though spotify-connect</li>
+                        <li>Recommends tracks base on user country / recent play</li>
+                    </ul>
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="bold pull-left">
+                                <a href="https://github.com/davidNHK/resume.json" target="_blank">
+                                    resume.json
+                                        <span class="sublink">∙ <a href="https://github.com/davidNHK/resume.json" target="_blank" class="sublink">https://github.com/davidNHK/resume.json</a></span>
+                                </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                        </h5>
+                    </div>
+                      <h4>
+                        My resume in JSON format
+                      </h4>
+        
+        
+                    <div class="flex-container">
+                            <h6 class="skill">JSON Resume</h6>
+                    </div>
+        
+        
+                </section>
+        </div>
+        <div class="container education-container">
+            <div class="title">
+            <h3>Education</h3>
+            <div class="keyline"></div>
+        </div> 
+            <section class="item">
+                <div class="section-header clearfix">
+            <h3 class="bold pull-left">
+                    The Open University of Hong Kong
+            </h3>
+            <h5 class="italic pull-right">
+                    <span class="startDate">09/2012</span>
+                    <span class="endDate"> - 05/2014</span>
+            </h5>
+        </div>
+         
+                <h4>Bachelor Information Technology</h4>
+        
+              </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
 
 </html>
