@@ -54,7 +54,7 @@
       "language": "Chinese"
     }
   ],
-  "meta": { "theme": "material" },
+  "meta": { "theme": "elegant" },
   "projects": [
     {
       "description": "Web Music Player for playing spotify music",

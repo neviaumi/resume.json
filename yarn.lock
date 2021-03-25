@@ -3469,7 +3469,7 @@ graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
-gravatar@^1.0.0:
+gravatar@^1.0.6:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/gravatar/-/gravatar-1.8.1.tgz#743bbdf3185c3433172e00e0e6ff5f6b30c58997"
   integrity sha512-18frnfVp4kRYkM/eQW32Mfwlsh/KMbwd3S6nkescBZHioobflFEFHsvM71qZAkUSLNifyi2uoI+TuGxJAnQIOA==
@@ -4737,14 +4737,14 @@ jsonresume-theme-even@^0.6.0:
     micromark "^2.11.4"
     striptags "^3.1.1"
 
-jsonresume-theme-material@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/jsonresume-theme-material/-/jsonresume-theme-material-1.3.1.tgz#a49b1d4765b8147ac0c33b3a1f6e79dad365ac1d"
-  integrity sha512-9c7PXB6qS3zQ0vsWz8/Vfv36kInZeNoeYyCTp83eN0SaLRipwb+FIhRGBo5FRjjLf11DouFwmA0FhNRh4DrmJw==
+jsonresume-theme-kendall@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/jsonresume-theme-kendall/-/jsonresume-theme-kendall-0.2.0.tgz#f7336343582b0da2d3eaeffc4fd0e204a6bbf177"
+  integrity sha512-K925MVtKXd2W8XbnR5/MzgO6c7wObyTPdjics9xmMDUW3xK3051IOIIVEyv+lIseEW3lOmm2yun9gLtJwVr1mA==
   dependencies:
-    gravatar "^1.0.0"
-    lodash "^4.17.15"
-    mustache "~2.1.3"
+    gravatar "^1.0.6"
+    lodash "^4.17.20"
+    mustache "^2.2.1"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -5177,10 +5177,10 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-mustache@~2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/mustache/-/mustache-2.1.3.tgz#25b90b4204a454c898e8bb2e38d26de223abbd56"
-  integrity sha1-JbkLQgSkVMiY6LsuONJt4iOrvVY=
+mustache@^2.2.1:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/mustache/-/mustache-2.3.2.tgz#a6d4d9c3f91d13359ab889a812954f9230a3d0c5"
+  integrity sha512-KpMNwdQsYz3O/SBS1qJ/o3sqUJ5wSb8gb0pul8CO0S56b9Y2ALm8zCfsjPXsqGFfoNBkDwZuZIAjhsZI03gYVQ==
 
 mute-stream@~0.0.4:
   version "0.0.8"
