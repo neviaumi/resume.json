@@ -1,7 +1,7 @@
 {
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
-    "jsonresume-theme-material": "1.3.1",
+    "jsonresume-theme-kendall": "0.2.0",
     "resume-cli": "3.0.4"
   },
   "description": "David Ng personal resume",
@@ -30,7 +30,7 @@
   "private": true,
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
-    "dev": "resume serve -t ./node_modules/jsonresume-theme-material",
+    "dev": "resume serve -t ./node_modules/jsonresume-theme-kendall",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
     "prepare": "husky install",
