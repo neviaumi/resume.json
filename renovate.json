@@ -1,3 +1,4 @@
 {
-  "extends": ["@busybox/renovate-config"]
+  "extends": ["@busybox/renovate-config"],
+  "ignorePaths": ["docs/*"]
 }
