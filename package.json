@@ -1,7 +1,7 @@
 {
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
-    "jsonresume-theme-kendall": "0.2.0",
+    "jsonresume-theme-macchiato": "1.1.0",
     "resume-cli": "3.0.4"
   },
   "description": "David Ng personal resume",
@@ -17,11 +17,11 @@
     "husky": "5.2.0",
     "is-ci": "3.0.0",
     "jest": "26.6.3",
-    "jsonresume-theme-macchiato": "1.1.0",
     "lint-staged": "10.5.4",
     "nodemon": "2.0.7",
     "npm-package-json-lint": "5.1.0",
     "prettier": "2.2.1",
+    "puppeteer-cli": "1.5.1",
     "resume-schema": "1.0.0",
     "serve": "11.3.2"
   },
@@ -35,6 +35,7 @@
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
     "build": "resume export -t macchiato docs/index.html",
+    "build:pdf": "yarn build && puppeteer --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 --format A4 print docs/index.html docs/resume.pdf",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
