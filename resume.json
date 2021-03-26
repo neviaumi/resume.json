@@ -8,7 +8,7 @@
       "region": "Hong Kong"
     },
     "name": "David Ng",
-    "picture": "https://davidnhk.github.io/qr-code.png",
+    "picture": "https://davidnhk.github.io/resume.json/qr-code.png",
     "profiles": [
       {
         "network": "Github",
@@ -84,36 +84,29 @@
   "references": [],
   "skills": [
     {
-      "keywords": ["React", "CSS", "JS"],
+      "keywords": ["React", "CSS"],
       "level": "Master",
       "name": "Web FrontEnd Development"
     },
     {
       "keywords": [
         "MongoDB",
-        "Redis",
         "NodeJS",
-        "NestJS",
         "Python",
         "Rest API",
-        "Queue System",
+        "Redis",
         "RabbitMQ"
       ],
       "level": "Master",
       "name": "Web BackEnd Development"
     },
     {
-      "keywords": ["Git"],
-      "level": "Intermediate",
-      "name": "General Software Development"
-    },
-    {
-      "keywords": ["AWS", "Docker", "GitHub Action", "Travis", "CI"],
+      "keywords": ["AWS", "Docker", "CI", "GitHub"],
       "level": "Intermediate",
       "name": "Cloud Deployment"
     },
     {
-      "keywords": ["Agile"],
+      "keywords": ["Agile", "Scrum"],
       "level": "Intermediate",
       "name": "Project Management"
     },
