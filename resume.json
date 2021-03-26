@@ -73,7 +73,7 @@
     },
     {
       "description": "The document you are reading currently",
-      "highlights": ["resume format", "multiple theme support"],
+      "highlights": ["Standard resume format", "multiple theme support"],
       "keywords": ["JSON Resume", "Standard"],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
@@ -121,41 +121,51 @@
       "company": "HK01",
       "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App store and Google Play store.",
       "highlights": [
-        "Technology used: MongoDB, NodeJS, Docker, Travis CI, RabbitMQ, Redis",
         "Created the system for the editor delivery notifications to end user. For example, push notifications, SMS, email ...etc.",
         "Created the company’s internal Single Sign On (SSO) system",
         "Created the Content Management System (CMS) for non-technical staff to create content for the company application"
+      ],
+      "keywords": [
+        "MongoDB",
+        "NodeJS",
+        "Docker",
+        "Travis CI",
+        "RabbitMQ",
+        "Redis"
       ],
       "location": "Hong Kong",
       "name": "HK01",
       "position": "Senior Software Engineer",
       "startDate": "2018-11-01",
       "summary": "Working in a shared service team to provide reusable, shared logic for difference products",
-      "url": "https://www.hk01.com/"
+      "url": "https://www.hk01.com/",
+      "website": "https://www.hk01.com"
     },
     {
       "company": "AfterShip",
       "description": "SasS provide post-purchase experience such as shipment visibility, analytics ..etc.",
       "endDate": "2018-09-01",
-      "highlights": ["Technology used: MongoDB, NodeJS, Beanstalk, Redis"],
+      "keywords": ["MongoDB", "NodeJS", "Beanstalk", "Redis"],
       "position": "Software Engineer",
       "startDate": "2017-05-01",
       "summary": "Use different sources including Website, API, API used by mobile app to provide tracked shipment and courier data through the tracking number.",
-      "url": "https://www.aftership.com/"
+      "url": "https://www.aftership.com/",
+      "website": "https://www.aftership.com/"
     },
     {
       "company": "PCCW Now Media Limited",
       "description": "Subscription based regional video streaming platform",
       "endDate": "2017-04-01",
       "highlights": [
-        "Technology used: AWS Redshift, AWS SWF, Python, MS Excel",
         "Designed the Data Transform Pipeline & reporting system for Video on Demand (VOD) application for Mobile, Tablet and PC. ",
         "This application covered cross regionally; it covered Hong Kong, Singapore, Philippines and Thailand."
       ],
+      "keywords": ["AWS Redshift", "AWS SWF", "Python", "MS Excel"],
       "position": "Data Developer",
       "startDate": "2015-05-01",
       "summary": "Setup data tracking and reporting system for the streaming platform",
-      "url": "https://www.viu.com/ott/hk/en-us/"
+      "url": "https://www.viu.com/ott/hk/en-us/",
+      "website": "https://www.viu.com/ott/hk/en-us/"
     }
   ]
 }
