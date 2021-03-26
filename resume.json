@@ -71,7 +71,7 @@
       "url": "https://github.com/davidNHK/spotify-music-player"
     },
     {
-      "description": "My resume in JSON format",
+      "description": "The document you are reading currently",
       "highlights": ["resume format", "multiple theme support"],
       "keywords": ["JSON Resume", "Standard"],
       "name": "resume.json",
