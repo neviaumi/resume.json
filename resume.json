@@ -17,8 +17,7 @@
       },
       {
         "network": "Linkedin",
-        "url": "https://www.linkedin.com/in/ng-kong-chor-ab251799/",
-        "username": "ng-kong-chor"
+        "url": "https://www.linkedin.com/in/ng-kong-chor-ab251799/"
       }
     ],
     "summary": "I am an innovative natural problem solver, who is passionate and will always fight for what I believe in, especially when it is best for the company. I love working in a team and have mentored and helped junior and new staff members on projects. I am always willing to share knowledge whether that’s job related or tech news, this is because I always want to help colleagues to ensure jobs are done to a high quality.",
@@ -37,12 +36,8 @@
   ],
   "interests": [
     {
-      "keywords": ["media", "music player", "spotify"],
+      "keywords": ["music", "multi media"],
       "name": "OSS"
-    },
-    {
-      "keywords": ["instruments", "hobby"],
-      "name": "Music"
     }
   ],
   "languages": [
@@ -63,7 +58,13 @@
         "Support multi device sync up though spotify-connect",
         "Recommends tracks base on user country / recent play"
       ],
-      "keywords": ["React", "React Query", "OpenID Client", "React Hook"],
+      "keywords": [
+        "React",
+        "Data fetching",
+        "OpenID Client",
+        "React Hook",
+        "CSS styling"
+      ],
       "name": "Spotify Music Player",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
@@ -71,8 +72,8 @@
     },
     {
       "description": "My resume in JSON format",
-      "highlights": [],
-      "keywords": ["JSON Resume"],
+      "highlights": ["resume format", "multiple theme support"],
+      "keywords": ["JSON Resume", "Standard"],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
@@ -91,23 +92,32 @@
         "MongoDB",
         "Redis",
         "NodeJS",
+        "NestJS",
         "Python",
-        "WebAPI",
-        "Queue",
+        "Rest API",
+        "Queue System",
         "RabbitMQ"
       ],
       "level": "Master",
       "name": "Web BackEnd Development"
     },
     {
-      "keywords": [
-        "Unit Test",
-        "Integration Test",
-        "Jest",
-        "CI",
-        "GitHub Action",
-        "Travis"
-      ],
+      "keywords": ["Git"],
+      "level": "Intermediate",
+      "name": "General Software Development"
+    },
+    {
+      "keywords": ["AWS", "Docker", "GitHub Action", "Travis", "CI"],
+      "level": "Intermediate",
+      "name": "Cloud Deployment"
+    },
+    {
+      "keywords": ["Agile"],
+      "level": "Intermediate",
+      "name": "Project Management"
+    },
+    {
+      "keywords": ["Unit Test", "Integration Test", "Jest"],
       "level": "Intermediate",
       "name": "Automated testing"
     }
@@ -117,16 +127,41 @@
       "company": "HK01",
       "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App store and Google Play store.",
       "highlights": [
-        "Signal Sign On (SSO) system for staff cross project login",
-        "Notification Center for central sending notification like App Push, SMS, Email ..etc.",
-        "Headless CMS for editor easily deploy content"
+        "Technology used: MongoDB, NodeJS, Docker, Travis CI, RabbitMQ, Redis",
+        "Created the system for the editor delivery notifications to end user. For example, push notifications, SMS, email ...etc.",
+        "Created the company’s internal Single Sign On (SSO) system",
+        "Created the Content Management System (CMS) for non-technical staff to create content for the company application"
       ],
       "location": "Hong Kong",
       "name": "HK01",
       "position": "Senior Software Engineer",
       "startDate": "2018-11-01",
-      "summary": "Working in a shared service team to provide reusable, shared logic such as Authorization, Notification, Content management ..etc. for difference products",
+      "summary": "Working in a shared service team to provide reusable, shared logic for difference products",
       "url": "https://www.hk01.com/"
+    },
+    {
+      "company": "AfterShip",
+      "description": "SasS provide post-purchase experience such as shipment visibility, analytics ..etc.",
+      "endDate": "2018-09-01",
+      "highlights": ["Technology used: MongoDB, NodeJS, Beanstalk, Redis"],
+      "position": "Software Engineer",
+      "startDate": "2017-05-01",
+      "summary": "Use different sources including Website, API, API used by mobile app to provide tracked shipment and courier data through the tracking number.",
+      "url": "https://www.aftership.com/"
+    },
+    {
+      "company": "PCCW Now Media Limited",
+      "description": "Subscription based regional video streaming platform",
+      "endDate": "2017-04-01",
+      "highlights": [
+        "Technology used: AWS Redshift, AWS SWF, Python, MS Excel",
+        "Designed the Data Transform Pipeline & reporting system for Video on Demand (VOD) application for Mobile, Tablet and PC. ",
+        "This application covered cross regionally; it covered Hong Kong, Singapore, Philippines and Thailand."
+      ],
+      "position": "Data Developer",
+      "startDate": "2015-05-01",
+      "summary": "Setup data tracking and reporting system for the streaming platform",
+      "url": "https://www.viu.com/ott/hk/en-us/"
     }
   ]
 }
