@@ -4,3 +4,6 @@
 
 set -e
 yarn lint-staged
+yarn build
+yarn build:pdf
+git add docs/
