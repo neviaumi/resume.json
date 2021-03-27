@@ -34,7 +34,7 @@
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
     "build": "resume export -t macchiato docs/index.html",
-    "build:pdf": "resume export -t macchiato docs/resume.pdf",
+    "build:pdf": "node buildPDF.js",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",

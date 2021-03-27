@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/node_modules/resume-cli/build/export-resume.js">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/resume.json">
           <value>
             <Attribute>
