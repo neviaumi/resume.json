@@ -2,6 +2,7 @@
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
     "jsonresume-theme-macchiato": "1.1.0",
+    "patch-package": "6.4.7",
     "resume-cli": "3.0.4"
   },
   "description": "David Ng personal resume",
@@ -20,6 +21,7 @@
     "lint-staged": "10.5.4",
     "nodemon": "2.0.7",
     "npm-package-json-lint": "5.1.0",
+    "postinstall-postinstall": "2.1.0",
     "prettier": "2.2.1",
     "resume-schema": "1.0.0",
     "serve": "11.3.2"
@@ -33,11 +35,12 @@
   "private": true,
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
-    "build": "resume export -t macchiato docs/index.html",
-    "build:pdf": "node buildPDF.js",
+    "build": "resume export -t ./theme docs/index.html",
+    "build:pdf": "resume export -t ./theme docs/resume.pdf",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
+    "postinstall": "patch-package",
     "prepare": "is-ci || husky install",
     "start": "yarn build && serve docs",
     "test": "jest"
