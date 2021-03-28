@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
         uses: actions/setup-node@v2
+        env:
+          RUNNER_TEMP: /tmp # https://github.com/nektos/act/issues/170
         with:
           node-version: 14.x
       - run: bash ./scripts/setup.sh

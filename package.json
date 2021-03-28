@@ -43,7 +43,8 @@
     "postinstall": "patch-package",
     "prepare": "is-ci || husky install",
     "start": "yarn build && serve docs",
-    "test": "jest"
+    "test": "jest",
+    "test:github-action": "act -b"
   },
   "version": "0.0.0"
 }
