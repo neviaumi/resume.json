@@ -3,8 +3,6 @@ set -x
 
 set -e
 yarn build
-export RESUME_PUPPETEER_NO_SANDBOX=true
-yarn build:pdf
 set +e
 git diff --name-only --exit-code docs
 
