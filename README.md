@@ -11,13 +11,11 @@ yarn dev
 ```
 
 [Live version](https://davidnhk.github.io/resume.json/)
-[PDF](https://davidnhk.github.io/resume.json/resume.pdf)
 
-# Commit message definition
 
-I use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for project and because resume is very hard to apply the prefix definition 
-(What meaning of `feature` in resume ? One more Experience? Changed the theme ? )
+# Get PDF Version
 
-Let redefine the `feat` definition here 
+Access [Live version](https://davidnhk.github.io/resume.json/) 
+on Browser and click print (Command + P) in toolbar then select `Save as PDF`. 
 
-* feat - change related to resume content 
+![print-pdf](./docs/print-pdf-instruction.png)
