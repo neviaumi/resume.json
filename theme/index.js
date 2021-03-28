@@ -7,7 +7,7 @@ module.exports = {
   ...theme,
   pdfRenderOptions: {
     format: 'a4',
-    margin: undefined,
+    margin: 0, // https://github.com/puppeteer/puppeteer/issues/393
     mediaType: 'print',
   },
 };
