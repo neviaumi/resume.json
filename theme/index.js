@@ -14,6 +14,6 @@ module.exports = {
       top: 0,
     },
     mediaType: 'print',
-    pdfViewport: 'width=device-width, initial-scale=1, minimal-ui',
+    pdfViewport: 'width=8.27in, initial-scale=1, minimal-ui',
   },
 };
