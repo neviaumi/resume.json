@@ -1,9 +1,12 @@
 #!/bin/bash
 set -x
 
+set -e
 yarn build
+yarn build:pdf
+set +e
+git diff --name-only --exit-code docs
 
-git diff --name-only --exit-code docs/index.html
 if [ $? -eq 1 ]; then
   set -e
   git config user.email "github-action@github.com"
@@ -12,7 +15,7 @@ if [ $? -eq 1 ]; then
   git commit -m "docs(release): publish new resume[skip ci]"
   git push
 else
-  echo "Result HTML not changed"
+  echo "Resume render result not changed"
 fi
 
 
