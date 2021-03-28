@@ -4,5 +4,3 @@
 
 set -e
 yarn lint-staged
-yarn build
-git add docs/
