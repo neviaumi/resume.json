@@ -297,10 +297,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@busybox/eslint-config@5.4.3":
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/@busybox/eslint-config/-/eslint-config-5.4.3.tgz#a823f21bc6d52351ade656aff2cca4b01655f8b1"
-  integrity sha512-Jqfx4Iqp0+VOWyfQTT+zkyoQANx3jcyzNUQbXuuUqC2SoUZD2JAavPuZkerOs/V2a1XLqPt2uhDsqUrXsvduAw==
+"@busybox/eslint-config@5.4.4":
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/@busybox/eslint-config/-/eslint-config-5.4.4.tgz#482c50d35fd619c5ba3529c21ee54f1389b59bc5"
+  integrity sha512-IYdBixqfWlpMARt8wzU1q849rwXHxMdwQeDTbogwH++n8jhoQSkUndSXUagUqPZgJfOfYhSj46kzlhvDP0r04Q==
   dependencies:
     "@spotify/eslint-config-base" "9.0.2"
     "@spotify/web-scripts-utils" "9.0.0"
