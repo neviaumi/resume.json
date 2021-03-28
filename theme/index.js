@@ -6,13 +6,8 @@ const theme = require('jsonresume-theme-macchiato');
 module.exports = {
   ...theme,
   pdfRenderOptions: {
-    format: 'A4',
-    margin: {
-      bottom: 0,
-      left: 0,
-      right: 0,
-      top: 0,
-    },
+    format: 'a4',
+    margin: 0, // https://github.com/puppeteer/puppeteer/issues/393
     mediaType: 'print',
   },
 };
