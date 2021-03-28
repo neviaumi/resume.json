@@ -20,7 +20,7 @@ async function main() {
   );
 
   await page.pdf({
-    format: 'A4',
+    format: 'a4',
     path: 'docs/resume.pdf',
     printBackground: true,
     ...theme.pdfRenderOptions,
