@@ -9,5 +9,6 @@ module.exports = {
     format: 'a4',
     margin: 0, // https://github.com/puppeteer/puppeteer/issues/393
     mediaType: 'print',
+    preferCSSPageSize: true,
   },
 };
