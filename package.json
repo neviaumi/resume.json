@@ -3,6 +3,7 @@
   "dependencies": {
     "jsonresume-theme-macchiato": "1.1.0",
     "patch-package": "6.4.7",
+    "puppeteer": "8.0.0",
     "resume-cli": "3.0.4"
   },
   "description": "David Ng personal resume",
@@ -36,6 +37,7 @@
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
     "build": "resume export -t ./theme docs/index.html",
+    "build:pdf": "node buildPDF.js",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",

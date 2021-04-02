@@ -8,9 +8,11 @@ async function main() {
   const html = await render(resume);
   const browser = await puppeteer.launch({
     args: [],
+    defaultViewport: null,
   });
   const page = await browser.newPage();
-
+  // eslint-disable-next-line no-console
+  console.debug({ viewport: page.viewport() });
   await page.emulateMediaType(pdfRenderOptions.mediaType);
   await page.goto(
     `data:text/html;base64,${Buffer.from(

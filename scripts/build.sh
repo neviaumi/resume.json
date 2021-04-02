@@ -3,6 +3,7 @@ set -x
 
 set -e
 yarn build
+yarn build:pdf
 set +e
 git diff --name-only --exit-code docs
 
