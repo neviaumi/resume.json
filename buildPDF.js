@@ -9,6 +9,7 @@ async function main() {
   const browser = await puppeteer.launch({
     args: [],
     defaultViewport: null,
+    devtools: false,
   });
   const page = await browser.newPage();
   await page.setViewport({
@@ -27,6 +28,13 @@ async function main() {
 
   await page.pdf({
     format: 'a4',
+    margin: {
+      bottom: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+    },
+    pageRanges: '1',
     path: 'docs/resume.pdf',
     printBackground: true,
     ...pdfRenderOptions,
