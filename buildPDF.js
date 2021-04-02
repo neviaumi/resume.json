@@ -11,9 +11,13 @@ async function main() {
     defaultViewport: null,
   });
   const page = await browser.newPage();
+  await page.setViewport({
+    height: 1080,
+    width: 1920,
+  });
   // eslint-disable-next-line no-console
-  console.debug({ viewport: page.viewport() });
-  await page.emulateMediaType(pdfRenderOptions.mediaType);
+  console.debug({ browser, viewport: page.viewport() });
+  await page.emulateMediaType('print');
   await page.goto(
     `data:text/html;base64,${Buffer.from(
       unescape(encodeURIComponent(html)),
@@ -25,7 +29,12 @@ async function main() {
     format: 'a4',
     path: 'docs/resume.pdf',
     printBackground: true,
-    ...theme.pdfRenderOptions,
+    ...pdfRenderOptions,
+  });
+
+  await page.screenshot({
+    fullPage: true,
+    path: 'docs/resume.png',
   });
 
   await browser.close();

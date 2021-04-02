@@ -6,7 +6,6 @@ const theme = require('jsonresume-theme-macchiato');
 module.exports = {
   ...theme,
   pdfRenderOptions: {
-    mediaType: 'print',
     preferCSSPageSize: true,
   },
 };
