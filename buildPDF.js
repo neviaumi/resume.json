@@ -27,7 +27,6 @@ async function main() {
       right: 0,
       top: 0,
     },
-    pageRanges: '1',
     path: 'docs/resume.pdf',
     printBackground: true,
     ...pdfRenderOptions,

@@ -73,7 +73,7 @@
     {
       "description": "The document you are reading currently",
       "highlights": ["Standard resume format", "multiple theme support"],
-      "keywords": ["JSON Resume", "Standard"],
+      "keywords": ["JSON Resume", "Standard", "CD", "Github Action"],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",

@@ -10,12 +10,10 @@ yarn
 yarn dev
 ```
 
+Build PDF
+```
+yarn build:pdf
+```
+
 [Live version](https://davidnhk.github.io/resume.json/)
-
-
-# Get PDF Version
-
-Access [Live version](https://davidnhk.github.io/resume.json/) 
-on Browser and click print (Command + P) in toolbar then select `Save as PDF`. 
-
-![print-pdf](./docs/print-pdf-instruction.png)
+[PDF Version](https://davidnhk.github.io/resume.json/resume.pdf)
