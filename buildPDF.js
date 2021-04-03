@@ -1,23 +1,16 @@
 /* eslint-disable no-console */
+const path = require('path');
 const playwright = require('playwright');
-const theme = require('./theme');
-const resume = require('./resume.json');
 
 async function main() {
-  const { render, pdfRenderOptions } = theme;
+  const htmlFile = path.resolve('./docs/index.html');
 
-  const html = await render(resume);
   const browser = await playwright.chromium.launch({
     args: ['--disable-dev-shm-usage'],
   });
   const page = await browser.newPage();
   await page.emulateMedia({ media: 'print' });
-  await page.goto(
-    `data:text/html;base64,${Buffer.from(
-      unescape(encodeURIComponent(html)),
-    ).toString('base64')}`,
-    { waitUntil: 'networkidle0' },
-  );
+  await page.goto(`file://${htmlFile}`, { waitUntil: 'networkidle0' });
 
   await page.pdf({
     format: 'a4',
@@ -27,9 +20,10 @@ async function main() {
       right: 0,
       top: 0,
     },
+    page: '1',
     path: 'docs/resume.pdf',
+    preferCSSPageSize: true,
     printBackground: true,
-    ...pdfRenderOptions,
   });
 
   await browser.close();

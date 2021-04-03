@@ -2,7 +2,6 @@
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
     "jsonresume-theme-macchiato": "1.1.0",
-    "patch-package": "6.4.7",
     "playwright": "1.10.0",
     "resume-cli": "3.0.4"
   },
@@ -36,12 +35,11 @@
   "private": true,
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
-    "build": "resume export -t ./theme docs/index.html",
+    "build": "resume export -t jsonresume-theme-macchiato ./docs/index.html",
     "build:pdf": "docker-compose -f docker-compose-build-pdf.yml up",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
-    "postinstall": "patch-package",
     "prepare": "is-ci || husky install",
     "start": "yarn build && serve docs",
     "test": "jest",
