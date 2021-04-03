@@ -9,7 +9,4 @@ services:
       - type: bind
         source: ./docs
         target: /app/docs
-      - type: bind
-        source: ./buildPDF.js
-        target: /app/buildPDF.js
     entrypoint: ["node", "buildPDF.js"]
