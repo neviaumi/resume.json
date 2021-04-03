@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  pdf-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ipc: host
+    volumes:
+      - type: bind
+        source: ./docs
+        target: /app/docs
+      - type: bind
+        source: ./buildPDF.js
+        target: /app/buildPDF.js
+    entrypoint: ["node", "buildPDF.js"]

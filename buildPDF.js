@@ -1,4 +1,5 @@
-const puppeteer = require('puppeteer');
+/* eslint-disable no-console */
+const playwright = require('playwright');
 const theme = require('./theme');
 const resume = require('./resume.json');
 
@@ -6,19 +7,11 @@ async function main() {
   const { render, pdfRenderOptions } = theme;
 
   const html = await render(resume);
-  const browser = await puppeteer.launch({
-    args: [],
-    defaultViewport: null,
-    devtools: false,
+  const browser = await playwright.chromium.launch({
+    args: ['--disable-dev-shm-usage'],
   });
   const page = await browser.newPage();
-  await page.setViewport({
-    height: 1080,
-    width: 1920,
-  });
-  // eslint-disable-next-line no-console
-  console.debug({ browser, viewport: page.viewport() });
-  await page.emulateMediaType('print');
+  await page.emulateMedia({ media: 'print' });
   await page.goto(
     `data:text/html;base64,${Buffer.from(
       unescape(encodeURIComponent(html)),
@@ -40,12 +33,10 @@ async function main() {
     ...pdfRenderOptions,
   });
 
-  await page.screenshot({
-    fullPage: true,
-    path: 'docs/resume.png',
-  });
-
   await browser.close();
 }
 
-main();
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
