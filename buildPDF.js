@@ -20,7 +20,7 @@ async function main() {
       right: 0,
       top: 0,
     },
-    page: '1',
+    pageRanges: '1',
     path: 'docs/resume.pdf',
     preferCSSPageSize: true,
     printBackground: true,
