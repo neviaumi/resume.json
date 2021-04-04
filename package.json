@@ -2,8 +2,7 @@
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
     "jsonresume-theme-macchiato": "1.1.0",
-    "playwright": "1.10.0",
-    "resume-cli": "3.0.4"
+    "playwright": "1.10.0"
   },
   "description": "David Ng personal resume",
   "devDependencies": {
@@ -35,8 +34,9 @@
   "private": true,
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
-    "build": "resume export -t jsonresume-theme-macchiato ./docs/index.html",
-    "build:pdf": "docker-compose -f docker-compose-build-pdf.yml up",
+    "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose-build.yml up",
+    "build:html": "node ./src/build-html.js",
+    "build:pdf": "yanr build:html && node ./src/build-pdf.js",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
