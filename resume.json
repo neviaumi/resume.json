@@ -17,7 +17,7 @@
       },
       {
         "network": "Linkedin",
-        "url": "https://www.linkedin.com/in/ng-kong-chor-ab251799/",
+        "url": "https://www.linkedin.com/in/davidnhk/",
         "username": "Ng Kong Chor"
       }
     ],
@@ -80,7 +80,20 @@
       "url": "https://github.com/davidNHK/resume.json"
     }
   ],
-  "references": [],
+  "references": [
+    {
+      "name": "Ki-hong Chan, HK01 Assistant Manager",
+      "reference": "During two years of working with David, we learn, growth and teaching each others in many ways. He give great effort and contribution to the team. Suggesting different solutions and tools to help solving many technical problems. Most importantly David help mentoring Junior developers. To help them get through hard time and start contributing the team more quickly. Without David our team will not be that successful. Highly recommend him to any company for a excellent team player."
+    },
+    {
+      "name": "Eddie Li, HK01 Senior Software Engineer",
+      "reference": "David is a big fan of automation. He loves to use the latest technical stacks to improve team's productivity. He even built an automate tool for the company to automate different jobs which needed to be manually processed time to time before. He is also eager to help others and brings constructive ideas to the team all the time."
+    },
+    {
+      "name": "Billy Chan, HK01 Software Engineer",
+      "reference": "A dedicated software engineer who can overcome challenges with creative solutions. He also loves to help his colleagues and discuss openly about the process and solution too. Highly recommend him to any company looking for a excellent team player"
+    }
+  ],
   "skills": [
     {
       "keywords": ["React", "CSS"],
