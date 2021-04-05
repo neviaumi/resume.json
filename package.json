@@ -36,12 +36,12 @@
   "scripts": {
     "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose-build.yml up",
     "build:html": "node ./src/build-html.js",
-    "build:pdf": "yanr build:html && node ./src/build-pdf.js",
+    "build:pdf": "yarn build:html && node ./src/build-pdf.js",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
     "prepare": "is-ci || husky install",
-    "start": "yarn build && serve docs",
+    "start": "yarn build:html && serve docs",
     "test": "jest",
     "test:github-action": "act -b"
   },

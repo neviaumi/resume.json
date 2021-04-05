@@ -7,8 +7,8 @@ services:
     ipc: host
     volumes:
       - type: bind
-        source: ./docs/
-        target: /app/docs/
+        source: ./docs/index.html
+        target: /app/docs/index.html
       - type: bind
         source: ./resume.json
         target: /app/resume.json
@@ -21,8 +21,12 @@ services:
     ipc: host
     volumes:
       - type: bind
-        source: ./docs/
-        target: /app/docs/
+        source: ./docs/resume.pdf
+        target: /app/docs/resume.pdf
+      - type: bind
+        source: ./docs/index.html
+        target: /app/docs/index.html
+        read_only: true
       - type: bind
         source: ./resume.json
         target: /app/resume.json
