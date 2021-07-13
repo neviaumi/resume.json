@@ -17,7 +17,7 @@
     "husky": "7.0.1",
     "is-ci": "3.0.0",
     "jest": "27.0.6",
-    "lint-staged": "11.0.0",
+    "lint-staged": "11.0.1",
     "nodemon": "2.0.12",
     "npm-package-json-lint": "5.1.0",
     "postinstall-postinstall": "2.1.0",
