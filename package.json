@@ -19,7 +19,7 @@
     "jest": "27.0.6",
     "lint-staged": "11.1.2",
     "nodemon": "2.0.12",
-    "npm-package-json-lint": "5.2.2",
+    "npm-package-json-lint": "5.2.3",
     "postinstall-postinstall": "2.1.0",
     "prettier": "2.3.2",
     "resume-schema": "1.0.0",
