@@ -134,6 +134,21 @@
   ],
   "work": [
     {
+      "company": "Neat",
+      "description": "Digital wallet for business",
+      "highlights": [
+        "Improve code base by adding test cover",
+        "Guide junior engineers"
+      ],
+      "location": "Hong Kong",
+      "name": "Neat",
+      "position": "Software Engineer",
+      "startDate": "2021-05-01",
+      "summary": "Senior developer help for making decision, code review, improve existing product quality",
+      "url": "https://www.neatcommerce.com/",
+      "website": "https://www.neatcommerce.com/"
+    },
+    {
       "company": "HK01",
       "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App store and Google Play store.",
       "highlights": [
