@@ -1,8 +1,8 @@
 {
-  "*.{js,ts,json}": ["yarn prettier --write", "yarn eslint --fix"],
+  "*.{js,ts,json}": ["npx prettier --write", "npx eslint --fix"],
   "package.json": [
-    "yarn eslint --fix",
-    "yarn prettier --write",
-    "yarn npmPkgJsonLint"
+    "npx eslint --fix",
+    "npx prettier --write",
+    "npx npmPkgJsonLint"
   ]
 }

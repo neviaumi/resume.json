@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/playwright:bionic
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 COPY src/ ./src
 RUN mkdir -p ./docs
-RUN yarn --production --frozen-lockfile
+RUN npm ci --ignore-scripts

@@ -26,7 +26,7 @@
     "serve": "12.0.0"
   },
   "engines": {
-    "node": "14"
+    "node": "16"
   },
   "license": "MIT",
   "main": "resume.json",
@@ -36,14 +36,13 @@
   "scripts": {
     "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose-build.yml up",
     "build:html": "node ./src/build-html.js",
-    "build:pdf": "yarn build:html && node ./src/build-pdf.js",
+    "build:pdf": "npm run build:html && node ./src/build-pdf.js",
     "dev": "nodemon --exec 'yarn start'",
     "lint": "eslint --ext=json,js --fix .",
     "lint:ci": "eslint --ext=json,js .",
     "prepare": "is-ci || husky install",
-    "start": "yarn build:html && serve docs",
-    "test": "jest",
-    "test:github-action": "act -b"
+    "start": "npm run build:html && serve docs",
+    "test": "jest"
   },
   "version": "0.0.0"
 }
