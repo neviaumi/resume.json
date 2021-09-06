@@ -332,10 +332,10 @@
     eslint-plugin-testing-library "4.12.1"
     eslint-plugin-typescript-sort-keys "1.8.0"
 
-"@busybox/npm-package-json-lint-config@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@busybox/npm-package-json-lint-config/-/npm-package-json-lint-config-1.2.0.tgz"
-  integrity sha512-GbRgh5Cl0vBxZ4oC5K1uXqzNk3yWuRbGJYosJEEnQd+WN1gQ/K2z/pTlUDi3Xx1XU3AtkHJRq72zcNMHfIdZKA==
+"@busybox/npm-package-json-lint-config@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/@busybox/npm-package-json-lint-config/-/npm-package-json-lint-config-1.3.0.tgz"
+  integrity sha512-KDb5qXS+evLvEgZT2gGDz6UtxYWgNqp89uQvrqbp996kX5F3RnkhTgGtUivBn5D5pQmKd4rJz8jbGxQckasR0A==
   dependencies:
     npm-package-json-lint-config-default "3.0.0"
 
@@ -3951,7 +3951,7 @@ map-obj@^4.0.0:
 
 meow@^6.1.1:
   version "6.1.1"
-  resolved "https://registry.yarnpkg.com/meow/-/meow-6.1.1.tgz#1ad64c4b76b2a24dfb2f635fddcadf320d251467"
+  resolved "https://registry.npmjs.org/meow/-/meow-6.1.1.tgz"
   integrity sha512-3YffViIt2QWgTy6Pale5QpopX/IvU3LPL03jOTqp6pGj3VjesdO/U8CuHMKpnQr4shCNCM5fd5XFFvIIl6JBHg==
   dependencies:
     "@types/minimist" "^1.2.0"
