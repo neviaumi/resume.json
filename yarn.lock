@@ -339,10 +339,10 @@
   dependencies:
     npm-package-json-lint-config-default "3.0.0"
 
-"@busybox/prettier-config@1.1.6":
-  version "1.1.6"
-  resolved "https://registry.npmjs.org/@busybox/prettier-config/-/prettier-config-1.1.6.tgz"
-  integrity sha512-thrKRYRRQfb/gpzyg1feKdYDxjT41c980ssxfUJXIWS4cXIgM3cW8Y10MxLU5V/C7bqXZUwzCzMlbfMxiSYPHQ==
+"@busybox/prettier-config@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/@busybox/prettier-config/-/prettier-config-1.2.0.tgz"
+  integrity sha512-QeyF8jo4JLXFWnI6Vb0eXH4xXterkG3bCi9JSirFIWEugGCIlQbjm9AquXu+qQd2bLCKsDh68FOir0xi1ovZLw==
   dependencies:
     "@spotify/prettier-config" "11.0.0"
 
