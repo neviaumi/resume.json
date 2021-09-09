@@ -1,4 +1,0 @@
-{
-  "extends": ["@busybox/renovate-config"],
-  "ignorePaths": ["docs/*"]
-}
