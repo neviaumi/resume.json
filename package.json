@@ -23,7 +23,7 @@
     "postinstall-postinstall": "2.1.0",
     "prettier": "2.4.0",
     "resume-schema": "1.0.0",
-    "serve": "12.0.0"
+    "serve": "12.0.1"
   },
   "engines": {
     "node": "16"
