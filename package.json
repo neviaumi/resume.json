@@ -11,7 +11,7 @@
     "@busybox/prettier-config": "1.2.0",
     "@busybox/renovate-config": "1.2.0",
     "@commitlint/cli": "15.0.0",
-    "@commitlint/config-conventional": "14.1.0",
+    "@commitlint/config-conventional": "15.0.0",
     "@jest/globals": "27.3.1",
     "eslint": "7.32.0",
     "husky": "7.0.4",
