@@ -2,7 +2,7 @@
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
     "jsonresume-theme-macchiato": "1.1.0",
-    "playwright": "1.17.0"
+    "playwright": "1.17.1"
   },
   "description": "David Ng personal resume",
   "devDependencies": {
