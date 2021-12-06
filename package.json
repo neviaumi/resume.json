@@ -21,7 +21,7 @@
     "nodemon": "2.0.15",
     "npm-package-json-lint": "5.4.2",
     "postinstall-postinstall": "2.1.0",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "resume-schema": "1.0.0",
     "serve": "13.0.2"
   },
