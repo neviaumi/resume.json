@@ -16,7 +16,7 @@
     "eslint": "8.4.1",
     "husky": "7.0.4",
     "is-ci": "3.0.1",
-    "jest": "27.4.4",
+    "jest": "27.4.5",
     "lint-staged": "12.1.2",
     "nodemon": "2.0.15",
     "npm-package-json-lint": "5.4.2",
