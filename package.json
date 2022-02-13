@@ -26,7 +26,8 @@
     "serve": "13.0.2"
   },
   "engines": {
-    "node": "16"
+    "node": "16",
+    "yarn": "use npm"
   },
   "license": "MIT",
   "main": "resume.json",
