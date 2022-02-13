@@ -2,4 +2,4 @@
 
 set -ex
 
-yarn
+npm install

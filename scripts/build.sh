@@ -2,7 +2,7 @@
 set -x
 
 set -e
-yarn build:docker
+npm run build:docker
 set +e
 git diff --name-only --exit-code docs
 
