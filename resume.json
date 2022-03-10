@@ -151,6 +151,7 @@
     {
       "company": "HK01",
       "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App store and Google Play store.",
+      "endDate": "2021-05-01",
       "highlights": [
         "Created the system for the editor delivery notifications to end user. For example, push notifications, SMS, email ...etc.",
         "Created the company’s internal Single Sign On (SSO) system",
@@ -168,7 +169,6 @@
       "name": "HK01",
       "position": "Software Engineer",
       "startDate": "2018-11-01",
-      "endDate": "2021-05-01",
       "summary": "Working in a shared service team to provide reusable, shared logic for difference products",
       "url": "https://www.hk01.com/",
       "website": "https://www.hk01.com"

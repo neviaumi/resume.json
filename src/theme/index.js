@@ -1,1 +1,3 @@
-module.exports = require('jsonresume-theme-macchiato');
+import theme from 'jsonresume-theme-macchiato';
+
+export { theme };
