@@ -1,15 +1,17 @@
 /* eslint-disable no-console */
+import { promises as fs } from 'fs';
+// https://github.com/eslint/eslint/discussions/15305 assert type not working meanwhile
+// import resume from '../resume.json' assert { type: 'json' };
+import path from 'path';
 
-const theme = require('./theme');
-const { promises: fs } = require('fs');
-const resume = require('../resume.json');
+import { theme } from './theme/index.js';
 
-async function main() {
-  const html = theme.render(resume);
-  await fs.writeFile('./docs/index.html', html);
-}
+const resumePath = path.join(
+  path.parse(new URL(import.meta.url).pathname).dir,
+  '../',
+  'resume.json',
+);
+const resume = await fs.readFile(resumePath, { encoding: 'utf-8' });
 
-main().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+const html = theme.render(resume);
+await fs.writeFile('./docs/index.html', html);

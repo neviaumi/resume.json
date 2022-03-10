@@ -14,12 +14,15 @@
     "@commitlint/config-conventional": "16.2.1",
     "@jest/globals": "27.5.1",
     "eslint": "8.10.0",
+    "eslint-plugin-jest": "26.1.1",
+    "eslint-plugin-jsonc": "2.2.1",
     "husky": "7.0.4",
     "is-ci": "3.0.1",
     "jest": "27.5.1",
     "lint-staged": "12.3.5",
     "nodemon": "2.0.15",
     "npm-package-json-lint": "6.0.0",
+    "npm-package-json-lint-config-default": "5.0.0",
     "postinstall-postinstall": "2.1.0",
     "prettier": "2.5.1",
     "resume-schema": "1.0.0",
@@ -45,5 +48,6 @@
     "start": "npm run build:html && serve docs",
     "test": "jest"
   },
+  "type": "module",
   "version": "0.0.0"
 }

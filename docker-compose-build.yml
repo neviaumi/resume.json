@@ -31,6 +31,6 @@ services:
         source: ./resume.json
         target: /app/resume.json
         read_only: true
-    entrypoint: ["node", "src/build-pdf.js"]
+    entrypoint: ["node","src/build-pdf.js"]
     depends_on:
       - html-builder
