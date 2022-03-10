@@ -140,9 +140,10 @@
         "Improve code base by adding test cover",
         "Guide junior engineers"
       ],
-      "location": "Hong Kong",
+      "keywords": ["GraphQL", "NodeJS", "Docker", "Circle CI", "Cypress"],
+      "location": "Hong Kong / London (Remote)",
       "name": "Neat",
-      "position": "Software Engineer",
+      "position": "Senior Software Engineer",
       "startDate": "2021-05-01",
       "summary": "Senior developer help for making decision, code review, improve existing product quality",
       "url": "https://www.neatcommerce.com/",
