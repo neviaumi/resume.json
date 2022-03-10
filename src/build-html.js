@@ -12,6 +12,5 @@ const resumePath = path.join(
   'resume.json',
 );
 const resume = await fs.readFile(resumePath, { encoding: 'utf-8' });
-
-const html = theme.render(resume);
+const html = theme.render(JSON.parse(resume));
 await fs.writeFile('./docs/index.html', html);
