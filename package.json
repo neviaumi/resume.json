@@ -41,7 +41,7 @@
     "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose-build.yml up",
     "build:html": "node ./src/build-html.js",
     "build:pdf": "node ./src/build-pdf.js",
-    "dev": "nodemon --exec 'npm run start'",
+    "dev": "nodemon --exec 'npm run start' -e .css,.js,hbs",
     "lint": "eslint --ext=json,js,yaml,yml --fix .",
     "lint:ci": "eslint --ext=json,js,yaml,yml .",
     "prepare": "is-ci || husky install",
