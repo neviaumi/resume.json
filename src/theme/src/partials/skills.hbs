@@ -1,0 +1,27 @@
+{{#if resume.skills.length}}
+    <div class="skills-container">
+        {{#each (formatSkills resume.skills)}}
+            <section class="container">
+                {{#if name}}
+                    {{> title value=name}}
+                {{/if}}
+                {{#if levels.Master}}
+                    <h4 class="bold capitalize">Master</h4>
+                    <div class="minimal flex-container">
+                        {{#each levels.Master}}
+                            <h6 class="main-skill skill">{{.}}</h6>
+                        {{/each}}
+                    </div>
+                {{/if}}
+                {{#if levels.Intermediate}}
+                    <h4 class="bold capitalize">Intermediate</h4>
+                    <div class="minimal flex-container">
+                        {{#each levels.Intermediate}}
+                            <h6 class="main-skill skill">{{.}}</h6>
+                        {{/each}}
+                    </div>
+                {{/if}}
+            </section>
+        {{/each}}
+    </div>
+{{/if}}

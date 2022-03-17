@@ -4,7 +4,7 @@ import { promises as fs } from 'fs';
 // import resume from '../resume.json' assert { type: 'json' };
 import path from 'path';
 
-import { theme } from './theme/index.js';
+import { render } from './theme/index.js';
 
 const resumePath = path.join(
   path.parse(new URL(import.meta.url).pathname).dir,
@@ -12,5 +12,5 @@ const resumePath = path.join(
   'resume.json',
 );
 const resume = await fs.readFile(resumePath, { encoding: 'utf-8' });
-const html = theme.render(JSON.parse(resume));
+const html = await render(JSON.parse(resume));
 await fs.writeFile('./docs/index.html', html);

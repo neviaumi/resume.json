@@ -32,7 +32,7 @@
       "score": "4.0",
       "startDate": "2012-09-01",
       "studyType": "Bachelor",
-      "url": "http://www.ouhk.edu.hk?lang=eng"
+      "url": "https://www.hkmu.edu.hk/"
     }
   ],
   "interests": [
@@ -105,15 +105,21 @@
       "name": "Web FrontEnd Development"
     },
     {
+      "keywords": ["Express", "NestJS", "NodeJS", "REST API"],
+      "level": "Master",
+      "name": "Web BackEnd Development"
+    },
+    {
       "keywords": [
-        "MongoDB",
-        "NodeJS",
         "Python",
-        "Rest API",
+        "GraphQL",
+        "MongoDB",
+        "RabbitMQ",
         "Redis",
+        "PostgresSQL",
         "RabbitMQ"
       ],
-      "level": "Master",
+      "level": "Intermediate",
       "name": "Web BackEnd Development"
     },
     {
@@ -127,8 +133,8 @@
       "name": "Project Management"
     },
     {
-      "keywords": ["Unit Test", "Integration Test", "Jest"],
-      "level": "Intermediate",
+      "keywords": ["TDD", "Unit Test", "Integration Test", "Jest", "Cypress"],
+      "level": "Master",
       "name": "Automated testing"
     }
   ],
@@ -140,7 +146,14 @@
         "Improve code base by adding test cover",
         "Guide junior engineers"
       ],
-      "keywords": ["GraphQL", "NodeJS", "Docker", "Circle CI", "Cypress"],
+      "keywords": [
+        "GraphQL",
+        "NodeJS",
+        "Docker",
+        "Circle CI",
+        "Cypress",
+        "PostgresSQL"
+      ],
       "location": "Hong Kong / London (Remote)",
       "name": "Neat",
       "position": "Senior Software Engineer",
