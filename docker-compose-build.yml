@@ -1,36 +1,36 @@
-version: "3.7"
 services:
   html-builder:
     build:
       context: .
       dockerfile: Dockerfile
+    entrypoint: [node, src/build-html.js]
     ipc: host
     volumes:
-      - type: bind
-        source: ./docs/index.html
+      - source: ./docs/index.html
         target: /app/docs/index.html
-      - type: bind
+        type: bind
+      - read_only: true
         source: ./resume.json
         target: /app/resume.json
-        read_only: true
-    entrypoint: [ "node", "src/build-html.js" ]
+        type: bind
   pdf-builder:
     build:
       context: .
       dockerfile: Dockerfile
-    ipc: host
-    volumes:
-      - type: bind
-        source: ./docs/resume.pdf
-        target: /app/docs/resume.pdf
-      - type: bind
-        source: ./docs/index.html
-        target: /app/docs/index.html
-        read_only: true
-      - type: bind
-        source: ./resume.json
-        target: /app/resume.json
-        read_only: true
-    entrypoint: ["node","src/build-pdf.js"]
     depends_on:
       - html-builder
+    entrypoint: [node, src/build-pdf.js]
+    ipc: host
+    volumes:
+      - source: ./docs/resume.pdf
+        target: /app/docs/resume.pdf
+        type: bind
+      - read_only: true
+        source: ./docs/index.html
+        target: /app/docs/index.html
+        type: bind
+      - read_only: true
+        source: ./resume.json
+        target: /app/resume.json
+        type: bind
+version: '3.7'
