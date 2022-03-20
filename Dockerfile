@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 COPY src/ ./src
-RUN mkdir -p ./docs
+COPY docs/ ./docs
+
 RUN npm ci --ignore-scripts
 RUN npx playwright install

@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
+    "birthday": "1990/10/28",
     "email": "david.ng.pub@gmail.com",
     "label": "Software Engineer",
     "location": {
@@ -18,7 +19,7 @@
       {
         "network": "Linkedin",
         "url": "https://www.linkedin.com/in/davidnhk/",
-        "username": "Ng Kong Chor"
+        "username": "Kong Chor Ng"
       }
     ],
     "summary": "I am an innovative natural problem solver, who is passionate and will always fight for what I believe in, especially when it is best for the company. I love working in a team and have mentored and helped junior and new staff members on projects. I am always willing to share knowledge whether that’s job related or tech news, this is because I always want to help colleagues to ensure jobs are done to a high quality.",
@@ -43,12 +44,12 @@
   ],
   "languages": [
     {
-      "fluency": "Intermediate",
-      "language": "English"
+      "fluency": "Master",
+      "language": "Chinese"
     },
     {
-      "fluency": "Native",
-      "language": "Chinese"
+      "fluency": "Intermediate",
+      "language": "English"
     }
   ],
   "projects": [
@@ -63,7 +64,7 @@
         "Data fetching",
         "OpenID Client",
         "React Hook",
-        "CSS styling"
+        "CSS"
       ],
       "name": "Spotify Music Player",
       "roles": ["Maintainer", "Code Owner"],
@@ -71,9 +72,9 @@
       "url": "https://github.com/davidNHK/spotify-music-player"
     },
     {
-      "description": "The document you are reading currently",
+      "description": "The document you reading currently",
       "highlights": ["Standard resume format", "multiple theme support"],
-      "keywords": ["JSON Resume", "Standard", "CD", "Github Action"],
+      "keywords": ["CSS", "Web Component", "CD", "Github Action"],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
