@@ -24,7 +24,7 @@
     "markdownlint-cli2": "0.4.0",
     "nodemon": "2.0.15",
     "postinstall-postinstall": "2.1.0",
-    "prettier": "2.6.0",
+    "prettier": "2.6.1",
     "resume-schema": "1.0.0",
     "serve": "13.0.2"
   },
