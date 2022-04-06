@@ -1,36 +1,20 @@
 services:
-  html-builder:
+  doc-serve:
     build:
       context: .
       dockerfile: Dockerfile
-    entrypoint: [node, src/build-html.js]
-    ipc: host
-    volumes:
-      - source: ./docs/index.html
-        target: /app/docs/index.html
-        type: bind
-      - read_only: true
-        source: ./resume.json
-        target: /app/resume.json
-        type: bind
+    entrypoint: [npm, run, serve]
   pdf-builder:
     build:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      - html-builder
+      - doc-serve
     entrypoint: [node, src/build-pdf.js]
-    ipc: host
+    environment:
+      - RESUME_DOMAIN=http://doc-serve:3000
     volumes:
       - source: ./docs/resume.pdf
         target: /app/docs/resume.pdf
-        type: bind
-      - read_only: true
-        source: ./docs/index.html
-        target: /app/docs/index.html
-        type: bind
-      - read_only: true
-        source: ./resume.json
-        target: /app/resume.json
         type: bind
 version: '3.7'
