@@ -20,7 +20,7 @@ jobs:
         env:
           RUNNER_TEMP: /tmp # https://github.com/nektos/act/issues/170
         with:
-          node-version: 16.x
+          node-version-file: '.nvmrc'
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/test.sh
       - run: bash ./scripts/build.sh
