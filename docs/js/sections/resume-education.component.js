@@ -3,7 +3,7 @@ import { injectSharedStyles } from '../styles.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
-<article class="print-break-inside-avoid">
+<article class="print-break-inside-avoid" data-testid="resume-education-element">
 <h1 class="text-decoration-underline">Education</h1>
 <ul class="list-group list-group-flush d-print-block" slot="education"/>
 </article>`;

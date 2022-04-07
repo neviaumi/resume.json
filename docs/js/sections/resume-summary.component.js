@@ -2,7 +2,7 @@ import { injectSharedStyles } from '../styles.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
-<article>
+<article data-testid="resume-summary-element">
 <h1 class="text-decoration-underline">Summary</h1>
 <p class="list-unstyled" slot="summary"/>
 </article>`;

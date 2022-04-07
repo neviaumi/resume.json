@@ -2,7 +2,7 @@ import { injectSharedStyles } from '../styles.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
-<article class="ms-3">
+<article class="ms-3" data-testid="resume-language-element">
 <h1 class="fs-2 ">Languages</h1>
 <ul class="d-flex list-unstyled gap-1 flex-wrap" slot="languages"/>
 </article>`;

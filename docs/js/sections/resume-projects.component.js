@@ -3,7 +3,7 @@ import { injectSharedStyles } from '../styles.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
-<article>
+<article data-testid="resume-projects-element">
 <h1 class="text-decoration-underline">Open Source Projects</h1>
 <ul class="list-group list-group-flush d-print-block" slot="projects"/>
 </article>`;

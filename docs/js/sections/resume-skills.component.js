@@ -2,7 +2,7 @@ import { injectSharedStyles } from '../styles.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
-<article>
+<article data-testid="resume-skills-element">
 <ul class="list-group list-group-flush d-print-block" slot="skills"/>
 </article>`;
 
