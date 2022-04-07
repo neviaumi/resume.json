@@ -14,6 +14,12 @@ template.innerHTML = `
         <h1 slot="name"></h1>
         <h2 class="text-muted" slot="label"></h2>
         <p class="d-flex gap-3 mb-2" slot="email"/>
+        <p class="d-flex gap-3 d-print-none">
+            <span class="bi bi-printer"></span>
+            <a href="resume.pdf" target="_blank" class="text-reset text-decoration-none">
+                <span>PDF version</span>
+            </a>
+        </p>
     </div>
     <img class="img-thumbnail rounded-circle h-100 border-primary" slot="profile-img"/>
 </header>`;
