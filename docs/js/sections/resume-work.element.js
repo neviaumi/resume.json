@@ -10,7 +10,7 @@ template.innerHTML = `
 </article>`;
 
 export const elementName = 'resume-work';
-class ResumeWorkComponent extends HTMLElement {
+class ResumeWorkElement extends HTMLElement {
   data = [];
 
   constructor() {
@@ -78,4 +78,4 @@ ${highlights?.map(highlight => `<li>${highlight}</li>`).join('') ?? ''}
   }
 }
 
-customElements.define(elementName, ResumeWorkComponent);
+customElements.define(elementName, ResumeWorkElement);

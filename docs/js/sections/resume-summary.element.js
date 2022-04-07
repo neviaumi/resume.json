@@ -8,7 +8,7 @@ template.innerHTML = `
 </article>`;
 
 export const elementName = 'resume-summary';
-class ResumeSummaryComponent extends HTMLElement {
+class ResumeSummaryElement extends HTMLElement {
   data = [];
 
   constructor() {
@@ -30,4 +30,4 @@ class ResumeSummaryComponent extends HTMLElement {
   }
 }
 
-customElements.define(elementName, ResumeSummaryComponent);
+customElements.define(elementName, ResumeSummaryElement);

@@ -16,7 +16,7 @@ function countryCodeToFlag(countryIso2Code) {
   return { HK: '🇭🇰', UK: '🇬🇧' }[countryIso2Code] ?? '🇬🇧';
 }
 
-class ResumeAboutComponent extends HTMLElement {
+class ResumeAboutElement extends HTMLElement {
   data = {};
 
   constructor() {
@@ -78,4 +78,4 @@ class="text-reset text-decoration-none">${profile.username}</a>
   }
 }
 
-customElements.define(elementName, ResumeAboutComponent);
+customElements.define(elementName, ResumeAboutElement);

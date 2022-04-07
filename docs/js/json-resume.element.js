@@ -1,12 +1,12 @@
-import { elementName as headerElementName } from './header.component.js';
-import { elementName as resumeAboutElementName } from './sections/resume-about.component.js';
-import { elementName as resumeEducationElementName } from './sections/resume-education.component.js';
-import { elementName as resumeLanguagesElementName } from './sections/resume-language.component.js';
-import { elementName as resumeProjectsElementName } from './sections/resume-projects.component.js';
-import { elementName as resumeReferencesElementName } from './sections/resume-references.component.js';
-import { elementName as resumeSkillsElementName } from './sections/resume-skills.component.js';
-import { elementName as resumeSummaryElementName } from './sections/resume-summary.component.js';
-import { elementName as resumeWorkElementName } from './sections/resume-work.component.js';
+import { elementName as headerElementName } from './header.element.js';
+import { elementName as resumeAboutElementName } from './sections/resume-about.element.js';
+import { elementName as resumeEducationElementName } from './sections/resume-education.element.js';
+import { elementName as resumeLanguagesElementName } from './sections/resume-language.element.js';
+import { elementName as resumeProjectsElementName } from './sections/resume-projects.element.js';
+import { elementName as resumeReferencesElementName } from './sections/resume-references.element.js';
+import { elementName as resumeSkillsElementName } from './sections/resume-skills.element.js';
+import { elementName as resumeSummaryElementName } from './sections/resume-summary.element.js';
+import { elementName as resumeWorkElementName } from './sections/resume-work.element.js';
 import { injectSharedStyles } from './styles.js';
 
 const template = document.createElement('template');
@@ -56,7 +56,9 @@ template.innerHTML = `
     </section>
 </main>`;
 
-class JsonResumeComponent extends HTMLElement {
+export const elementName = 'json-resume';
+
+class JsonResumeElement extends HTMLElement {
   resume = {};
 
   constructor() {
@@ -193,4 +195,4 @@ class JsonResumeComponent extends HTMLElement {
   }
 }
 
-customElements.define('json-resume', JsonResumeComponent);
+customElements.define(elementName, JsonResumeElement);
