@@ -9,7 +9,7 @@ template.innerHTML = `
 </article>`;
 
 export const elementName = 'resume-education';
-class ResumeEducationComponent extends HTMLElement {
+class ResumeEducationElement extends HTMLElement {
   data = [];
 
   constructor() {
@@ -46,4 +46,4 @@ class ResumeEducationComponent extends HTMLElement {
   }
 }
 
-customElements.define(elementName, ResumeEducationComponent);
+customElements.define(elementName, ResumeEducationElement);

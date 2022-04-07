@@ -8,7 +8,7 @@ template.innerHTML = `
 </article>`;
 
 export const elementName = 'resume-references';
-class ResumeReferencesComponent extends HTMLElement {
+class ResumeReferencesElement extends HTMLElement {
   data = [];
 
   constructor() {
@@ -42,4 +42,4 @@ class ResumeReferencesComponent extends HTMLElement {
   }
 }
 
-customElements.define(elementName, ResumeReferencesComponent);
+customElements.define(elementName, ResumeReferencesElement);

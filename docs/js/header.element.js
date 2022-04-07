@@ -18,7 +18,7 @@ template.innerHTML = `
     <img class="img-thumbnail rounded-circle h-100 border-primary" slot="profile-img"/>
 </header>`;
 
-class HeaderComponent extends HTMLElement {
+class HeaderElement extends HTMLElement {
   data = {};
 
   constructor() {
@@ -50,4 +50,4 @@ class HeaderComponent extends HTMLElement {
   }
 }
 
-customElements.define(elementName, HeaderComponent);
+customElements.define(elementName, HeaderElement);

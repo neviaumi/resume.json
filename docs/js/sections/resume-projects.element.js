@@ -9,7 +9,7 @@ template.innerHTML = `
 </article>`;
 
 export const elementName = 'resume-projects';
-class ResumeProjectsComponent extends HTMLElement {
+class ResumeProjectsElement extends HTMLElement {
   data = [];
 
   constructor() {
@@ -63,4 +63,4 @@ ${this.#skills(keywords)}
   }
 }
 
-customElements.define(elementName, ResumeProjectsComponent);
+customElements.define(elementName, ResumeProjectsElement);
