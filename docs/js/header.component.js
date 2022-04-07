@@ -9,7 +9,7 @@ template.innerHTML = `
       height: 12rem;
     }
   </style>
-<header class="d-flex align-items-center justify-content-between px-5 pt-3 mb-3 border-top border-3 border-primary">
+<header data-testid="resume-header-element" class="d-flex align-items-center justify-content-between px-5 pt-3 mb-3 border-top border-3 border-primary">
     <div>
         <h1 slot="name"></h1>
         <h2 class="text-muted" slot="label"></h2>

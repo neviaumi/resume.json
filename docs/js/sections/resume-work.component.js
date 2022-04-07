@@ -4,7 +4,7 @@ import { injectSharedStyles } from '../styles.js';
 
 const template = document.createElement('template');
 template.innerHTML = `
-<article>
+<article data-testid="resume-work-element">
 <h1 class="text-decoration-underline">Experience</h1>
 <ul class="list-group list-group-flush d-print-block" slot="work"/>
 </article>`;
