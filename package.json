@@ -1,7 +1,7 @@
 {
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
-    "playwright": "1.20.2",
+    "playwright": "1.21.0",
     "serve": "13.0.2"
   },
   "description": "David Ng personal resume",
@@ -32,7 +32,7 @@
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
     "build:docker": "touch ./docs/resume.pdf && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose-build.yml up --build --exit-code-from pdf-builder --abort-on-container-exit",
-    "build:pdf": "node ./src/build-pdf.js",
+    "build:pdf": "npx playwright install && node ./src/build-pdf.js",
     "lint": "eslint --ext=json,js,yaml,yml --fix .",
     "lint:ci": "eslint --ext=json,js,yaml,yml .",
     "prepare": "is-ci || husky install",
