@@ -7,4 +7,3 @@ COPY src/ ./src
 COPY docs/ ./docs
 
 RUN npm ci --ignore-scripts
-RUN npx playwright install

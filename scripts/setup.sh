@@ -3,3 +3,4 @@
 set -ex
 
 npm install
+npx playwright install
