@@ -9,7 +9,7 @@
     "@busybox/eslint-config": "5.10.0",
     "@busybox/prettier-config": "1.2.3",
     "@commitlint/cli": "17.0.2",
-    "@commitlint/config-conventional": "17.0.0",
+    "@commitlint/config-conventional": "17.0.2",
     "@playwright/test": "1.22.2",
     "eslint": "8.17.0",
     "eslint-plugin-jsonc": "2.3.0",
