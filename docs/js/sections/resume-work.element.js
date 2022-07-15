@@ -47,6 +47,7 @@ class ResumeWorkElement extends HTMLElement {
           endDate ? formatDate(endDate) : 'Present'
         }</span>
 
+
 </a>
 <section class="card-body">
 <h3 class="card-title ">${description}</h3>
