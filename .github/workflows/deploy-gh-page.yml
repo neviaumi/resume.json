@@ -15,10 +15,8 @@ jobs:
       name: master
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.x
+      - name: Use Node.js LTS
         uses: actions/setup-node@v3.4.1
-        env:
-          RUNNER_TEMP: /tmp # https://github.com/nektos/act/issues/170
         with:
           node-version-file: '.nvmrc'
       - run: bash ./scripts/setup.sh

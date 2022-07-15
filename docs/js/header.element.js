@@ -37,11 +37,11 @@ class HeaderElement extends HTMLElement {
   connectedCallback() {
     if (!this.attributes.data) return;
     this.data = JSON.parse(this.attributes.data.value);
-    this.shadowRoot.querySelector(`[slot="name"]`).innerHTML = this.data.name;
+    this.shadowRoot.querySelector('[slot="name"]').innerHTML = this.data.name;
     this.shadowRoot
-      .querySelector(`[slot="profile-img"]`)
+      .querySelector('[slot="profile-img"]')
       .setAttribute('src', this.data.picture);
-    this.shadowRoot.querySelector(`[slot="label"]`).innerHTML = this.data.label;
+    this.shadowRoot.querySelector('[slot="label"]').innerHTML = this.data.label;
     this.#setupEmail();
   }
 

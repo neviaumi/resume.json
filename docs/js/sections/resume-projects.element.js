@@ -34,7 +34,7 @@ class ResumeProjectsElement extends HTMLElement {
 <div class="card-body">
 <h2 class="card-title">
     <a href="${url}" target="_blank" class="text-decoration-none text-reset d-flex align-items-center">
-        ${name} - <span class="ms-3 fs-4 text-secondary">${url}</span>
+        ${name} <span class="ms-3 fs-4 text-secondary">${url}</span>
     </a>
 </h2>
 <h3 class="card-subtitle text-secondary">${description}</h3>

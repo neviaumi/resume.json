@@ -6,13 +6,12 @@
   },
   "description": "David Ng personal resume",
   "devDependencies": {
-    "@busybox/eslint-config": "5.10.1",
+    "@busybox/eslint-config": "5.11.0",
     "@busybox/prettier-config": "1.2.4",
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
     "@playwright/test": "1.23.3",
     "eslint": "8.19.0",
-    "eslint-plugin-jsonc": "2.3.0",
     "husky": "8.0.1",
     "is-ci": "3.0.1",
     "lint-staged": "13.0.3",
@@ -38,6 +37,7 @@
     "prepare": "is-ci || husky install",
     "serve": "serve --cors docs",
     "test": "npx playwright test",
+    "test:debug": "npx playwright test --debug",
     "test:docker": "npm run build:docker"
   },
   "type": "module",

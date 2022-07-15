@@ -27,12 +27,16 @@ export function sortSkills(skillGroupedByKeywords) {
       const isKeyWordALevelUnknown = keywordALevel === 'Unknown';
       const isKeyWordBLevelUnknown = keywordBLevel === 'Unknown';
 
-      if (isKeyWordAMaster && isKeyWordBMaster)
+      if (isKeyWordAMaster && isKeyWordBMaster) {
         return keywordA.localeCompare(keywordB);
-      if (isKeyWordAIntermediate && isKeyWordBIntermediate)
+      }
+      if (isKeyWordAIntermediate && isKeyWordBIntermediate) {
         return keywordA.localeCompare(keywordB);
-      if (isKeyWordALevelUnknown && isKeyWordBLevelUnknown)
+      }
+
+      if (isKeyWordALevelUnknown && isKeyWordBLevelUnknown) {
         return keywordA.localeCompare(keywordB);
+      }
       if (isKeyWordALevelUnknown && !isKeyWordBLevelUnknown) return 1;
       if (isKeyWordBLevelUnknown && !isKeyWordALevelUnknown) return -1;
       if (isKeyWordAMaster) return -1;
