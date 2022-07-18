@@ -1,7 +1,7 @@
 {
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
-    "playwright": "1.23.3",
+    "playwright": "1.23.4",
     "serve": "14.0.1"
   },
   "description": "David Ng personal resume",
