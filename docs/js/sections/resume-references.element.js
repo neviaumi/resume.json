@@ -25,6 +25,7 @@ class ResumeReferencesElement extends HTMLElement {
 
   #setupReferences() {
     this.shadowRoot.querySelector("[slot='references']").innerHTML = this.data
+      .slice(0, 4)
       .map(reference => {
         const { name, reference: comment } = reference;
         return `<li class="list-group-item d-print-block">

@@ -8,8 +8,13 @@ Repo here contain my personal resume.
 
 ```bash
 npm install
-npm run dev
+npm run serve
 ```
+
+### Get PDF
+
+`npm run build:docker`
+and then check [PDF](./docs/resume.pdf)
 
 ## Live
 
