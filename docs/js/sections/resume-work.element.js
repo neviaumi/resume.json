@@ -28,6 +28,7 @@ class ResumeWorkElement extends HTMLElement {
   #setupWork() {
     if (!this.data?.work.length > 0) return;
     this.shadowRoot.querySelector("[slot='work']").innerHTML = this.data.work
+      .slice(0, 4)
       .map(work => {
         const {
           company,

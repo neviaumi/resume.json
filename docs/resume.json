@@ -83,6 +83,10 @@
   ],
   "references": [
     {
+      "name": "Rutger Huijsmans, Neat Lear Engineer",
+      "reference": "When I joined Neat I had limited experience with web development and JavaScript. Luckily, I had Chor on my team! Chor is extremely experienced in JS development and he's a very patient person. Despite the pandemic he made the effort to commute to office everyday to teach me the ins and outs of Neat's system face to face. He truly enabled the team to excel technically. He inspired us to use the best technologies for the job and explained them when needed. I hope to work together with Chor again in the future."
+    },
+    {
       "name": "Ki-hong Chan, HK01 Assistant Manager",
       "reference": "During two years of working with David, we learn, growth and teaching each others in many ways. He give great effort and contribution to the team. Suggesting different solutions and tools to help solving many technical problems. Most importantly David help mentoring Junior developers. To help them get through hard time and start contributing the team more quickly. Without David our team will not be that successful. Highly recommend him to any company for a excellent team player."
     },
@@ -91,12 +95,12 @@
       "reference": "I worked with David for the past two years, He is an innovative team player and created many automated tools to improve team efficiency and product quality. He is able to apply his innovative mind on spotting quick solutions for complex problems, which is essential for a fast development pace. He is also very willing to speak up when he spotted problems and usually come up with solutions. If the right solution is obscure, he could manage to use data to deduce the right one. He is also willing to share his skills, knowledge and new findings to team members which improve the whole team productivity. I recommend him if you are looking for an engineer who can handle fast development cycles like startup company."
     },
     {
-      "name": "Eddie Li, HK01 Senior Software Engineer",
-      "reference": "David is a big fan of automation. He loves to use the latest technical stacks to improve team's productivity. He even built an automate tool for the company to automate different jobs which needed to be manually processed time to time before. He is also eager to help others and brings constructive ideas to the team all the time."
-    },
-    {
       "name": "Billy Chan, HK01 Software Engineer",
       "reference": "A dedicated software engineer who can overcome challenges with creative solutions. He also loves to help his colleagues and discuss openly about the process and solution too. Highly recommend him to any company looking for a excellent team player"
+    },
+    {
+      "name": "Eddie Li, HK01 Senior Software Engineer",
+      "reference": "David is a big fan of automation. He loves to use the latest technical stacks to improve team's productivity. He even built an automate tool for the company to automate different jobs which needed to be manually processed time to time before. He is also eager to help others and brings constructive ideas to the team all the time."
     }
   ],
   "skills": [
@@ -141,8 +145,21 @@
   ],
   "work": [
     {
+      "company": "PlayStation",
+      "description": "Partner engineering",
+      "highlights": [],
+      "keywords": ["NodeJS", "Scrum"],
+      "location": "UK, Liverpool",
+      "position": "Software Engineer II",
+      "startDate": "2022-05-01",
+      "summary": "WIP",
+      "url": "https://partners.playstation.net/",
+      "website": "https://partners.playstation.net/"
+    },
+    {
       "company": "Neat",
       "description": "Digital wallet for business",
+      "endDate": "2022-05-01",
       "highlights": [
         "Improve code base by adding test cover",
         "Guide junior engineers"
