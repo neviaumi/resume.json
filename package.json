@@ -6,7 +6,7 @@
   },
   "description": "David Ng personal resume",
   "devDependencies": {
-    "@busybox/eslint-config": "5.14.1",
+    "@busybox/eslint-config": "5.14.2",
     "@busybox/prettier-config": "1.3.0",
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
