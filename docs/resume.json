@@ -147,12 +147,12 @@
     {
       "company": "PlayStation",
       "description": "Partner engineering",
-      "highlights": ["Test"],
-      "keywords": ["Test"],
+      "highlights": [],
+      "keywords": ["NodeJS", "Scrum"],
       "location": "UK, Liverpool",
       "position": "Software Engineer II",
       "startDate": "2022-05-01",
-      "summary": "TBC",
+      "summary": "WIP",
       "url": "https://partners.playstation.net/",
       "website": "https://partners.playstation.net/"
     },
