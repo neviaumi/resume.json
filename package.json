@@ -17,7 +17,7 @@
     "lint-staged": "13.1.0",
     "markdownlint-cli2": "0.6.0",
     "postinstall-postinstall": "2.1.0",
-    "prettier": "2.8.1",
+    "prettier": "2.8.2",
     "resume-schema": "1.0.0"
   },
   "engines": {
