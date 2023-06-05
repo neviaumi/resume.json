@@ -11,7 +11,7 @@
     "@commitlint/cli": "17.6.5",
     "@commitlint/config-conventional": "17.6.5",
     "@playwright/test": "1.34.3",
-    "eslint": "8.41.0",
+    "eslint": "8.42.0",
     "husky": "8.0.3",
     "is-ci": "3.0.1",
     "lint-staged": "13.2.2",
