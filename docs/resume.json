@@ -146,13 +146,17 @@
   "work": [
     {
       "company": "PlayStation",
-      "description": "Partner engineering",
-      "highlights": [],
-      "keywords": ["NodeJS", "Scrum"],
+      "description": "Platform for gaming Partner engineering",
+      "highlights": [
+        "UK working culture",
+        "Cross team collaboration for the features",
+        "Deal with component library that build from scratch and used across company"
+      ],
+      "keywords": ["AWS", "Jenkins", "NodeJS", "React"],
       "location": "UK, Liverpool",
       "position": "Software Engineer II",
       "startDate": "2022-05-01",
-      "summary": "WIP",
+      "summary": "Bugfix on platform and UI library",
       "url": "https://partners.playstation.net/",
       "website": "https://partners.playstation.net/"
     },
@@ -174,7 +178,7 @@
       ],
       "location": "Hong Kong / London (Remote)",
       "name": "Neat",
-      "position": "Senior Software Engineer",
+      "position": "Software Engineer",
       "startDate": "2021-05-01",
       "summary": "Senior developer help for making decision, code review, improve existing product quality",
       "url": "https://www.neatcommerce.com/",
