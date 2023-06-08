@@ -1,6 +1,3 @@
-name: Verify PR
-
-on: pull_request
 env:
   CI: true
 jobs:
@@ -13,6 +10,9 @@ jobs:
       - name: Use Node.js LTS
         uses: actions/setup-node@v3.6.0
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: .nvmrc
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/test.sh
+name: Verify PR
+
+on: pull_request
