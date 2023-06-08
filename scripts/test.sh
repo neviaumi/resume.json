@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
+npm audit
 npm run lint:ci
-npx markdownlint-cli2-fix "**/*.md" "#node_modules"
 npm run test
 npm run test:docker
