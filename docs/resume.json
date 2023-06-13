@@ -22,7 +22,7 @@
         "username": "Kong Chor Ng"
       }
     ],
-    "summary": "I am an innovative natural problem solver, who is passionate and will always fight for what I believe in, especially when it is best for the company. I love working in a team and have mentored and helped junior and new staff members on projects. I am always willing to share knowledge whether that’s job related or tech news, this is because I always want to help colleagues to ensure jobs are done to a high quality.",
+    "summary": "Software engineer with a passion for problem-solving and a strong commitment to delivering high-quality solutions. Experienced in collaborating with teams, mentoring junior staff, and sharing knowledge. Skilled in web development, automation, and project management.",
     "website": "https://davidnhk.github.io/resume.json"
   },
   "education": [
@@ -38,8 +38,8 @@
   ],
   "interests": [
     {
-      "keywords": ["music", "multi media"],
-      "name": "OSS"
+      "keywords": ["music streaming", "Organizing asset in computer"],
+      "name": "Work interest"
     }
   ],
   "languages": [
@@ -74,7 +74,7 @@
     {
       "description": "The document you reading currently",
       "highlights": ["Standard resume format", "multiple theme support"],
-      "keywords": ["CSS", "Web Component", "CD", "Github Action"],
+      "keywords": ["CSS", "Web Component", "Github Action"],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
@@ -146,27 +146,28 @@
   "work": [
     {
       "company": "PlayStation",
-      "description": "Platform for Gaming Partner engineering",
+      "description": "Platform for game develop partner to manage member access in game development component",
       "highlights": [
-        "UK working culture",
-        "Cross team collaboration for the features",
-        "Deal with component library that build from scratch and used across company"
+        "Contributed to bug fixes and feature development using NodeJS and React",
+        "Worked with a component library used across the company, utilizing React and CSS",
+        "Collaborated within the UK working culture"
       ],
-      "keywords": ["AWS", "Jenkins", "NodeJS", "React"],
+      "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS"],
       "location": "UK, Liverpool",
       "position": "Software Engineer II",
       "startDate": "2022-05-01",
-      "summary": "Bugfix on platform and UI library",
+      "summary": "Enable game development partners to manage member access in game development components.",
       "url": "https://partners.playstation.net/",
       "website": "https://partners.playstation.net/"
     },
     {
       "company": "Neat",
-      "description": "Digital wallet for business",
+      "description": "Digital wallet for company manage expense by give their company VISA debit card / virtual Bank account",
       "endDate": "2022-05-01",
       "highlights": [
-        "Improve code base by adding test cover",
-        "Guide junior engineers"
+        "Developed features using GraphQL, NodeJS, and React.",
+        "Improved code stability by introduce automated test.",
+        "Mentored junior engineers to improve their technical skills."
       ],
       "keywords": [
         "GraphQL",
@@ -180,7 +181,7 @@
       "name": "Neat",
       "position": "Software Engineer",
       "startDate": "2021-05-01",
-      "summary": "Senior developer help for making decision, code review, improve existing product quality",
+      "summary": "Enable company register their application to wallet and compliance to verify applicant company",
       "url": "https://www.neatcommerce.com/",
       "website": "https://www.neatcommerce.com/"
     },
@@ -205,7 +206,7 @@
       "name": "HK01",
       "position": "Software Engineer",
       "startDate": "2018-11-01",
-      "summary": "Working in a shared service team to provide reusable, shared logic for difference products",
+      "summary": "Enable editors to login across company sub-systems with given permission, deliver notification to end user through different channels and create content for the campaign",
       "url": "https://www.hk01.com/",
       "website": "https://www.hk01.com"
     },
@@ -213,10 +214,11 @@
       "company": "AfterShip",
       "description": "SasS provide post-purchase experience such as shipment visibility, analytics ..etc.",
       "endDate": "2018-09-01",
-      "keywords": ["MongoDB", "NodeJS", "Beanstalk", "Redis"],
+      "highlights": ["Fixed bugs in the platform using NodeJS"],
+      "keywords": ["MongoDB", "NodeJS", "Beanstalk", "Redis", "Crawler"],
       "position": "Software Engineer",
       "startDate": "2017-05-01",
-      "summary": "Use different sources including Website, API, API used by mobile app to provide tracked shipment and courier data through the tracking number.",
+      "summary": "Enable user to track shipment status through the tracking number.",
       "url": "https://www.aftership.com/",
       "website": "https://www.aftership.com/"
     },
