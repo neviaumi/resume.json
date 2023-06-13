@@ -37,7 +37,7 @@ class ResumeProjectsElement extends HTMLElement {
         ${name} <span class="ms-3 fs-4 text-secondary">${url}</span>
     </a>
 </h2>
-<h3 class="card-subtitle text-secondary">${description}</h3>
+<h3 class="card-subtitle text-secondary mb-2">${description}</h3>
 ${this.#skills(keywords)}
 <ul class="card-text">
     ${highlights.map(highlight => `<li>${highlight}</li>`).join('')}
