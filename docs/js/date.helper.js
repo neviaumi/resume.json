@@ -1,6 +1,8 @@
 export function formatDate(dateStr) {
+  const locale = 'en-GB';
   const dateObj = new Date(dateStr);
-  return `${String(dateObj.getMonth() + 1).padStart(2, '0')}/${String(
-    dateObj.getFullYear(),
-  ).substring(2)}`;
+  return dateObj.toLocaleDateString(locale, {
+    month: 'short',
+    year: 'numeric',
+  });
 }
