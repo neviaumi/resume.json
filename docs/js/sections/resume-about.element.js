@@ -5,7 +5,7 @@ template.innerHTML = `
 <article class="ms-3" data-testid="resume-about-element">
 <h1>About</h1>
 <p class="d-flex gap-4 mb-3 align-items-center" slot="location"/>
-<p class="d-flex gap-4 mb-3 align-items-center" slot="birthday"/>
+<p slot="birthday"/>
 <p class="d-flex gap-4 mb-3 align-items-center" slot="website"/>
 <ul class="list-unstyled d-flex flex-column gap-3 mt-3" slot="profiles"/>
 </article>`;
@@ -31,7 +31,6 @@ class ResumeAboutElement extends HTMLElement {
   connectedCallback() {
     this.data = JSON.parse(this.attributes.data.value);
     this.#setupLocation();
-    this.#setupBirthday();
     this.#setupWebSite();
     this.#setupProfiles();
   }
@@ -46,10 +45,13 @@ class ResumeAboutElement extends HTMLElement {
   }
 
   #setupBirthday() {
-    if (!this.data.birthday) return;
-    this.shadowRoot.querySelector(
-      "[slot='birthday']",
-    ).innerHTML = `<span class="bi bi-balloon"></span>
+    const slot = this.shadowRoot.querySelector("[slot='birthday']");
+    if (!this.data.birthday) {
+      slot.className = 'd-none';
+      return;
+    }
+    slot.className = 'd-flex gap-4 mb-3 align-items-center';
+    slot.innerHTML = `<span class="bi bi-balloon"></span>
 <span>Born in ${new Date(this.data.birthday).getFullYear()}</span>`;
   }
 
