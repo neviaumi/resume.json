@@ -6,7 +6,7 @@
   },
   "description": "David Ng personal resume",
   "devDependencies": {
-    "@busybox/commitlint-config": "2023.5.11-alpha.2048",
+    "@busybox/commitlint-config": "2023.6.22",
     "@busybox/eslint-config": "2023.4.4",
     "@busybox/prettier-config": "2023.4.4",
     "@commitlint/cli": "17.6.5",
