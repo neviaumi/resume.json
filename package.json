@@ -9,7 +9,7 @@
     "@busybox/commitlint-config": "2023.7.14",
     "@busybox/eslint-config": "2023.7.14",
     "@busybox/prettier-config": "2023.7.14",
-    "@commitlint/cli": "17.6.6",
+    "@commitlint/cli": "17.6.7",
     "@playwright/test": "1.36.1",
     "eslint": "8.45.0",
     "husky": "8.0.3",
