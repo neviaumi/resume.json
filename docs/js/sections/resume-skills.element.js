@@ -55,7 +55,7 @@ class ResumeSkillsElement extends HTMLElement {
                   `<li class="badge ${
                     shouldHighlightSkill
                       ? highlightSkillIfWanted(skill)
-                      : 'bg-secondary'
+                      : 'bg-primary'
                   }">${skill}</li>`,
               )
               .join('')}</ul>
