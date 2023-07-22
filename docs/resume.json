@@ -57,24 +57,6 @@
   },
   "projects": [
     {
-      "description": "Web Music Player for playing spotify music",
-      "highlights": [
-        "Support multi device sync up though spotify-connect",
-        "Recommends tracks base on user country / recent play"
-      ],
-      "keywords": [
-        "React",
-        "Data fetching",
-        "OpenID Client",
-        "React Hook",
-        "CSS"
-      ],
-      "name": "Spotify Music Player",
-      "roles": ["Maintainer", "Code Owner"],
-      "type": "project",
-      "url": "https://github.com/davidNHK/spotify-music-player"
-    },
-    {
       "description": "The document you reading currently",
       "highlights": ["Standard resume format", "multiple theme support"],
       "keywords": ["CSS", "Web Component", "Github Action"],
@@ -82,6 +64,15 @@
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
       "url": "https://github.com/davidNHK/resume.json"
+    },
+    {
+      "description": "React component intend to share across different project",
+      "highlights": ["Theme support", "Automated workflow"],
+      "keywords": ["React", "CSS", "TailwindCSS", "MUI", "Storybook"],
+      "name": "React components",
+      "roles": ["Maintainer", "Code Owner"],
+      "type": "project",
+      "url": "https://github.com/davidNHK/react-components"
     }
   ],
   "references": [
