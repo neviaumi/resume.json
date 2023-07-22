@@ -1,5 +1,6 @@
 import { elementName as headerElementName } from './header.element.js';
 import { elementName as resumeAboutElementName } from './sections/resume-about.element.js';
+import { elementName as resumeApplicationElementName } from './sections/resume-application.element.js';
 import { elementName as resumeEducationElementName } from './sections/resume-education.element.js';
 import { elementName as resumeLanguagesElementName } from './sections/resume-language.element.js';
 import { elementName as resumeProjectsElementName } from './sections/resume-projects.element.js';
@@ -46,6 +47,7 @@ template.innerHTML = `
                 </aside>
                 <section class="col">
                     <slot name="${resumeSummaryElementName}"></slot>
+                    <slot name="${resumeApplicationElementName}"></slot>
                     <slot name="${resumeWorkElementName}"></slot>
                     <slot name="${resumeReferencesElementName}"></slot>
                     <slot name="${resumeProjectsElementName}"></slot>
@@ -89,11 +91,21 @@ class JsonResumeElement extends HTMLElement {
     this.#setupAboutSection();
     this.#setupSkillsSection();
     this.#setupSummarySection();
+    this.#setupApplicationSection();
     this.#setupWorkSection();
     this.#setupReferenceSection();
     this.#setupProjectsSection();
     this.#setupEducationSection();
     this.#setupLanguageSection();
+  }
+
+  #setupApplicationSection() {
+    if (!this.resume.meta?.application) return;
+    const element = document.createElement(resumeApplicationElementName);
+    element.setAttribute('data', JSON.stringify(this.resume.meta.application));
+    this.shadowRoot
+      .querySelector(`slot[name="${resumeApplicationElementName}"]`)
+      .replaceChildren(element);
   }
 
   #setupHeader() {

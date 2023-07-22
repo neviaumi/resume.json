@@ -31,6 +31,7 @@ class ResumeAboutElement extends HTMLElement {
   connectedCallback() {
     this.data = JSON.parse(this.attributes.data.value);
     this.#setupLocation();
+    this.#setupBirthday();
     this.#setupWebSite();
     this.#setupProfiles();
   }

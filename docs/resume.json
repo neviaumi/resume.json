@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
+    "birthday": "1990/10/28",
     "email": "david.ng.pub@gmail.com",
     "label": "Software Engineer",
     "location": {
@@ -51,6 +52,9 @@
       "language": "English"
     }
   ],
+  "meta": {
+    "canonical": "https://davidnhk.github.io/resume.json"
+  },
   "projects": [
     {
       "description": "Web Music Player for playing spotify music",
