@@ -13,8 +13,9 @@ template.innerHTML = `
     <div>
         <h1 slot="name"></h1>
         <h2 class="text-muted" slot="label"></h2>
+        <p class="d-flex gap-3 mb-1" slot="phone"/>
         <p class="d-flex gap-3 mb-2" slot="email"/>
-        <p class="d-flex gap-3 d-print-none">
+        <p class="d-flex gap-3 d-print-none mb-0">
             <span class="bi bi-printer"></span>
             <a href="resume.pdf" target="_blank" class="text-reset text-decoration-none">
                 <span>PDF version</span>
@@ -43,6 +44,18 @@ class HeaderElement extends HTMLElement {
       .setAttribute('src', this.data.picture);
     this.shadowRoot.querySelector('[slot="label"]').innerHTML = this.data.label;
     this.#setupEmail();
+    this.#setupPhone();
+  }
+
+  #setupPhone() {
+    if (!this.data.phone) return;
+    this.shadowRoot.querySelector(
+      "[slot='phone']",
+    ).innerHTML = `<span class="bi bi-telephone-outbound"></span>
+<a href="tel:+44${this.data.phone.replaceAll(
+      ' ',
+      '',
+    )}" class="text-reset text-decoration-none">+44 ${this.data.phone}</a>`;
   }
 
   #setupEmail() {

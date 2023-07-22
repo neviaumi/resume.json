@@ -118,3 +118,6 @@ dist
 .pnp.*
 
 public/
+
+docs/resume.private.json
+docs/private.json

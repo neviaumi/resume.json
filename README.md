@@ -11,6 +11,15 @@ npm install
 npm run serve
 ```
 
+### Generate tailored resume
+
+```bash
+npm run serve
+node ./src/build-pdf.js --private
+```
+
+after that you will see `resume.pdf` in `docs/` folder
+
 ### Get PDF
 
 `npm run build:docker`
@@ -53,3 +62,60 @@ and then check [PDF](./docs/resume.pdf)
 - Master - I know both theory and have real world execution,
   and I can explain and debt to teammate
 - Intermediate - I know theory and have real world execution
+
+## Reuse that work with your resume?
+
+Copy and paste code below and replace `JSON.stringify({})`
+with your resume.json content
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimal-ui"
+    />
+    <title>David Ng</title>
+    <script
+      src="https://davidnhk.github.io/resume.json/js/json-resume.element.js"
+      type="module"
+    ></script>
+    <style>
+      /*https://robdodson.me/posts/at-font-face-doesnt-work-in-shadow-dom/*/
+      @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
+      @page {
+        size: A4;
+      }
+
+      @media print {
+        :root {
+          font-size: 50%; /*Make element on PDF smaller*/
+        }
+        body {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media screen {
+        :root {
+          font-size: 62.5%; /*Make compute rem more easily*/
+        }
+        body {
+          font-size: 1.6rem; /*Restore default font size*/
+        }
+      }
+    </style>
+    <script>
+      const resumeElement = document.querySelector('json-resume');
+      // place your resume.json content here
+      resumeElement.setAttribute('resume', JSON.stringify({}));
+    </script>
+  </head>
+
+  <body>
+    <json-resume />
+  </body>
+</html>
+```
