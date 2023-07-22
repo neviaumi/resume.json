@@ -131,10 +131,12 @@ class JsonResumeElement extends HTMLElement {
   #setupWorkSection() {
     if (!this.resume.work) return;
     const skills = this.resume.skills || [];
+    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
+
     const element = document.createElement(resumeWorkElementName);
     element.setAttribute(
       'data',
-      JSON.stringify({ skills, work: this.resume.work }),
+      JSON.stringify({ skillWanted, skills, work: this.resume.work }),
     );
 
     this.shadowRoot
@@ -144,8 +146,16 @@ class JsonResumeElement extends HTMLElement {
 
   #setupSkillsSection() {
     if (!this.resume.skills) return;
+    const skills = this.resume.skills;
+    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
     const element = document.createElement(resumeSkillsElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.skills));
+    element.setAttribute(
+      'data',
+      JSON.stringify({
+        skillWanted,
+        skills,
+      }),
+    );
 
     this.shadowRoot
       .querySelector(`slot[name="${resumeSkillsElementName}"]`)
@@ -154,8 +164,16 @@ class JsonResumeElement extends HTMLElement {
 
   #setupLanguageSection() {
     if (!this.resume.languages) return;
+    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
+    const languages = this.resume.languages;
     const element = document.createElement(resumeLanguagesElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.languages));
+    element.setAttribute(
+      'data',
+      JSON.stringify({
+        languages,
+        skillWanted,
+      }),
+    );
 
     this.shadowRoot
       .querySelector(`slot[name="${resumeLanguagesElementName}"]`)
@@ -174,11 +192,12 @@ class JsonResumeElement extends HTMLElement {
 
   #setupProjectsSection() {
     if (!this.resume.projects) return;
+    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
     const skills = this.resume.skills || [];
     const element = document.createElement(resumeProjectsElementName);
     element.setAttribute(
       'data',
-      JSON.stringify({ projects: this.resume.projects, skills }),
+      JSON.stringify({ projects: this.resume.projects, skillWanted, skills }),
     );
 
     this.shadowRoot
