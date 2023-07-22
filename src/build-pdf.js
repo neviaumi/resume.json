@@ -39,7 +39,7 @@ await page.pdf({
     right: 0,
     top: 0,
   },
-  path: 'docs/resume.pdf',
+  path: isPrivateBuild ? 'docs/resume.private.pdf' : 'docs/resume.pdf',
   preferCSSPageSize: true,
   printBackground: true,
 });

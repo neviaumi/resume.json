@@ -9,8 +9,8 @@ template.innerHTML = `
     <p slot="company-summary"></p>
 </section>
 <section class="col-5">
-    <h1 class="text-decoration-underline">Role expectation</h1>
-    <p slot="role-expectation"></p>
+    <h1 id="role-expectation-heading" class="text-decoration-underline">Role expectation</h1>
+    <ul slot="role-expectation" aria-labelledby="role-expectation-heading"></ul>
 </section>
 </div>
 
@@ -23,9 +23,7 @@ class ResumeApplicationElement extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open', slotAssignment: 'named' });
-
     injectSharedStyles(this.shadowRoot);
-
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
@@ -45,9 +43,14 @@ class ResumeApplicationElement extends HTMLElement {
   }
 
   #setupAboutApplicationRole() {
-    if (!this.data.roleSummary) return;
-    this.shadowRoot.querySelector("[slot='role-expectation']").innerText =
-      this.data.roleSummary;
+    if (!this.data.role) return;
+    this.shadowRoot.querySelector("[slot='role-expectation']").innerHTML =
+      this.data.role.responsibilities
+        .slice(0, 4)
+        .map(responsibility => {
+          return `<li >${responsibility}</li>`;
+        })
+        .join('');
   }
 }
 
