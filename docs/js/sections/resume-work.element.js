@@ -43,7 +43,7 @@ class ResumeWorkElement extends HTMLElement {
         } = work;
         return `<li class="card d-print-block list-group-item border-light">
 <a href="${website}" target="_blank" class="d-flex align-content-center bg-success text-white justify-content-between card-header text-decoration-none">
-    <h2 class="mb-0">${company}</h2>
+    <h2 class="mb-0">${position} in ${company}</h2>
     <span class="d-flex align-items-center">${formatDate(startDate)} - ${
           endDate ? formatDate(endDate) : 'Present'
         }</span>
@@ -52,7 +52,6 @@ class ResumeWorkElement extends HTMLElement {
 </a>
 <section class="card-body">
 <h3 class="card-title ">${description}</h3>
-<h4 class="card-subtitle mb-2 text-muted">${position}</h4>
 ${this.#skills(keywords)}
 <p class="card-text">${summary}</p>
 <ul>
