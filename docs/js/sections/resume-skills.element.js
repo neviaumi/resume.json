@@ -26,9 +26,10 @@ class ResumeSkillsElement extends HTMLElement {
   }
 
   #setupSkills() {
-    if (!this.data.length > 0) return;
+    const { skillWanted } = this.data;
+    if (!this.data.skills.length > 0) return;
     const skills = Object.entries(
-      this.data.reduce((acc, { keywords, level, name }) => {
+      this.data.skills.reduce((acc, { keywords, level, name }) => {
         acc[name] = {
           ...(acc[name] || {}),
           [level]: keywords,
@@ -36,6 +37,9 @@ class ResumeSkillsElement extends HTMLElement {
         return acc;
       }, {}),
     );
+    const shouldHighlightSkill = skillWanted.length > 0;
+    const highlightSkillIfWanted = skill =>
+      skillWanted.includes(skill) ? 'bg-primary' : 'bg-light text-dark';
     this.shadowRoot.querySelector("[slot='skills']").innerHTML = skills
       .map(([name, levels]) => {
         const masterSkills = levels.Master ?? [];
@@ -46,7 +50,14 @@ class ResumeSkillsElement extends HTMLElement {
           skillLevels.push(`
             <h2 class="text-primary fs-3 text-nowrap">Master</h2>
             <ul class="list-unstyled d-flex gap-1 flex-wrap mb-2">${masterSkills
-              .map(skill => `<li class="badge bg-primary">${skill}</li>`)
+              .map(
+                skill =>
+                  `<li class="badge ${
+                    shouldHighlightSkill
+                      ? highlightSkillIfWanted(skill)
+                      : 'bg-secondary'
+                  }">${skill}</li>`,
+              )
               .join('')}</ul>
           `);
         }
@@ -54,7 +65,14 @@ class ResumeSkillsElement extends HTMLElement {
           skillLevels.push(`
             <h2 class="text-secondary fs-3 text-nowrap">Intermediate</h2>
             <ul class="list-unstyled d-flex gap-1 flex-wrap">${intermediateSkills
-              .map(skill => `<li class="badge bg-secondary">${skill}</li>`)
+              .map(
+                skill =>
+                  `<li class="badge ${
+                    shouldHighlightSkill
+                      ? highlightSkillIfWanted(skill)
+                      : 'bg-secondary'
+                  }">${skill}</li>`,
+              )
               .join('')}</ul>
           `);
         }

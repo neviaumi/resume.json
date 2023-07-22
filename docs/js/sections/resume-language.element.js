@@ -7,6 +7,9 @@ template.innerHTML = `
 <ul class="d-flex list-unstyled gap-1 flex-wrap" slot="languages"/>
 </article>`;
 
+const highlightLanguageByFluency = ({ fluency }) =>
+  fluency === 'Master' ? 'bg-primary' : 'bg-secondary';
+
 export const elementName = 'resume-languages';
 class ResumeEducationComponent extends HTMLElement {
   data = [];
@@ -20,11 +23,18 @@ class ResumeEducationComponent extends HTMLElement {
 
   connectedCallback() {
     this.data = JSON.parse(this.attributes.data.value);
-    this.shadowRoot.querySelector("[slot='languages']").innerHTML = this.data
+    const { languages, skillWanted } = this.data;
+    const shouldHighlightSkill = skillWanted.length > 0;
+    const highlightSkillIfWanted = ({ language }) =>
+      skillWanted.includes(language) ? 'bg-primary' : 'bg-light text-dark';
+
+    this.shadowRoot.querySelector("[slot='languages']").innerHTML = languages
       .map(language => {
-        const { fluency, language: languageName } = language;
+        const { language: languageName } = language;
         return `<li class="badge ${
-          fluency === 'Master' ? 'bg-primary' : 'bg-secondary'
+          shouldHighlightSkill
+            ? highlightSkillIfWanted(language)
+            : highlightLanguageByFluency(language)
         }">${languageName}</li>`;
       })
       .join('');
