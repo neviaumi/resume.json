@@ -8,7 +8,7 @@ jobs:
         with:
           ref: ${{github.head_ref}}
       - name: Use Node.js LTS
-        uses: actions/setup-node@v3.7.0
+        uses: actions/setup-node@v3.8.0
         with:
           node-version-file: .nvmrc
       - run: bash ./scripts/setup.sh
