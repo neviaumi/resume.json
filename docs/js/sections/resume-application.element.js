@@ -9,6 +9,8 @@ template.innerHTML = `
     <p slot="company-summary"></p>
 </section>
 <section class="col-5">
+    <h1 id="salary-expectation-heading" class="text-decoration-underline">Salary expectation</h1>
+    <p slot="salary-expectation" aria-labelledby="salary-expectation-heading"></p>
     <h1 id="role-expectation-heading" class="text-decoration-underline">Role expectation</h1>
     <ul slot="role-expectation" aria-labelledby="role-expectation-heading"></ul>
 </section>
@@ -31,6 +33,19 @@ class ResumeApplicationElement extends HTMLElement {
     this.data = JSON.parse(this.attributes.data.value);
     this.#setupAboutApplicationCompany();
     this.#setupAboutApplicationRole();
+    this.#setupAboutApplicationSalary();
+  }
+
+  #setupAboutApplicationSalary() {
+    if (!this.data.salary) return;
+    const { currency, expectation, type } = this.data.salary;
+    this.shadowRoot.querySelector(
+      "[slot='salary-expectation']",
+    ).innerText = `${new Intl.NumberFormat('en-GB', {
+      currency: currency,
+      maximumFractionDigits: 0,
+      style: 'currency',
+    }).format(expectation)} ${type}`;
   }
 
   #setupAboutApplicationCompany() {

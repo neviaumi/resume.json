@@ -57,7 +57,7 @@
   },
   "projects": [
     {
-      "description": "The document you reading currently",
+      "description": "The document you reading now",
       "highlights": ["Standard resume format", "multiple theme support"],
       "keywords": ["CSS", "Web Component", "Github Action"],
       "name": "resume.json",
@@ -68,7 +68,14 @@
     {
       "description": "React component intend to share across different project",
       "highlights": ["Theme support", "Automated workflow"],
-      "keywords": ["React", "CSS", "TailwindCSS", "MUI", "Storybook"],
+      "keywords": [
+        "React",
+        "CSS",
+        "TailwindCSS",
+        "MUI",
+        "Storybook",
+        "Typescript"
+      ],
       "name": "React components",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
@@ -77,7 +84,7 @@
   ],
   "references": [
     {
-      "name": "Rutger Huijsmans, Neat Lear Engineer",
+      "name": "Rutger Huijsmans, Neat Lead Engineer",
       "reference": "When I joined Neat I had limited experience with web development and JavaScript. Luckily, I had Chor on my team! Chor is extremely experienced in JS development and he's a very patient person. Despite the pandemic he made the effort to commute to office everyday to teach me the ins and outs of Neat's system face to face. He truly enabled the team to excel technically. He inspired us to use the best technologies for the job and explained them when needed. I hope to work together with Chor again in the future."
     },
     {
@@ -146,7 +153,7 @@
         "Worked with a component library used across the company, utilizing React and CSS",
         "Collaborated within the UK working culture"
       ],
-      "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS"],
+      "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS", "Typescript"],
       "location": "UK, Liverpool",
       "position": "Software Engineer II",
       "startDate": "2022-05-01",
@@ -194,7 +201,8 @@
         "Docker",
         "Travis CI",
         "RabbitMQ",
-        "Redis"
+        "Redis",
+        "Typescript"
       ],
       "location": "Hong Kong",
       "name": "HK01",

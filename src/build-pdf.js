@@ -2,7 +2,7 @@ import { promises as fs } from 'node:fs';
 import { URL } from 'node:url';
 
 import playwright from 'playwright';
-import { mergeDeepLeft } from 'ramda';
+import { mergeDeepRight } from 'ramda';
 
 const flagForIsPrivate = process.argv[2];
 const isPrivateBuild = flagForIsPrivate === '--private';
@@ -14,7 +14,7 @@ if (isPrivateBuild) {
   const dataWantToIncludeInPrivateBuild = JSON.parse(
     await fs.readFile('docs/private.json', 'utf-8'),
   );
-  const privateResume = mergeDeepLeft(
+  const privateResume = mergeDeepRight(
     resumeJson,
     dataWantToIncludeInPrivateBuild,
   );

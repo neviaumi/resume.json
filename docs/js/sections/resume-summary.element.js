@@ -4,7 +4,7 @@ const template = document.createElement('template');
 template.innerHTML = `
 <article data-testid="resume-summary-element">
 <h1 class="text-decoration-underline">Summary</h1>
-<p class="list-unstyled" slot="summary"/>
+<p slot="summary"></p>
 </article>`;
 
 export const elementName = 'resume-summary';
@@ -26,7 +26,7 @@ class ResumeSummaryElement extends HTMLElement {
 
   #setupSummary() {
     if (!this.data) return;
-    this.shadowRoot.querySelector("[slot='summary']").innerHTML = this.data;
+    this.shadowRoot.querySelector("[slot='summary']").innerText = this.data;
   }
 }
 
