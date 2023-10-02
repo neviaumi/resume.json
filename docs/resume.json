@@ -13,8 +13,8 @@
     "profiles": [
       {
         "network": "Github",
-        "url": "https://github.com/davidNHK",
-        "username": "davidNHK"
+        "url": "https://github.com/neviaumi",
+        "username": "neviaumi"
       },
       {
         "network": "Linkedin",
@@ -23,7 +23,7 @@
       }
     ],
     "summary": "Software engineer with a passion for problem-solving and a strong commitment to delivering high-quality solutions. Experienced in collaborating with teams, mentoring junior staff, and sharing knowledge. Skilled in web development, automation, and project management.",
-    "website": "https://davidnhk.github.io/resume.json"
+    "website": "https://neviaumi.github.io/resume.json"
   },
   "education": [
     {
@@ -53,7 +53,7 @@
     }
   ],
   "meta": {
-    "canonical": "https://davidnhk.github.io/resume.json"
+    "canonical": "https://neviaumi.github.io/resume.json"
   },
   "projects": [
     {
@@ -63,7 +63,7 @@
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
-      "url": "https://github.com/davidNHK/resume.json"
+      "url": "https://github.com/neviaumi/resume.json"
     },
     {
       "description": "React component intend to share across different project",
@@ -79,7 +79,7 @@
       "name": "React components",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
-      "url": "https://github.com/davidNHK/react-components"
+      "url": "https://github.com/neviaumi/react-components"
     }
   ],
   "references": [
@@ -150,8 +150,7 @@
       "description": "Platform for game develop partner to manage member access in game development component",
       "highlights": [
         "Contributed to bug fixes and feature development using NodeJS and React",
-        "Worked with a component library used across the company, utilizing React and CSS",
-        "Collaborated within the UK working culture"
+        "Worked with a component library used across the company, utilizing React and CSS"
       ],
       "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS", "Typescript"],
       "location": "UK, Liverpool",
