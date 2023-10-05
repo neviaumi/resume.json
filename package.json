@@ -2,7 +2,7 @@
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
     "playwright": "1.38.1",
-    "ramda": "0.29.0",
+    "ramda": "0.29.1",
     "serve": "14.2.1"
   },
   "description": "David Ng personal resume",
