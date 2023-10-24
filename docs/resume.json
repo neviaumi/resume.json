@@ -66,20 +66,30 @@
       "url": "https://github.com/neviaumi/resume.json"
     },
     {
-      "description": "React component intend to share across different project",
-      "highlights": ["Theme support", "Automated workflow"],
+      "description": "Full stack bootstrap template intend to provide project template for start the project quickly with test, CI, infrastructure and deployment configuration. If you ask me do some project assignment i will use this template to start the project.",
+      "highlights": [
+        "Full stack",
+        "Web FrontEnd",
+        "GraphQL",
+        "CI",
+        "CD",
+        "Infrastructure as Code"
+      ],
       "keywords": [
         "React",
-        "CSS",
+        "NestJS",
         "TailwindCSS",
-        "MUI",
-        "Storybook",
-        "Typescript"
+        "Vite",
+        "Pulumi",
+        "Typescript",
+        "Github Action",
+        "AWS",
+        "Serverless"
       ],
-      "name": "React components",
+      "name": "project-bootstrap-aws-nest-react",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
-      "url": "https://github.com/neviaumi/react-components"
+      "url": "https://github.com/neviaumi/project-bootstrap-aws-nest-react"
     }
   ],
   "references": [
