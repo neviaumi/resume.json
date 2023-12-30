@@ -57,18 +57,21 @@
   },
   "projects": [
     {
-      "description": "The document you reading now",
-      "highlights": ["Standard resume format", "multiple theme support"],
-      "keywords": ["CSS", "Web Component", "Github Action"],
+      "description": "Developed a standardized resume format with support for multiple themes.",
+      "highlights": [
+        "Implemented a standard resume format.",
+        "Provided support for multiple themes."
+      ],
+      "keywords": ["CSS", "Web Component", "GitHub Action"],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
       "url": "https://github.com/neviaumi/resume.json"
     },
     {
-      "description": "Full stack bootstrap template intend to provide project template for start the project quickly with test, CI, infrastructure and deployment configuration. If you ask me do some project assignment i will use this template to start the project.",
+      "description": "Developed a full-stack bootstrap template designed to provide a quick project start with testing, continuous integration (CI), infrastructure, and deployment configurations. This template is utilized for efficiently initiating projects when given assignments.",
       "highlights": [
-        "Full stack",
+        "Full-stack development",
         "Web FrontEnd",
         "GraphQL",
         "CI",
@@ -82,7 +85,7 @@
         "Vite",
         "Pulumi",
         "Typescript",
-        "Github Action",
+        "GitHub Action",
         "AWS",
         "Serverless"
       ],
@@ -172,12 +175,12 @@
     },
     {
       "company": "Neat",
-      "description": "Digital wallet for company manage expense by give their company VISA debit card / virtual Bank account",
+      "description": "A digital wallet for companies to manage expenses through the issuance of company VISA debit cards and virtual bank accounts.",
       "endDate": "2022-05-01",
       "highlights": [
         "Developed features using GraphQL, NodeJS, and React.",
-        "Improved code stability by introduce automated test.",
-        "Mentored junior engineers to improve their technical skills."
+        "Improved code stability by introducing automated tests.",
+        "Mentored junior engineers to enhance their technical skills."
       ],
       "keywords": [
         "GraphQL",
@@ -188,21 +191,19 @@
         "PostgresSQL"
       ],
       "location": "Hong Kong / London (Remote)",
-      "name": "Neat",
       "position": "Software Engineer",
       "startDate": "2021-05-01",
-      "summary": "Enable company register their application to wallet and compliance to verify applicant company",
-      "url": "https://www.neatcommerce.com/",
+      "summary": "Enabled companies to register their applications to the digital wallet and ensured compliance for verifying applicant companies.",
       "website": "https://www.neatcommerce.com/"
     },
     {
       "company": "HK01",
-      "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App store and Google Play store.",
+      "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App Store and Google Play Store.",
       "endDate": "2021-05-01",
       "highlights": [
-        "Created the system for the editor delivery notifications to end user. For example, push notifications, SMS, email ...etc.",
-        "Created the company’s internal Single Sign On (SSO) system",
-        "Created the Content Management System (CMS) for non-technical staff to create content for the company application"
+        "Created the system for editor delivery notifications to end users, including push notifications, SMS, email, etc.",
+        "Created the company’s internal Single Sign-On (SSO) system.",
+        "Created the Content Management System (CMS) for non-technical staff to create content for the company application."
       ],
       "keywords": [
         "MongoDB",
@@ -214,23 +215,20 @@
         "Typescript"
       ],
       "location": "Hong Kong",
-      "name": "HK01",
       "position": "Software Engineer",
       "startDate": "2018-11-01",
-      "summary": "Enable editors to login across company sub-systems with given permission, deliver notification to end user through different channels and create content for the campaign",
-      "url": "https://www.hk01.com/",
+      "summary": "Enabled editors to log in across company sub-systems with given permission, deliver notifications to end users through different channels, and create content for campaigns.",
       "website": "https://www.hk01.com"
     },
     {
       "company": "AfterShip",
-      "description": "SasS provide post-purchase experience such as shipment visibility, analytics ..etc.",
+      "description": "SaaS provider offering post-purchase experiences such as shipment visibility, analytics, etc.",
       "endDate": "2018-09-01",
-      "highlights": ["Fixed bugs in the platform using NodeJS"],
+      "highlights": ["Fixed bugs in the platform using NodeJS."],
       "keywords": ["MongoDB", "NodeJS", "Beanstalk", "Redis", "Crawler"],
       "position": "Software Engineer",
       "startDate": "2017-05-01",
-      "summary": "Enable user to track shipment status through the tracking number.",
-      "url": "https://www.aftership.com/",
+      "summary": "Enabled users to track shipment status through the tracking number.",
       "website": "https://www.aftership.com/"
     },
     {
