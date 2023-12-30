@@ -8,7 +8,7 @@ template.innerHTML = `
     <h1 class="text-decoration-underline" slot="about-company">About</h1>
     <p slot="company-summary"></p>
 </section>
-<section class="col-5">
+<section class="col-5" id="expectation">
     <h1 id="salary-expectation-heading" class="text-decoration-underline">Salary expectation</h1>
     <p slot="salary-expectation" aria-labelledby="salary-expectation-heading"></p>
     <h1 id="role-expectation-heading" class="text-decoration-underline">Role expectation</h1>
@@ -58,7 +58,18 @@ class ResumeApplicationElement extends HTMLElement {
   }
 
   #setupAboutApplicationRole() {
-    if (!this.data.role) return;
+    if (
+      !this.data.role ||
+      !this.data.role.responsibilities ||
+      this.data.role.responsibilities.length === 0
+    ) {
+      this.shadowRoot
+        .querySelector('#expectation')
+        .removeChild(
+          this.shadowRoot.querySelector('#role-expectation-heading'),
+        );
+      return;
+    }
     this.shadowRoot.querySelector("[slot='role-expectation']").innerHTML =
       this.data.role.responsibilities
         .slice(0, 4)

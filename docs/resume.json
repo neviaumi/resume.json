@@ -116,7 +116,7 @@
   ],
   "skills": [
     {
-      "keywords": ["React", "CSS"],
+      "keywords": ["React", "CSS", "Javascript"],
       "level": "Master",
       "name": "Web FrontEnd Development"
     },
