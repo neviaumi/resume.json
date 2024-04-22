@@ -3,7 +3,7 @@
   "dependencies": {
     "playwright": "1.43.1",
     "ramda": "0.29.1",
-    "serve": "14.2.1"
+    "serve": "14.2.2"
   },
   "description": "David Ng personal resume",
   "devDependencies": {
