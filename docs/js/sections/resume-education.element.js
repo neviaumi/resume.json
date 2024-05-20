@@ -34,8 +34,8 @@ class ResumeEducationElement extends HTMLElement {
 <h2 class="d-flex justify-content-between align-items-center">
     <span>${institution}</span>
     <span class="text-secondary fs-3">${formatDate(startDate)} - ${formatDate(
-          endDate,
-        )}</span>
+      endDate,
+    )}</span>
 </h2>
 <h3 class="text-secondary">${studyType} ${area}</h3>
 </a>

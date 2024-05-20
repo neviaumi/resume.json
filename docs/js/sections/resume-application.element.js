@@ -39,20 +39,18 @@ class ResumeApplicationElement extends HTMLElement {
   #setupAboutApplicationSalary() {
     if (!this.data.salary) return;
     const { currency, expectation, type } = this.data.salary;
-    this.shadowRoot.querySelector(
-      "[slot='salary-expectation']",
-    ).innerText = `${new Intl.NumberFormat('en-GB', {
-      currency: currency,
-      maximumFractionDigits: 0,
-      style: 'currency',
-    }).format(expectation)} ${type}`;
+    this.shadowRoot.querySelector("[slot='salary-expectation']").innerText =
+      `${new Intl.NumberFormat('en-GB', {
+        currency: currency,
+        maximumFractionDigits: 0,
+        style: 'currency',
+      }).format(expectation)} ${type}`;
   }
 
   #setupAboutApplicationCompany() {
     if (!this.data.company) return;
-    this.shadowRoot.querySelector(
-      "[slot='about-company']",
-    ).innerText = `About ${this.data.company.name}`;
+    this.shadowRoot.querySelector("[slot='about-company']").innerText =
+      `About ${this.data.company.name}`;
     this.shadowRoot.querySelector("[slot='company-summary']").innerText =
       this.data.company.summary;
   }

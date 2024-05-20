@@ -38,11 +38,10 @@ class ResumeAboutElement extends HTMLElement {
 
   #setupLocation() {
     if (!this.data.location) return;
-    this.shadowRoot.querySelector(
-      "[slot='location']",
-    ).innerHTML = `<span>${countryCodeToFlag(
-      this.data.location.countryCode,
-    )}</span><span>${this.data.location.region}</span>`;
+    this.shadowRoot.querySelector("[slot='location']").innerHTML =
+      `<span>${countryCodeToFlag(
+        this.data.location.countryCode,
+      )}</span><span>${this.data.location.region}</span>`;
   }
 
   #setupBirthday() {
@@ -59,9 +58,8 @@ class ResumeAboutElement extends HTMLElement {
   #setupWebSite() {
     if (!this.data.website) return;
     const websitePath = new URL(this.data.website);
-    this.shadowRoot.querySelector(
-      "[slot='website']",
-    ).innerHTML = `<span class="bi bi-house"></span>
+    this.shadowRoot.querySelector("[slot='website']").innerHTML =
+      `<span class="bi bi-house"></span>
 <a href="${this.data.website}" target="_blank" class="text-reset text-decoration-none">${websitePath.pathname}</a>`;
   }
 

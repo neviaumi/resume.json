@@ -49,23 +49,21 @@ class HeaderElement extends HTMLElement {
 
   #setupPhone() {
     if (!this.data.phone) return;
-    this.shadowRoot.querySelector(
-      "[slot='phone']",
-    ).innerHTML = `<span class="bi bi-telephone-outbound"></span>
+    this.shadowRoot.querySelector("[slot='phone']").innerHTML =
+      `<span class="bi bi-telephone-outbound"></span>
 <a href="tel:+44${this.data.phone.replaceAll(
-      ' ',
-      '',
-    )}" class="text-reset text-decoration-none">+44 ${this.data.phone}</a>`;
+        ' ',
+        '',
+      )}" class="text-reset text-decoration-none">+44 ${this.data.phone}</a>`;
   }
 
   #setupEmail() {
     if (!this.data.email) return;
-    this.shadowRoot.querySelector(
-      "[slot='email']",
-    ).innerHTML = `<span class="bi bi-envelope"></span>
+    this.shadowRoot.querySelector("[slot='email']").innerHTML =
+      `<span class="bi bi-envelope"></span>
 <a href="mailto:${this.data.email}?subject=${encodeURIComponent(
-      'Job opportunity',
-    )}" class="text-reset text-decoration-none">${this.data.email}</a>`;
+        'Job opportunity',
+      )}" class="text-reset text-decoration-none">${this.data.email}</a>`;
   }
 }
 
