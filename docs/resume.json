@@ -67,32 +67,6 @@
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
       "url": "https://github.com/neviaumi/resume.json"
-    },
-    {
-      "description": "Developed a full-stack bootstrap template designed to provide a quick project start with testing, continuous integration (CI), infrastructure, and deployment configurations. This template is utilized for efficiently initiating projects when given assignments.",
-      "highlights": [
-        "Full-stack development",
-        "Web FrontEnd",
-        "GraphQL",
-        "CI",
-        "CD",
-        "Infrastructure as Code"
-      ],
-      "keywords": [
-        "React",
-        "NestJS",
-        "TailwindCSS",
-        "Vite",
-        "Pulumi",
-        "Typescript",
-        "GitHub Action",
-        "AWS",
-        "Serverless"
-      ],
-      "name": "project-bootstrap-aws-nest-react",
-      "roles": ["Maintainer", "Code Owner"],
-      "type": "project",
-      "url": "https://github.com/neviaumi/project-bootstrap-aws-nest-react"
     }
   ],
   "references": [
@@ -159,8 +133,25 @@
   ],
   "work": [
     {
+      "company": "Emma App Technologies",
+      "description": "A all-in-one mobile app to manage personal finance",
+      "endDate": "2024-05-17",
+      "highlights": [
+        "Port application from mobile to web",
+        "Integrate Open Banking API"
+      ],
+      "keywords": ["React", "NodeJS", "Open Banking", "Typescript"],
+      "location": "UK, London",
+      "position": "Backend Engineer",
+      "startDate": "2024-03-17",
+      "summary": "Port mobile application to web and integrate Open Banking API",
+      "url": "https://emma-app.com",
+      "website": "https://emma-app.com/onboarding/welcome"
+    },
+    {
       "company": "PlayStation",
       "description": "Platform for game develop partner to manage member access in game development component",
+      "endDate": "2024-03-01",
       "highlights": [
         "Contributed to bug fixes and feature development using NodeJS and React",
         "Worked with a component library used across the company, utilizing React and CSS"
