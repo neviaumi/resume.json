@@ -7,7 +7,7 @@ Repo here contain my personal resume.
 ## Development
 
 ```bash
-npm install
+bash ./scripts/setup.sh
 npm run serve
 ```
 
@@ -69,7 +69,7 @@ Copy and paste code below and replace `JSON.stringify({})`
 with your resume.json content
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
