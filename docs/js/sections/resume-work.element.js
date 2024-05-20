@@ -45,8 +45,8 @@ class ResumeWorkElement extends HTMLElement {
 <a href="${website}" target="_blank" class="d-flex align-content-center bg-success text-white justify-content-between card-header text-decoration-none">
     <h2 class="mb-0">${position} in ${company}</h2>
     <span class="d-flex align-items-center">${formatDate(startDate)} - ${
-          endDate ? formatDate(endDate) : 'Present'
-        }</span>
+      endDate ? formatDate(endDate) : 'Present'
+    }</span>
 
 
 </a>
