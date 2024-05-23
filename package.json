@@ -1,7 +1,7 @@
 {
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
-    "playwright": "1.44.0",
+    "playwright": "1.44.1",
     "ramda": "0.30.0",
     "serve": "14.2.3"
   },
