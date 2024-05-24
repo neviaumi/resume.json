@@ -22,7 +22,7 @@
         "username": "Kong Chor Ng"
       }
     ],
-    "summary": "Software engineer with a passion for problem-solving and a strong commitment to delivering high-quality solutions. Experienced in collaborating with teams, mentoring junior staff, and sharing knowledge. Skilled in web development, automation, and project management.",
+    "summary": "Software engineer with a passion for problem-solving and a strong commitment to delivering high-quality solutions. Experienced in collaborating with teams, mentoring junior staff, and sharing knowledge. Skilled in web development, automation, and project management. Looking for a company with a clean business mission, offering a hybrid work environment, focused on full-stack development, and thriving in a rapid development environment.",
     "website": "https://neviaumi.github.io/resume.json"
   },
   "education": [
@@ -107,7 +107,6 @@
         "Python",
         "GraphQL",
         "MongoDB",
-        "RabbitMQ",
         "Redis",
         "PostgresSQL",
         "RabbitMQ"
@@ -140,7 +139,7 @@
         "Port application from mobile to web",
         "Integrate Open Banking API"
       ],
-      "keywords": ["React", "NodeJS", "Open Banking", "Typescript"],
+      "keywords": ["React", "NodeJS", "Open Banking", "Typescript", "NextJS"],
       "location": "UK, London",
       "position": "Backend Engineer",
       "startDate": "2024-03-17",
