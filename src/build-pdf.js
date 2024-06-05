@@ -8,6 +8,7 @@ const flagForIsPrivate = process.argv[2];
 const isPrivateBuild = flagForIsPrivate === '--private';
 const domain = process.env.RESUME_DOMAIN ?? 'http://localhost:3000';
 const path = isPrivateBuild ? '/index.private.html' : '/index.html';
+let resumePdf = 'docs/resume.pdf';
 
 if (isPrivateBuild) {
   const resumeJson = JSON.parse(await fs.readFile('docs/resume.json', 'utf-8'));
@@ -18,6 +19,8 @@ if (isPrivateBuild) {
     resumeJson,
     dataWantToIncludeInPrivateBuild,
   );
+  const companyName = privateResume['meta']['application']['company']['name'];
+  resumePdf = `docs/${companyName.replaceAll(' ', '-').toLowerCase()}.pdf`;
   await fs.writeFile(
     'docs/resume.private.json',
     JSON.stringify(privateResume, null, 2),
@@ -39,7 +42,7 @@ await page.pdf({
     right: 0,
     top: 0,
   },
-  path: isPrivateBuild ? 'docs/resume.private.pdf' : 'docs/resume.pdf',
+  path: resumePdf,
   preferCSSPageSize: true,
   printBackground: true,
 });
