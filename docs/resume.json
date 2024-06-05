@@ -38,7 +38,7 @@
   ],
   "interests": [
     {
-      "keywords": ["music streaming", "Organizing asset in computer"],
+      "keywords": ["Home DIY", "Organizing asset in computer"],
       "name": "Work interest"
     }
   ],
@@ -136,6 +136,7 @@
       "description": "A all-in-one mobile app to manage personal finance",
       "endDate": "2024-05-17",
       "highlights": [
+        "Collaborated with CTO and Designer to clarify requirements and design",
         "Port application from mobile to web",
         "Integrate Open Banking API"
       ],
@@ -152,6 +153,7 @@
       "description": "Platform for game develop partner to manage member access in game development component",
       "endDate": "2024-03-01",
       "highlights": [
+        "Collaborated with Product Owner and engineers to clarify requirements, estimate effort, and breakdown features into smaller tasks",
         "Contributed to bug fixes and feature development using NodeJS and React",
         "Worked with a component library used across the company, utilizing React and CSS"
       ],
@@ -168,7 +170,8 @@
       "description": "A digital wallet for companies to manage expenses through the issuance of company VISA debit cards and virtual bank accounts.",
       "endDate": "2022-05-01",
       "highlights": [
-        "Developed features using GraphQL, NodeJS, and React.",
+        "Worked with product owners and QA to prioritize, estimate and deliver features",
+        "Developed features for onboarding and KYC using GraphQL, NodeJS, and React.",
         "Improved code stability by introducing automated tests.",
         "Mentored junior engineers to enhance their technical skills."
       ],
@@ -178,7 +181,8 @@
         "Docker",
         "Circle CI",
         "Cypress",
-        "PostgresSQL"
+        "PostgresSQL",
+        "AWS"
       ],
       "location": "Hong Kong / London (Remote)",
       "position": "Software Engineer",
@@ -191,6 +195,7 @@
       "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App Store and Google Play Store.",
       "endDate": "2021-05-01",
       "highlights": [
+        "Collaborated with team lead and product owner to prioritize and break down features into valuable deliverables",
         "Created the system for editor delivery notifications to end users, including push notifications, SMS, email, etc.",
         "Created the company’s internal Single Sign-On (SSO) system.",
         "Created the Content Management System (CMS) for non-technical staff to create content for the company application."
@@ -202,7 +207,8 @@
         "Travis CI",
         "RabbitMQ",
         "Redis",
-        "Typescript"
+        "Typescript",
+        "AWS"
       ],
       "location": "Hong Kong",
       "position": "Software Engineer",
