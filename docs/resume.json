@@ -67,6 +67,33 @@
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
       "url": "https://github.com/neviaumi/resume.json"
+    },
+    {
+      "description": "Developed a project to crawl major UK grocery websites to display their prices and country of origin. This project was created in my spare time to enhance my skills and learn new technologies.",
+      "highlights": [
+        "Created a monorepo for frontend, backend, and infrastructure.",
+        "Hosted on GCP with server-side rendering (SSR) and GraphQL.",
+        "Implemented CI/CD using GitHub Actions and Pulumi.",
+        "Developed using TypeScript, React, TailwindCSS, and Docker.",
+        "Enabled asynchronous data fetching with GraphQL."
+      ],
+      "keywords": [
+        "GCP",
+        "Remix",
+        "SSR",
+        "React",
+        "GraphQL",
+        "GitHub Action",
+        "Pulumi",
+        "TypeScript",
+        "Docker",
+        "CSS",
+        "TailwindCSS"
+      ],
+      "name": "Made in UK",
+      "roles": ["Maintainer", "Code Owner"],
+      "type": "project",
+      "url": "https://github.com/neviaumi/made-in-uk"
     }
   ],
   "references": [
