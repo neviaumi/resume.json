@@ -38,8 +38,9 @@ class ResumeSkillsElement extends HTMLElement {
       }, {}),
     );
     const shouldHighlightSkill = skillWanted.length > 0;
+    const isSkillWanted = skill => skillWanted.includes(skill);
     const highlightSkillIfWanted = skill =>
-      skillWanted.includes(skill) ? 'bg-primary' : 'bg-light text-dark';
+      isSkillWanted(skill) ? 'bg-primary' : 'bg-light text-dark';
     this.shadowRoot.querySelector("[slot='skills']").innerHTML = skills
       .map(([name, levels]) => {
         const masterSkills = levels.Master ?? [];
@@ -50,6 +51,10 @@ class ResumeSkillsElement extends HTMLElement {
           skillLevels.push(`
             <h2 class="text-primary fs-3 text-nowrap">Master</h2>
             <ul class="list-unstyled d-flex gap-1 flex-wrap mb-2">${masterSkills
+              .toSorted(skillA => {
+                if (!shouldHighlightSkill) return 0;
+                return isSkillWanted(skillA) ? -1 : 1;
+              })
               .map(
                 skill =>
                   `<li class="badge ${
@@ -65,6 +70,10 @@ class ResumeSkillsElement extends HTMLElement {
           skillLevels.push(`
             <h2 class="text-secondary fs-3 text-nowrap">Intermediate</h2>
             <ul class="list-unstyled d-flex gap-1 flex-wrap">${intermediateSkills
+              .toSorted(skillA => {
+                if (!shouldHighlightSkill) return 0;
+                return isSkillWanted(skillA) ? -1 : 1;
+              })
               .map(
                 skill =>
                   `<li class="badge ${

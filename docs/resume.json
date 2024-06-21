@@ -167,7 +167,7 @@
         "Port application from mobile to web",
         "Integrate Open Banking API"
       ],
-      "keywords": ["React", "NodeJS", "Open Banking", "Typescript", "NextJS"],
+      "keywords": ["React", "NodeJS", "Open Banking", "TypeScript", "NextJS"],
       "location": "UK, London",
       "position": "Backend Engineer",
       "startDate": "2024-03-17",
@@ -184,7 +184,7 @@
         "Contributed to bug fixes and feature development using NodeJS and React",
         "Worked with a component library used across the company, utilizing React and CSS"
       ],
-      "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS", "Typescript"],
+      "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS", "TypeScript"],
       "location": "UK, Liverpool",
       "position": "Software Engineer II",
       "startDate": "2022-05-01",
@@ -205,6 +205,7 @@
       "keywords": [
         "GraphQL",
         "NodeJS",
+        "React",
         "Docker",
         "Circle CI",
         "Cypress",
@@ -230,11 +231,12 @@
       "keywords": [
         "MongoDB",
         "NodeJS",
+        "TypeScript",
+        "React",
         "Docker",
         "Travis CI",
         "RabbitMQ",
         "Redis",
-        "Typescript",
         "AWS"
       ],
       "location": "Hong Kong",
