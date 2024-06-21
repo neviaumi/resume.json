@@ -67,14 +67,20 @@ ${highlights?.map(highlight => `<li>${highlight}</li>`).join('') ?? ''}
   #skills(keywords) {
     const { skillWanted } = this.data;
     const shouldHighlightSkill = skillWanted.length > 0;
+    const isSkillWanted = skill => skillWanted.includes(skill);
 
     return `<ul class="list-unstyled mb-2 d-flex gap-1 flex-wrap">${sortSkills(
       groupByKeyword(this.data.skills ?? [], keywords),
     )
+      .toSorted(([keywordA], [keywordB]) => {
+        if (!shouldHighlightSkill) return 0;
+        if (isSkillWanted(keywordA) && isSkillWanted(keywordB)) return 0;
+        return isSkillWanted(keywordA) ? -1 : 1;
+      })
       .map(([keyword, level]) => {
         if (shouldHighlightSkill) {
           return `<li class="badge ${
-            skillWanted.includes(keyword) ? 'bg-primary' : 'bg-light text-dark'
+            isSkillWanted(keyword) ? 'bg-primary' : 'bg-light text-dark'
           }">${keyword}</li>`;
         }
         const isClassified = level !== 'Unknown';
