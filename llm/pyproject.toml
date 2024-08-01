@@ -1,0 +1,28 @@
+[tool.pdm]
+distribution = false
+
+[build-system]
+requires = ["torch==2.2.2"]
+
+[tool.pdm.build]
+includes = []
+[project]
+name = "llm"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "David Ng", email = "david.ng.dev@gmail.com" },
+]
+dependencies = [
+    "transformers<5.0.0,>=4.43.3",
+    "torch==2.2.2",
+    "sentencepiece<1.0.0,>=0.2.0",
+    "accelerate<1.0.0,>=0.33.0",
+    "gpt4all>=2.7.0",
+    "openai>=1.37.1",
+    "httpx>=0.27.0",
+]
+requires-python = "<4.0,>=3.12"
+readme = "README.md"
+license = { text = "MIT" }
+
