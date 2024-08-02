@@ -16,23 +16,25 @@ with open("../docs/resume.json", "r") as resume, open("../docs/jd.md", "r") as j
 you can read my resume and JD from assistent content.
 I have drafted the introduction here, feel free to change it.
 
-Hi I'm David and I am 9 years experiences Web full stack developer 
+Hi I'm David and I am 7 years experiences Web full stack developer
 
 I previously work at Emma App Technology the company missioned on create super-app for personal finance.  I enjoyed my work at Emma as every task i got was cleanly mission and impact,  I implemented new OpenBanking connections in Typescript & NodeJS for connect and display more banks to the system, developed a referral page and QR code generator in CloudFlare worker, and created the web version of the onboarding and subscription pages in NextJS for new users register and advertiser redirect the traffic from campian.
-
 But due to the requirement for five days of on-site work, which resulted in a challenging 4-hour daily commute and non-flexible work for take some day WFH in a month notice.  i have to resign and currently was employed.
+The experience on Emma improved my ability to work within a fast-paced, deadline-driven environment.
 
 Before Emma, I worked at PlayStation for two years, where I implemented an access control system for game development partners with 5 developer and 2 QA in NodeJS, Redux and React . However, delays in seeing our work reach production prompted me to seek more impactful opportunities.
+this gain me an experience on large company workflow and deepened my understanding of system architecture such as micro repo, mirco frontend, event-driven architecture...etc. .
 
 And before Playstation i was working on couple of company on Hong Kong with JS stack include React, Node, Nest, GraphQL / Rest …etc.
 
 My interests are problem solving with engineering and I love to understand what problems Business want to solve and create extendable solution from the scratch around the problem.
 
-I am fit to the position because i belive i was aglined to company values . for example i belive in order build the system in the right way on a fast changing world,  the system should get the strong foundation such as infrestructure config, project configurations ....etc. that why i have keep building couple of open source projects on my spare times, i alway learned new and better way to done the same things during the deployment.
+I am fit to the position because i believe i was aligned to company values . for example i believe as a engineer growing every day is important to keep my knowledge on the front that why i have keep building couple of open source projects on my spare times, i always learned new and better way to done the same things during the deployment.
+Also i believe built the team relationship on honesty and ethics, that shouldn't have someone is left behind and just receive notice about new features.
 
-Also, i am active learner on my spare time, for example i am learning how to using AI and prompt from hugging face recently. i also will learn from mistake over my carrer.
+However, i am active learner on my spare time, for example i am learning how to using AI and prompt from hugging face recently. i also will learn from mistake over my carrier.
 
-Finally, i was almost matched the Skills required on JD beside of Mobile App development and Med Tech regulatory / SDLC , i am confitent to take it up and exciting to learning it.
+Finally, i was matched the Skills required on JD , i am confident to take the task up and exciting to learning anything from routine .
 """,
         [f"""here is my resume on JSON format:
 {resume_str}""",
