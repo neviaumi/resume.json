@@ -29,14 +29,12 @@
   "private": true,
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
-    "build:docker": "touch ./docs/resume.pdf && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose-build.yml up --build --exit-code-from pdf-builder --abort-on-container-exit",
+    "build:docker": "touch ./docs/resume.pdf && docker compose -f docker-compose-build.yml up --build --exit-code-from pdf-builder --abort-on-container-exit",
     "build:pdf": "npx playwright install && node ./src/build-pdf.js",
     "lint": "eslint --fix .",
     "lint:ci": "eslint .",
     "prepare": "is-ci || husky install",
     "serve": "serve --cors docs",
-    "test": "npx playwright test",
-    "test:debug": "npx playwright test --debug",
     "test:docker": "npm run build:docker"
   },
   "type": "module",

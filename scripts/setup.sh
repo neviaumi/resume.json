@@ -3,4 +3,4 @@
 set -ex
 
 npm install
-npx playwright install
+npx playwright install chromium

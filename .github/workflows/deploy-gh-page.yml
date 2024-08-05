@@ -15,6 +15,13 @@ jobs:
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/test.sh
       - run: bash ./scripts/build.sh
+      - name: Upload doc folder
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+      - id: deployment
+        name: Deploy storybook to GitHub Pages
+        uses: actions/deploy-pages@v4
 name: deploy-github-page-after-push-master
 
 on:
