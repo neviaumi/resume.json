@@ -20,7 +20,7 @@ jobs:
         with:
           path: ./docs
       - id: deployment
-        name: Deploy storybook to GitHub Pages
+        name: Deploy doc with PDF to GitHub Pages
         uses: actions/deploy-pages@v4
 name: deploy-github-page-after-push-master
 
@@ -28,3 +28,7 @@ on:
   push:
     branches:
       - master
+permissions:
+  contents: write
+  id-token: write
+  pages: write
