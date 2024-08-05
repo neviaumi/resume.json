@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ex
 
-npm run lint:ci
-npm run test
+npx eslint .
+npx playwright test
 npm run test:docker
