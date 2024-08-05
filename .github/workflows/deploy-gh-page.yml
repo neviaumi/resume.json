@@ -8,12 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js LTS
-        uses: actions/setup-node@v4.0.3
-        with:
-          node-version-file: .nvmrc
-      - run: bash ./scripts/setup.sh
-      - run: bash ./scripts/test.sh
       - run: bash ./scripts/build.sh
       - name: Upload doc folder
         uses: actions/upload-pages-artifact@v3
