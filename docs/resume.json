@@ -62,7 +62,7 @@
         "Implemented a standard resume format.",
         "Provided support for multiple themes."
       ],
-      "keywords": ["CSS", "Web Component", "GitHub Action"],
+      "keywords": ["CSS", "Web Component", "GitHub Action", "GPT 4"],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
