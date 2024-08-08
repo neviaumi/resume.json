@@ -25,8 +25,9 @@ with open("../docs/resume.json", "r") as resume, open("../docs/jd.md", "r") as j
     start = time.perf_counter()
     open_ai_responses = open_ai.prompt_init(
         "You are Software engineer preparing go to interview.",
-        f"""Opmitze my introduction in Markdown format below and advise what i can do better.
-The output don't have to Markdown format, just plain-text is good.
+        f"""Opmitze my introduction speech in Markdown format below and advise what i can do better.
+Response the enhanced speech in plain-text and keep your wording simple and professional.
+i not a native english speaker and i want to speech finish within 3 minutes.
 you can read my resume and JD from assistent content.
 I have drafted the introduction here, feel free to change it.
 
