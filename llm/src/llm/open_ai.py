@@ -11,7 +11,7 @@ client = OpenAI(
 )
 
 
-def prompt(system, user, assistants):
+def prompt_init(system, user, assistants):
     messages = [
                    {
                        "role": "system",
@@ -26,4 +26,17 @@ def prompt(system, user, assistants):
         messages=messages,
         model="gpt-4o-mini",
     )
-    return completion.choices[0].message.content
+    return messages + [completion.choices[0].message]
+
+
+def prompt_follow_up(history, user, assistants=None):
+    messages = history + [{
+        "role": "user",
+        "content": user
+    }] + [] if assistants is None else list(
+        map(lambda assistant: ({"role": "assistant", "content": assistant}), assistants))
+    completion = client.chat.completions.create(
+        messages=messages,
+        model="gpt-4o-mini",
+    )
+    return messages + [completion.choices[0].message]
