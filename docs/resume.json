@@ -88,7 +88,8 @@
         "TypeScript",
         "Docker",
         "CSS",
-        "TailwindCSS"
+        "TailwindCSS",
+        "LLM"
       ],
       "name": "Made in UK",
       "roles": ["Maintainer", "Code Owner"],
