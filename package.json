@@ -11,7 +11,7 @@
     "@busybox/eslint-config": "2024.2.29-alpha.203",
     "@busybox/prettier-config": "2024.2.29-alpha.203",
     "@commitlint/cli": "19.5.0",
-    "@playwright/test": "1.47.1",
+    "@playwright/test": "1.47.2",
     "eslint": "8.57.1",
     "husky": "9.1.6",
     "is-ci": "3.0.1",
