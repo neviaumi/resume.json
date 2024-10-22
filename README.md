@@ -29,9 +29,9 @@ and then check [PDF](./docs/resume.pdf)
 
 ### if you're watching this then I suggest you read web version
 
-[WEB version](https://davidnhk.github.io/resume.json/)
+[WEB version](https://neviaumi.github.io/resume.json/)
 
-[PDF Version](https://davidnhk.github.io/resume.json/resume.pdf)
+[PDF Version](https://neviaumi.github.io/resume.json/resume.pdf)
 
 ## Skill level definition
 
@@ -79,7 +79,7 @@ with your resume.json content
     />
     <title>David Ng</title>
     <script
-      src="https://davidnhk.github.io/resume.json/js/json-resume.element.js"
+      src="https://neviaumi.github.io/resume.json/js/json-resume.element.js"
       type="module"
     ></script>
     <style>
