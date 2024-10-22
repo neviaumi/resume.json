@@ -107,6 +107,8 @@ should_finish = False
 
 while not should_finish:
     feedback = input("Type EOP if no more feedbacks: ").strip()
+    if not feedback:
+        continue
     should_finish = feedback == 'EOP'
     if should_finish:
         print("This is final version of generated result:")
