@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: bash ./scripts/start.sh
+      - run: bash ./scripts/setup.sh
       - run: bash ./scripts/build.sh
       - name: Upload doc folder
         uses: actions/upload-pages-artifact@v3
