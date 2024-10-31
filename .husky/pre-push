@@ -1,7 +1,5 @@
 #!/bin/sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-. "$(dirname $0)/_/husky.sh"
-
-set -e
-npm run lint
-npx playwright test
+set -ex
+bash ./scripts/test.sh

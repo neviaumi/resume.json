@@ -1,20 +1,10 @@
 services:
-  doc-serve:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    entrypoint: [npm, run, serve]
   pdf-builder:
     build:
       context: .
       dockerfile: Dockerfile
-    depends_on:
-      - doc-serve
     entrypoint: [node, src/build-pdf.js]
-    environment:
-      - RESUME_DOMAIN=http://doc-serve:3000
     volumes:
       - source: ./docs/resume.pdf
         target: /app/docs/resume.pdf
         type: bind
-version: '3.7'

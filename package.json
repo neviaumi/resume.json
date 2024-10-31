@@ -3,7 +3,7 @@
   "dependencies": {
     "playwright": "1.48.2",
     "ramda": "0.30.1",
-    "serve": "14.2.4"
+    "vite": "5.4.10"
   },
   "description": "David Ng personal resume",
   "devDependencies": {
@@ -11,13 +11,13 @@
     "@busybox/eslint-config": "2024.2.29-alpha.203",
     "@busybox/prettier-config": "2024.2.29-alpha.203",
     "@commitlint/cli": "19.5.0",
-    "@playwright/test": "1.48.1",
     "eslint": "8.57.1",
     "husky": "9.1.6",
     "is-ci": "3.0.1",
     "lint-staged": "15.2.10",
     "prettier": "3.3.3",
-    "resume-schema": "1.0.1"
+    "resume-schema": "1.0.1",
+    "vitest": "2.1.4"
   },
   "engines": {
     "node": ">=20",
@@ -29,13 +29,7 @@
   "private": true,
   "repository": "git@github.com:davidNHK/resume.json.git",
   "scripts": {
-    "build:docker": "touch ./docs/resume.pdf && docker compose -f docker-compose-build.yml up --build --exit-code-from pdf-builder --abort-on-container-exit",
-    "build:pdf": "npx playwright install && node ./src/build-pdf.js",
-    "lint": "eslint --fix .",
-    "lint:ci": "eslint .",
-    "prepare": "is-ci || husky install",
-    "serve": "serve --cors docs",
-    "test:docker": "npm run build:docker"
+    "prepare": "is-ci || husky"
   },
   "type": "module",
   "version": "0.0.0"
