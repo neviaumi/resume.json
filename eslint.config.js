@@ -7,6 +7,7 @@ export default [
       'llm/**/*',
       'docs/jd.md',
       'docs/draft-introduction.md',
+      'dist/**/*',
     ],
   },
   {

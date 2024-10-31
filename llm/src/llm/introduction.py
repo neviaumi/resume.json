@@ -27,20 +27,19 @@ with open("../docs/resume.json", "r") as resume, open("../docs/jd.md", "r") as j
         "You are Software engineer preparing go to interview.",
         f"""Opmitze my introduction speech in Markdown format below and advise what i can do better.
 Response the enhanced speech in plain-text and keep your wording simple and professional.
-i not a native english speaker and i want to speech finish within 3 minutes.
-you can read my resume and JD from assistent content.
-I have drafted the introduction here, feel free to change it.
+i not a native english speaker and i want to speech finish within 2 minutes.
+you can read my resume and JD from assistant content.
 
-{draft_introudction_str}
-""",
-        [f"""here is my resume on JSON format:
-{resume_str}""",
-         f"""here is the job description on markdown format about the job you are going to interview:
+here is the job description on markdown format about the job you are going to interview:
 {jd_str}
-""",
-         f"""for my resume json, you can read the schema definition here:
-{resume_json_schema}""",
-         f"""here is key elements of sucessful interviews:
+
+here is my resume on JSON format:
+{resume_str}
+
+for my resume json, you can read the schema definition here:
+{resume_json_schema}
+
+here is key elements of successful interviews:
 1. Start with basic background information
 Include who you are, who you work for (or school and major), and what you do.
 
@@ -51,10 +50,10 @@ Does this look familiar? It should be, because it is similar to your resume! You
 2. KISS (Keep It Simple and Sweet)
 Tell them some highlights from your favorite/most impressive projects and including some numbers if they're impressive or challenges that you've overcome. Do not delve into the depths of how you reverse engineered a game and decrypted a packet to predict when to use your DKP on a drop. Tell them the executive summary: "I reverse engineered X game by decrypting Y packet to predict Z." If this catches their interest, they might ask further questions on their own.
 
-3. Why do they want you?​
+3. Why do they want you?
 Tell the interviewer why you would make a good hire. Is your experience relevant to the company? Have you used a similar tech stack as the company or built relevant products? What unique talent(s) do you have that may give them confidence about your ability to contribute to the company?
-""",
-         f"""here is some good example of software engineer self introductions
+
+here is some good example of software engineer self introductions
 Example 1: Front End Engineer at Meta
 Self introduction
 "Hi I'm XXX and I graduated from National University of Singapore in 2015 with a degree in Computer Science. My interests are in Front End Engineering and I love to create beautiful and performant products with delightful user experiences.
@@ -96,8 +95,11 @@ Lyft was Grab's sister company! In fact they even had a partnership in the past.
 "I built the project with another engineer over the period of 4 months on a React/Redux and Golang stack."
 
 Acknowledge that you work with others. Building a non-trivial system with just 2 people in 3 months is quite good for a non-trivial system. Lyft also uses Golang for their high performance systems.
-        """]
-    )
+
+I have drafted the introduction here, feel free to change it.
+
+{draft_introudction_str}
+""", [])
 
 end = time.perf_counter()
 

@@ -1,8 +1,8 @@
-import { expect, test } from '@playwright/test';
+import { describe, expect, test } from 'vitest';
 
 import { groupByKeyword, sortSkills } from '../skills.helper.js';
 
-test.describe('Skills helper', () => {
+describe('Skills helper', () => {
   [
     {
       input: {

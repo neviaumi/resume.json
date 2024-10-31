@@ -2,5 +2,4 @@
 set -ex
 
 npx eslint .
-npx playwright test
-npm run test:docker
+npx vitest --run
