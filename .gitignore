@@ -117,8 +117,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-public/
-
 docs/resume.private.json
 docs/resume.private.pdf
 docs/private.json

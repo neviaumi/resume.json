@@ -1,7 +1,7 @@
 import playwright from 'playwright';
 import { createServer } from 'vite';
 
-const resumePdf = 'docs/resume.pdf';
+const resumePdf = 'public/resume.pdf';
 
 const server = await createServer();
 await server.listen();
