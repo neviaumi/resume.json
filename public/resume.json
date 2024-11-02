@@ -57,30 +57,34 @@
   },
   "projects": [
     {
-      "description": "Developed a standardized resume format with support for multiple themes.",
+      "description": "Resume website that allows for quick and easy updates, ensuring format stability and effortless editing. This project enabled automated PDF exports upon deployment to GitHub Pages and facilitated the generation of tailored interview introductions based on job descriptions, enhancing my job application process.",
       "highlights": [
-        "Implemented a standard resume format.",
-        "Provided support for multiple themes."
+        "Built a dynamic, JSON-driven resume generator using TailwindCSS and WebComponents for effortless updates without format issues.",
+        "Automated PDF export upon deployment to GitHub Pages for seamless resume sharing.",
+        "Developed a tool to auto-generate personalized job interview introductions using OpenAI, based on job descriptions and initial prompts."
       ],
-      "keywords": ["CSS", "Web Component", "GitHub Action", "GPT 4"],
+      "keywords": [
+        "TailwindCSS",
+        "CSS",
+        "Web Component",
+        "GitHub Action",
+        "OpenAI"
+      ],
       "name": "resume.json",
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
       "url": "https://github.com/neviaumi/resume.json"
     },
     {
-      "description": "Developed a project to crawl major UK grocery websites to display their prices and country of origin. This project was created in my spare time to enhance my skills and learn new technologies.",
+      "description": "Built a price comparison tool for online grocery shopping that tracks product prices across supermarkets, with country-of-origin filtering and custom alerts. Designed to streamline shopping while leveraging cloud and serverless technologies",
       "highlights": [
-        "Created a monorepo for frontend, backend, and infrastructure.",
-        "Hosted on GCP with server-side rendering (SSR) and GraphQL.",
-        "Implemented CI/CD using GitHub Actions and Pulumi.",
-        "Developed using TypeScript, React, TailwindCSS, and Docker.",
-        "Enabled asynchronous data fetching with GraphQL."
+        "Developed a price comparison tool for major supermarkets, incorporating country of origin filtering and product monitoring to enhance the online shopping experience.",
+        "Utilized GCP serverless components, Infrastructure as Code, server-side rendering, and LLMs for free-text processing, gaining hands-on experience with modern deployment and processing techniques.",
+        "Managed end-to-end project lifecycle, including ticketing and maintenance workflows, ensuring continuous functionality and improvement."
       ],
       "keywords": [
         "GCP",
         "Remix",
-        "SSR",
         "React",
         "GraphQL",
         "GitHub Action",
@@ -89,7 +93,7 @@
         "Docker",
         "CSS",
         "TailwindCSS",
-        "LLM"
+        "LLAMA.cpp"
       ],
       "name": "Made in UK",
       "roles": ["Maintainer", "Code Owner"],
@@ -121,29 +125,35 @@
   ],
   "skills": [
     {
-      "keywords": ["React", "CSS", "Javascript"],
+      "keywords": [
+        "React",
+        "CSS",
+        "Javascript",
+        "Express",
+        "NestJS",
+        "NodeJS",
+        "REST API",
+        "Typescript"
+      ],
       "level": "Master",
-      "name": "Web FrontEnd Development"
-    },
-    {
-      "keywords": ["Express", "NestJS", "NodeJS", "REST API"],
-      "level": "Master",
-      "name": "Web BackEnd Development"
+      "name": "Web Development"
     },
     {
       "keywords": [
-        "Python",
         "GraphQL",
+        "Python",
         "MongoDB",
         "Redis",
         "PostgresSQL",
-        "RabbitMQ"
+        "RabbitMQ",
+        "Remix",
+        "TailwindCSS"
       ],
       "level": "Intermediate",
-      "name": "Web BackEnd Development"
+      "name": "Web Development"
     },
     {
-      "keywords": ["AWS", "Docker", "CI", "GitHub"],
+      "keywords": ["AWS", "Docker", "CI", "GitHub", "Pulumi", "GCP"],
       "level": "Intermediate",
       "name": "Cloud Deployment"
     },

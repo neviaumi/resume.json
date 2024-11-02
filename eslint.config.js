@@ -1,4 +1,5 @@
 import busyboxEslintConfig, { globals } from '@busybox/eslint-config';
+import { useTailwindCSSEslintConfig } from '@busybox/eslint-config-tailwindcss';
 
 export default [
   {
@@ -19,4 +20,7 @@ export default [
     },
   },
   ...busyboxEslintConfig,
+  useTailwindCSSEslintConfig({
+    files: ['src/**/*.js'],
+  }),
 ];

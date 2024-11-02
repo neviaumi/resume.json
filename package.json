@@ -1,22 +1,28 @@
 {
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
+    "clsx": "2.1.1",
     "playwright": "1.48.2",
     "ramda": "0.30.1",
     "vite": "5.4.10"
   },
   "description": "David Ng personal resume",
   "devDependencies": {
-    "@busybox/commitlint-config": "2024.2.29-alpha.203",
-    "@busybox/eslint-config": "2024.2.29-alpha.203",
-    "@busybox/prettier-config": "2024.2.29-alpha.203",
+    "@busybox/commitlint-config": "2024.11.1-alpha.1920",
+    "@busybox/eslint-config": "2024.11.1-alpha.1920",
+    "@busybox/eslint-config-tailwindcss": "2024.11.1-alpha.1920",
+    "@busybox/prettier-config": "2024.11.1-alpha.1920",
+    "@busybox/tailwindcss-config": "2024.11.1-alpha.1920",
     "@commitlint/cli": "19.5.0",
+    "autoprefixer": "10.4.20",
     "eslint": "8.57.1",
     "husky": "9.1.6",
     "is-ci": "3.0.1",
     "lint-staged": "15.2.10",
+    "postcss": "8.4.47",
     "prettier": "3.3.3",
     "resume-schema": "1.0.1",
+    "tailwindcss": "3.4.14",
     "vitest": "2.1.4"
   },
   "engines": {
