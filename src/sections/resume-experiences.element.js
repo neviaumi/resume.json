@@ -8,7 +8,7 @@ class ResumeExperiencesElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
-    const works = JSON.parse(this.attributes.works.value).slice(0, 3);
+    const works = JSON.parse(this.attributes.works.value);
     const skills = JSON.parse(this.attributes.skills.value);
     const template = document.createElement('template');
     template.innerHTML = `
@@ -30,14 +30,16 @@ class ResumeExperiencesElement extends styles.withInjectedStyles(HTMLElement)({
           categorizedKeywords = skillsHelper.categorizeKeywordsBySkillLevel(
             keywords,
             skills,
-          );
+          ),
+          shouldRenderSectionHeader = index === 0,
+          shouldRenderExperienceInDetail = index <= 2;
 
         return `<li class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${position} in ${company}">
-${index === 0 ? `<header id="resume-experiences-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-black tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Experience</header>` : ''}
+${shouldRenderSectionHeader ? `<header id="resume-experiences-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-black tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Experience</header>` : ''}
 
 <header>
 <a 
-    class="${clsx('tw-flex tw-flex-col tw-rounded-xl tw-bg-emerald-500 tw-px-3 tw-py-2 tw-text-white')}" 
+    class="${clsx('tw-flex tw-flex-col tw-rounded-xl tw-bg-gray-100 tw-px-3 tw-py-2')}"
     href="${website}" 
     target="_blank">
     <span  class="${clsx('tw-flex tw-flex-wrap tw-items-center tw-justify-between')}" >
@@ -49,7 +51,7 @@ ${index === 0 ? `<header id="resume-experiences-section-header" class="${clsx('t
 </a>
 </header>
 <section class="${clsx('tw-flex tw-flex-col tw-gap-1.5 tw-p-2')}">
-<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}">${summary}</p>
+${shouldRenderExperienceInDetail ? `<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}">${summary}</p>` : ''}
 <ul class="${clsx('tw-flex tw-flex-wrap tw-gap-1')}">${[
           ['Master', categorizedKeywords.Master ?? []],
           ['Intermediate', categorizedKeywords.Intermediate ?? []],
@@ -64,9 +66,13 @@ ${index === 0 ? `<header id="resume-experiences-section-header" class="${clsx('t
           .flat()
           .join('\n')}
 </ul>
-<ul class="${clsx('tw-flex tw-list-inside tw-list-disc tw-flex-col tw-gap-0.5 tw-px-3')}">
+${
+  shouldRenderExperienceInDetail
+    ? `<ul class="${clsx('tw-flex tw-list-inside tw-list-disc tw-flex-col tw-gap-0.5 tw-px-3')}">
 ${highlights.map(highlight => `<li class="${clsx('tw-text-base tw-font-medium tw-text-primary')}">${highlight}</li>`).join('')}
-</ul>
+</ul>`
+    : ''
+}
 </section>
 </li>`;
       })
