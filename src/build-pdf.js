@@ -16,12 +16,6 @@ await page.goto('http://localhost:3000/', {
 });
 await page.pdf({
   format: 'a4',
-  margin: {
-    bottom: 0,
-    left: 0,
-    right: 0,
-    top: 0,
-  },
   path: resumePdf,
   preferCSSPageSize: true,
   printBackground: true,
