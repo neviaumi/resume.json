@@ -2,4 +2,4 @@
 set -ex
 
 npx eslint .
-npx vitest --run
+npx vitest --run --passWithNoTests

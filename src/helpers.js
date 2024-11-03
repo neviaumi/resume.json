@@ -1,4 +1,4 @@
-import css from '../main.css?url';
+import css from './main.css?url';
 
 export const json = {
   withQuoteEscape(stringifyFunction) {

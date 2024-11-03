@@ -2,11 +2,13 @@
 
 @page {
     size: A4 portrait;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 @media print {
     :root {
-        font-size: 50%; /* When default font size is 16px, 50% is 8px, all rem will be based on 8px*/
+        font-size: 50%; /* When default font size is 16px, 50% is 8px, all rem will be based on 8px */
     }
 
     body {

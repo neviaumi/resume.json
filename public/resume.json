@@ -174,15 +174,15 @@
       "description": "A all-in-one mobile app to manage personal finance",
       "endDate": "2024-05-17",
       "highlights": [
-        "Collaborated with CTO and Designer to clarify requirements and design",
-        "Port application from mobile to web",
-        "Integrate Open Banking API"
+        "Enhanced backend performance and integrated Open Banking connections with TypeScript and Node.js, streamlining bank connections for users.",
+        "Developed key features including a referral page and QR code generator using Cloudflare Workers.",
+        "Migrated onboarding and subscription flows to a web-based platform using Next.js, improving accessibility and user experience."
       ],
       "keywords": ["React", "NodeJS", "Open Banking", "TypeScript", "NextJS"],
-      "location": "UK, London",
+      "location": "London, UK (on-site)",
       "position": "Backend Engineer",
       "startDate": "2024-03-17",
-      "summary": "Port mobile application to web and integrate Open Banking API",
+      "summary": "Contributed to the development of a personal finance super-app, focusing on backend performance, integration, and user experience improvements.",
       "url": "https://emma-app.com",
       "website": "https://emma-app.com/onboarding/welcome"
     },
@@ -191,15 +191,15 @@
       "description": "Platform for game develop partner to manage member access in game development component",
       "endDate": "2024-03-01",
       "highlights": [
-        "Collaborated with Product Owner and engineers to clarify requirements, estimate effort, and breakdown features into smaller tasks",
-        "Contributed to bug fixes and feature development using NodeJS and React",
-        "Worked with a component library used across the company, utilizing React and CSS"
+        "Developed frontend for the Access Control System using TypeScript and React, collaborating with product, development, and QA teams on feature planning and deployments.",
+        "Maintained a shared component library for consistent design across internal systems, working closely with designers.",
+        "Improved MicroFrontend setup by implementing Module Federation, reducing bundle size by 10% and simplifying code sharing."
       ],
       "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS", "TypeScript"],
-      "location": "UK, Liverpool",
+      "location": "Liverpool, UK (remote)",
       "position": "Software Engineer II",
       "startDate": "2022-05-01",
-      "summary": "Enable game development partners to manage member access in game development components.",
+      "summary": "Developed an Access Control System to help partners manage tool access, focusing on frontend performance and design consistency",
       "url": "https://partners.playstation.net/",
       "website": "https://partners.playstation.net/"
     },
@@ -208,10 +208,9 @@
       "description": "A digital wallet for companies to manage expenses through the issuance of company VISA debit cards and virtual bank accounts.",
       "endDate": "2022-05-01",
       "highlights": [
-        "Worked with product owners and QA to prioritize, estimate and deliver features",
-        "Developed features for onboarding and KYC using GraphQL, NodeJS, and React.",
-        "Improved code stability by introducing automated tests.",
-        "Mentored junior engineers to enhance their technical skills."
+        "Built the registration system interface based on Figma designs and developed an admin dashboard for compliance review and verification.",
+        "Established testing frameworks for backend and frontend using Jest, ensuring system reliability and a smooth user experience.",
+        "Mentored junior team members, providing guidance on technical challenges and fostering skill development."
       ],
       "keywords": [
         "GraphQL",
@@ -223,10 +222,10 @@
         "PostgresSQL",
         "AWS"
       ],
-      "location": "Hong Kong / London (Remote)",
+      "location": "Hong Kong / UK (Remote)",
       "position": "Software Engineer",
       "startDate": "2021-05-01",
-      "summary": "Enabled companies to register their applications to the digital wallet and ensured compliance for verifying applicant companies.",
+      "summary": "Developed a registration system for companies using our digital wallet platform, contributing to both front-end and back-end functionality while enhancing team skills and system reliability",
       "website": "https://www.neatcommerce.com/"
     },
     {

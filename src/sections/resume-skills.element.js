@@ -1,98 +1,65 @@
-import { injectSharedStyles } from '../styles.js';
+import './skill-badge.element.js';
 
-const template = document.createElement('template');
-template.innerHTML = `
-<article data-testid="resume-skills-element">
-<ul class="list-group list-group-flush d-print-block" slot="skills"/>
-</article>`;
+import clsx from 'clsx';
 
-export const elementName = 'resume-skills';
+import { styles } from '../helpers.js';
 
-class ResumeSkillsElement extends HTMLElement {
-  data = [];
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-
-    injectSharedStyles(this.shadowRoot);
-
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
+class ResumeSkillsElement extends styles.withInjectedStyles(HTMLElement)({
+  mode: 'open',
+}) {
   connectedCallback() {
-    this.data = JSON.parse(this.attributes.data.value);
-    this.#setupSkills();
-  }
-
-  #setupSkills() {
-    const { skillWanted } = this.data;
-    if (!this.data.skills.length > 0) return;
     const skills = Object.entries(
-      this.data.skills.reduce((acc, { keywords, level, name }) => {
-        acc[name] = {
-          ...(acc[name] || {}),
-          [level]: keywords,
-        };
-        return acc;
-      }, {}),
+      JSON.parse(this.attributes.skills.value).reduce(
+        (acc, { keywords, level, name }) => {
+          acc[name] = {
+            ...(acc[name] || {}),
+            [level]: keywords,
+          };
+          return acc;
+        },
+        {},
+      ),
     );
-    const shouldHighlightSkill = skillWanted.length > 0;
-    const isSkillWanted = skill => skillWanted.includes(skill);
-    const highlightSkillIfWanted = skill =>
-      isSkillWanted(skill) ? 'bg-primary' : 'bg-light text-dark';
-    this.shadowRoot.querySelector("[slot='skills']").innerHTML = skills
-      .map(([name, levels]) => {
-        const masterSkills = levels.Master ?? [];
-        const intermediateSkills = levels.Intermediate ?? [];
-
-        const skillLevels = [];
-        if (masterSkills.length > 0) {
-          skillLevels.push(`
-            <h2 class="text-primary fs-3 text-nowrap">Master</h2>
-            <ul class="list-unstyled d-flex gap-1 flex-wrap mb-2">${masterSkills
-              .toSorted(skillA => {
-                if (!shouldHighlightSkill) return 0;
-                return isSkillWanted(skillA) ? -1 : 1;
-              })
-              .map(
-                skill =>
-                  `<li class="badge ${
-                    shouldHighlightSkill
-                      ? highlightSkillIfWanted(skill)
-                      : 'bg-primary'
-                  }">${skill}</li>`,
-              )
-              .join('')}</ul>
-          `);
-        }
-        if (intermediateSkills.length > 0) {
-          skillLevels.push(`
-            <h2 class="text-secondary fs-3 text-nowrap">Intermediate</h2>
-            <ul class="list-unstyled d-flex gap-1 flex-wrap">${intermediateSkills
-              .toSorted(skillA => {
-                if (!shouldHighlightSkill) return 0;
-                return isSkillWanted(skillA) ? -1 : 1;
-              })
-              .map(
-                skill =>
-                  `<li class="badge ${
-                    shouldHighlightSkill
-                      ? highlightSkillIfWanted(skill)
-                      : 'bg-secondary'
-                  }">${skill}</li>`,
-              )
-              .join('')}</ul>
-          `);
-        }
-
-        return `<li class="list-group-item d-print-block">
-                <h1 class="card-title fs-2">${name}</h1>
-                ${skillLevels.join('')}
-</li>`;
-      })
-      .join('');
+    const languages = JSON.parse(this.attributes.languages.value);
+    const template = document.createElement('template');
+    template.innerHTML = `
+<article title="skills">
+${skills
+  .map(([name, levels]) => {
+    return `<section class="${clsx('tw-mb-2 tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${name}">
+<header class="${clsx('tw-mb-1 tw-text-2xl tw-font-bold')}">${name}</header>
+${[
+  ['Master', levels.Master],
+  ['Intermediate', levels.Intermediate],
+]
+  .map(([level, skillsOnLevel]) => {
+    if (!skillsOnLevel || skillsOnLevel.length < 1) return '';
+    return `<header class="${clsx('tw-mb-0.5 tw-text-base tw-font-semibold', level === 'Master' ? 'tw-text-primary' : 'tw-text-secondary')}" title="${level}">${level}</header>
+<ul class="${clsx('tw-mb-1 tw-flex tw-w-32 tw-flex-wrap tw-gap-1 tw-px-1')}">${skillsOnLevel
+      .map(
+        skill =>
+          `<skill-badge skill="${skill}" level="${level}" element="li"></skill-badge>`,
+      )
+      .join('')}</ul>
+`;
+  })
+  .join('\n')}
+</section>`;
+  })
+  .join('\n')}
+<section class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="Languages">
+<header class="${clsx('tw-mb-1.5 tw-text-2xl tw-font-bold')}">Languages</header>
+<ul class="${clsx('tw-mb-1 tw-flex tw-gap-1 tw-px-1')}">
+${languages
+  .map(
+    language =>
+      `<skill-badge skill="${language.language}" level="${language.fluency}" element="li"></skill-badge>`,
+  )
+  .join('')}</ul>
+</section>
+</article>`;
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
 
-customElements.define(elementName, ResumeSkillsElement);
+customElements.define('resume-skills', ResumeSkillsElement);

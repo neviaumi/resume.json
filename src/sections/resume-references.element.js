@@ -1,46 +1,37 @@
-import { injectSharedStyles } from '../styles.js';
+import clsx from 'clsx';
 
-const template = document.createElement('template');
-template.innerHTML = `
-<article data-testid="resume-references-element">
-<h1 class="text-decoration-underline">References</h1>
-<ul class="list-group list-group-flush d-print-block" slot="references"/>
-</article>`;
+import { styles } from '../helpers.js';
 
-export const elementName = 'resume-references';
-class ResumeReferencesElement extends HTMLElement {
-  data = [];
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    injectSharedStyles(this.shadowRoot);
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
+class ResumeReferencesElement extends styles.withInjectedStyles(HTMLElement)({
+  mode: 'open',
+}) {
   connectedCallback() {
-    this.data = JSON.parse(this.attributes.data.value);
-    this.#setupReferences();
-  }
+    const references = JSON.parse(
+        decodeURIComponent(this.attributes.references.value),
+      ).slice(0, 3),
+      linkedInLink = this.attributes['linkedin-link'].value;
+    const template = document.createElement('template');
+    template.innerHTML = `
+<section aria-labelledby="resume-references-section-header">
+    <ul class="${clsx('tw-flex tw-flex-col tw-gap-2')}">${references
+      .map(({ name, reference }, index) => {
+        return `<li class="${clsx('tw-border-b tw-border-gray-200 print:tw-break-inside-avoid')}" title="${name}">
+${index === 0 ? `<header id="resume-references-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-semibold tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">References</header>` : ''}
 
-  #setupReferences() {
-    this.shadowRoot.querySelector("[slot='references']").innerHTML = this.data
-      .slice(0, 4)
-      .map(reference => {
-        const { name, reference: comment } = reference;
-        return `<li class="list-group-item d-print-block">
-<figure>
-  <blockquote class="blockquote">
-    <p>${comment}</p>
+<a href="${linkedInLink}" target="_blank" class="${clsx('tw-flex tw-flex-col tw-gap-1 tw-py-2')}">
+  <blockquote cite="${linkedInLink}">
+    <p class="${clsx('tw-text-sm')}">${reference}</p>
   </blockquote>
-  <figcaption class="blockquote-footer text-end">
+  <p class="${clsx('tw-flex tw-justify-end tw-text-base tw-text-gray-600')}">
     ${name}
-  </figcaption>
-</figure>
+  </p>
+</a>
 </li>`;
       })
-      .join('');
+      .join('\n')}</ul>
+</section>`;
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
 
-customElements.define(elementName, ResumeReferencesElement);
+customElements.define('resume-references', ResumeReferencesElement);

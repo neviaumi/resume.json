@@ -1,82 +1,52 @@
-import { injectSharedStyles } from '../styles.js';
+import clsx from 'clsx';
 
-const template = document.createElement('template');
-template.innerHTML = `
-<article class="ms-3" data-testid="resume-about-element">
-<h1>About</h1>
-<p class="d-flex gap-4 mb-3 align-items-center" slot="location"/>
-<p slot="birthday"/>
-<p class="d-flex gap-4 mb-3 align-items-center" slot="website"/>
-<ul class="list-unstyled d-flex flex-column gap-3 mt-3" slot="profiles"/>
-</article>`;
-
-export const elementName = 'resume-about';
+import { styles } from '../helpers.js';
+import cakeIcon from '../icons/cake.svg';
+import githubIcon from '../icons/github-mark.svg';
+import homeIcon from '../icons/home.svg';
+import linkedInIcon from '../icons/LI-In-Bug.png';
 
 function countryCodeToFlag(countryIso2Code) {
   return { HK: '🇭🇰', UK: '🇬🇧' }[countryIso2Code] ?? '🇬🇧';
 }
 
-class ResumeAboutElement extends HTMLElement {
-  data = {};
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-
-    injectSharedStyles(this.shadowRoot);
-
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
+class ResumeAboutElement extends styles.withInjectedStyles(HTMLElement)({
+  mode: 'open',
+}) {
   connectedCallback() {
-    this.data = JSON.parse(this.attributes.data.value);
-    this.#setupLocation();
-    this.#setupBirthday();
-    this.#setupWebSite();
-    this.#setupProfiles();
-  }
+    const resumeBasic = JSON.parse(this.attributes.data.value);
+    const template = document.createElement('template');
+    template.innerHTML = `
+<section class="${clsx('print:tw-break-inside-avoid')}">
+<header class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-semibold')}">About</header>
+<div class="${clsx('tw-px-1')}">
+<p class="${clsx('tw-mb-1 tw-flex tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-text-primary')}" >
+    <span class="${clsx('tw-text-lg')}">${countryCodeToFlag(resumeBasic.location.countryCode)}</span>
+    <span>${resumeBasic.location.region}</span>
+</p>
+<p class="${clsx('tw-mb-1 tw-flex tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-text-primary')}">
+    <img src="${cakeIcon}" class="${clsx('tw-h-2.5')}" alt="birthday-icon"/>
+    Born in ${new Date(resumeBasic.birthday).getFullYear()}
+</p>
+<a href="${resumeBasic.website}" target="_blank" class="${clsx('tw-mb-1 tw-flex tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-text-primary')}">
+    <img src="${homeIcon}" alt="home icon" class="${clsx('tw-h-2.5')}"/>
+    Home Page
+</a>
 
-  #setupLocation() {
-    if (!this.data.location) return;
-    this.shadowRoot.querySelector("[slot='location']").innerHTML =
-      `<span>${countryCodeToFlag(
-        this.data.location.countryCode,
-      )}</span><span>${this.data.location.region}</span>`;
-  }
+${resumeBasic.profiles
+  .map(profile => {
+    const network = profile.network.toLowerCase();
+    const icon = network === 'github' ? githubIcon : linkedInIcon;
+    return `<a href="${profile.url}" target="_blank" class='${clsx('tw-text-base tw-font-medium tw-text-primary', 'tw-items-center', 'tw-flex', 'tw-gap-2', network === 'github' ? 'tw-mb-1' : '')}'>
+        <img src="${icon}" alt="home icon" class="${clsx('tw-h-2.5')}"/>
+        ${profile.username}
+      </a>`;
+  })
+  .join('\n')}
 
-  #setupBirthday() {
-    const slot = this.shadowRoot.querySelector("[slot='birthday']");
-    if (!this.data.birthday) {
-      slot.className = 'd-none';
-      return;
-    }
-    slot.className = 'd-flex gap-4 mb-3 align-items-center';
-    slot.innerHTML = `<span class="bi bi-balloon"></span>
-<span>Born in ${new Date(this.data.birthday).getFullYear()}</span>`;
-  }
-
-  #setupWebSite() {
-    if (!this.data.website) return;
-    const websitePath = new URL(this.data.website);
-    this.shadowRoot.querySelector("[slot='website']").innerHTML =
-      `<span class="bi bi-house"></span>
-<a href="${this.data.website}" target="_blank" class="text-reset text-decoration-none">${websitePath.pathname}</a>`;
-  }
-
-  #setupProfiles() {
-    if (!this.data.profiles || this.data.profiles.length === 0) return;
-    this.shadowRoot.querySelector("[slot='profiles']").innerHTML =
-      this.data.profiles
-        .map(
-          profile =>
-            `<li>
-<span class="bi bi-${profile.network.toLowerCase()} me-3"></span>
-<a href="${profile.url}" target="_blank" 
-class="text-reset text-decoration-none">${profile.username}</a>
-</li>`,
-        )
-        .join('');
+</section>`;
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
 
-customElements.define(elementName, ResumeAboutElement);
+customElements.define('resume-about', ResumeAboutElement);

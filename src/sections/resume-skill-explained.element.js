@@ -20,16 +20,16 @@ class ResumeSkillExplainedElement extends styles.withInjectedStyles(
     );
     const template = document.createElement('template');
     template.innerHTML = `
-<section class="${clsx('tw-mb-3')}">
-<p class="${clsx('tw-mb-1 tw-flex tw-items-center tw-gap-1')}">
+<section class="${clsx('print:tw-break-inside-avoid')}" title="Skills level explained">
+<p class="${clsx('tw-mb-1 tw-flex tw-items-center tw-gap-1 tw-text-base tw-font-medium tw-text-primary')}">
     <skill-badge skill="Skill" level="Master" element="span"></skill-badge>
     Means I have mastered this skill.
 </p>
-<p class="${clsx('tw-mb-1 tw-flex tw-items-center tw-gap-1')}">
+<p class="${clsx('tw-mb-1 tw-flex tw-items-center tw-gap-1 tw-text-base tw-font-medium tw-text-primary')}">
     <skill-badge skill="Skill" level="Intermediate" element="span"></skill-badge>
     Means I am at an intermediate level in this skill.
 </p>
-<a href="${readmeLink}" target="_blank" class="${clsx('tw-underline')}">Check the README for a detailed definition of 'mastered' and 'intermediate.'</a>
+<a href="${readmeLink}" target="_blank" class="${clsx('tw-text-base tw-font-semibold tw-text-primary tw-underline')}">Check the README for a detailed definition of 'mastered' and 'intermediate.'</a>
 
 </section>`;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
