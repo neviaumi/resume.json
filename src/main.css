@@ -1,4 +1,5 @@
 @import '@busybox/tailwindcss-config/tailwind.css';
+@import url('./roboto.css');
 
 @page {
     size: A4 portrait;
@@ -13,5 +14,16 @@
 
     body {
         font-size: 2rem; /*Restore default font size*/
+    }
+}
+
+
+
+@layer base {
+    html {
+        font-family: Roboto, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    }
+    * {
+        font-family: Roboto, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
     }
 }

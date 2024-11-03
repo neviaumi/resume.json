@@ -11,7 +11,7 @@ class SkillBadgeElement extends styles.withInjectedStyles(HTMLElement)({
     const elementName = this.attributes.element.value;
     const template = document.createElement('template');
     const styleByLevel = {
-      Intermediate: clsx('tw-bg-sky-300 tw-font-semibold tw-text-white'),
+      Intermediate: clsx('tw-bg-sky-300 tw-font-medium tw-text-white'),
       Master: clsx(
         'tw-border tw-border-emerald-700 tw-bg-emerald-500 tw-font-bold tw-text-white',
       ),
