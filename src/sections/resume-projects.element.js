@@ -21,20 +21,20 @@ ${projects
       );
     // language=html
     return `<li class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${name}">
-${index === 0 ? `<header id="resume-projects-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-semibold tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Open Source Projects</header>` : ''}
+${index === 0 ? `<header id="resume-projects-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-black tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Open Source Projects</header>` : ''}
 
 <header>
     <a     
         class="${clsx('tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-rounded-xl tw-bg-gray-100 tw-px-3 tw-py-2')}" 
         href="${url}"
     >
-        <p class="${clsx('tw-text-2xl tw-font-bold')}">${name}</p>
-        <p class="${clsx('tw-text-base tw-font-semibold')}">${url}</p>
+        <p class="${clsx('tw-text-2xl tw-font-black')}">${name}</p>
+        <p class="${clsx('tw-text-base tw-font-medium')}">${url}</p>
     </a>
 </header>
 <section class="${clsx('tw-flex tw-flex-col tw-gap-1.5 tw-p-2')}">
 
-<p class="tw-text-primary tw-text-xl tw-font-semibold">${description}</p>
+<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}">${description}</p>
 <ul class="${clsx('tw-flex tw-flex-wrap tw-gap-1')}">
 ${[
   ['Master', categorizedKeywords.Master ?? []],
