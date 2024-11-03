@@ -8,22 +8,16 @@ Repo here contain my personal resume.
 
 ```bash
 bash ./scripts/setup.sh
-npm run serve
+npx vite dev
 ```
 
-### Generate tailored resume
+### Generate resume.pdf
 
 ```bash
-npm run serve
-node ./src/build-pdf.js --private
+node ./src/build-pdf.js
 ```
 
-after that you will see `resume.pdf` in `docs/` folder
-
-### Get PDF
-
-`npm run build:docker`
-and then check [PDF](./docs/resume.pdf)
+after that you will see `resume.pdf` in `public/` folder
 
 ## Live
 
