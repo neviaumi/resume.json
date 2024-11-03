@@ -249,7 +249,7 @@
         "Redis",
         "AWS"
       ],
-      "location": "Hong Kong",
+      "location": "Hong Kong (on-site)",
       "position": "Software Engineer",
       "startDate": "2018-11-01",
       "summary": "Enabled editors to log in across company sub-systems with given permission, deliver notifications to end users through different channels, and create content for campaigns.",
@@ -261,6 +261,7 @@
       "endDate": "2018-09-01",
       "highlights": ["Fixed bugs in the platform using NodeJS."],
       "keywords": ["MongoDB", "NodeJS", "Beanstalk", "Redis", "Crawler"],
+      "location": "Hong Kong (hybird)",
       "position": "Software Engineer",
       "startDate": "2017-05-01",
       "summary": "Enabled users to track shipment status through the tracking number.",
@@ -274,7 +275,8 @@
         "Designed the Data Transform Pipeline & reporting system for Video on Demand (VOD) application for Mobile, Tablet and PC. ",
         "This application covered cross regionally; it covered Hong Kong, Singapore, Philippines and Thailand."
       ],
-      "keywords": ["AWS Redshift", "AWS SWF", "Python", "MS Excel"],
+      "keywords": ["NodeJS", "AWS", "Python", "MS Excel"],
+      "location": "Hong Kong (on-site)",
       "position": "Data Developer",
       "startDate": "2015-05-01",
       "summary": "Setup data tracking and reporting system for the streaming platform",
