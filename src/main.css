@@ -1,0 +1,17 @@
+@import '@busybox/tailwindcss-config/tailwind.css';
+
+@page {
+    size: A4 portrait;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+@media print {
+    :root {
+        font-size: 50%; /* When default font size is 16px, 50% is 8px, all rem will be based on 8px */
+    }
+
+    body {
+        font-size: 2rem; /*Restore default font size*/
+    }
+}

@@ -33,89 +33,37 @@ and then check [PDF](./docs/resume.pdf)
 
 [PDF Version](https://neviaumi.github.io/resume.json/resume.pdf)
 
-## Skill level definition
+## Skill Level Definitions
 
-### Programming language / Framework / Library
+### Programming Language / Framework / Library
 
-- Master - I am confidently work on feature independently
-  without too much research on internet about `how to do stuff`
-  and still followed the best practice by this language
-- Intermediate - I can work on feature independently
-  with some research on internet and
-  will need experienced teammate do the code review
+- **Master** - I can confidently work on features independently
+  without needing extensive online research about "how to do things,"
+  while still following best practices specific to the language.
+- **Intermediate** - I can work on features independently with some online research,
+  but will need an experienced teammate to review my code.
 
-### Architecture Components (Queue, DB ..etc.)
+### Architecture Components (Queues, Databases, etc.)
 
-- Master - Beside to integration from code,
-  I also can set up optimized configuration and deploy to production
-- Intermediate - I am confidence on how integrate from application code
-  and integration pattern also with some basic development environment setup
+- **Master** - In addition to integrating components in code,
+  I can also set up optimized configurations and deploy them to production.
+- **Intermediate** - I am confident in integrating components from application code
+  and understanding integration patterns,
+  along with basic development environment setup.
 
-### Protocol (REST, HTTP, GraphQL ..etc.)
+### Protocols (REST, HTTP, GraphQL, etc.)
 
-- Master - I know best practice of the protocol
-  and how to defense security attack and performance turning
-- Intermediate - I can integrate on application and how it's working
+- **Master** - I understand best practices for the protocol,
+  can defend against security attacks,
+  and handle performance tuning.
+- **Intermediate** - I can integrate the protocol into applications
+  and understand how it works.
 
 ### Workflow
 
-- Master - I know both theory and have real world execution,
-  and I can explain and debt to teammate
-- Intermediate - I know theory and have real world execution
+- **Master** - I understand both theory and real-world application,
+  and I can explain concepts and
+  handle technical discussions with teammates.
 
-## Reuse that work with your resume?
-
-Copy and paste code below and replace `JSON.stringify({})`
-with your resume.json content
-
-```html
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, minimal-ui"
-    />
-    <title>David Ng</title>
-    <script
-      src="https://neviaumi.github.io/resume.json/js/json-resume.element.js"
-      type="module"
-    ></script>
-    <style>
-      /*https://robdodson.me/posts/at-font-face-doesnt-work-in-shadow-dom/*/
-      @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
-      @page {
-        size: A4;
-      }
-
-      @media print {
-        :root {
-          font-size: 50%; /*Make element on PDF smaller*/
-        }
-        body {
-          font-size: 1.5rem;
-        }
-      }
-
-      @media screen {
-        :root {
-          font-size: 62.5%; /*Make compute rem more easily*/
-        }
-        body {
-          font-size: 1.6rem; /*Restore default font size*/
-        }
-      }
-    </style>
-    <script>
-      const resumeElement = document.querySelector('json-resume');
-      // place your resume.json content here
-      resumeElement.setAttribute('resume', JSON.stringify({}));
-    </script>
-  </head>
-
-  <body>
-    <json-resume />
-  </body>
-</html>
-```
+- **Intermediate** - I understand the theory and have practical experience
+  with real-world execution.

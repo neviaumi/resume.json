@@ -1,229 +1,67 @@
-import { elementName as headerElementName } from './header.element.js';
-import { elementName as resumeAboutElementName } from './sections/resume-about.element.js';
-import { elementName as resumeApplicationElementName } from './sections/resume-application.element.js';
-import { elementName as resumeEducationElementName } from './sections/resume-education.element.js';
-import { elementName as resumeLanguagesElementName } from './sections/resume-language.element.js';
-import { elementName as resumeProjectsElementName } from './sections/resume-projects.element.js';
-import { elementName as resumeReferencesElementName } from './sections/resume-references.element.js';
-import { elementName as resumeSkillsElementName } from './sections/resume-skills.element.js';
-import { elementName as resumeSummaryElementName } from './sections/resume-summary.element.js';
-import { elementName as resumeWorkElementName } from './sections/resume-work.element.js';
-import { injectSharedStyles } from './styles.js';
+import './sections/resume-header.element.js';
+import './sections/resume-about.element.js';
+import './sections/resume-skills.element.js';
+import './sections/resume-skill-explained.element.js';
+import './sections/resume-summary.element.js';
+import './sections/resume-experiences.element.js';
+import './sections/resume-references.element.js';
+import './sections/resume-projects.element.js';
+import './sections/resume-education.element.js';
 
-const template = document.createElement('template');
-template.innerHTML = `
-<style>
+import clsx from 'clsx';
 
-    @media print {
-      .page-content.border {
-        border: 0;!important
-      }
-      .page-content.shadow {
-        box-shadow: none;!important
-      }
-    }
-    @media screen {
-      .page {
-        display: flex;
-        justify-content: center;
-       }
-      .page-content {
-        width: 210mm;
-        padding: 0 0.8rem; /* bootstrap unable remove class name when media is print*/
-        border: 1px solid #000;
-        box-shadow: 0 .5rem 1rem rgba(0,0,0, 0.15);
-      }
-    }
-</style>
-<main class="page">
-    <section class="page-content">
-        <slot name="${headerElementName}"></slot>
-        <main class="container-fluid">
-            <div class="row gx-1">
-                <aside class="col-3 d-none d-sm-block">
-                    <slot name="${resumeAboutElementName}"></slot>
-                    <slot name="${resumeSkillsElementName}"></slot>
-                    <slot name="${resumeLanguagesElementName}"></slot>
-                </aside>
-                <section class="col">
-                    <slot name="${resumeSummaryElementName}"></slot>
-                    <slot name="${resumeApplicationElementName}"></slot>
-                    <slot name="${resumeWorkElementName}"></slot>
-                    <slot name="${resumeReferencesElementName}"></slot>
-                    <slot name="${resumeProjectsElementName}"></slot>
-                    <slot name="${resumeEducationElementName}"></slot>
-                </section>
-            </div>
-        </main>
-    </section>
-</main>`;
+import { json, styles } from './helpers.js';
 
-export const elementName = 'json-resume';
+const resumeJson = await import('/resume.json?url&raw').then(
+  mod => mod.default,
+);
 
-class JsonResumeElement extends HTMLElement {
-  resume = {};
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    injectSharedStyles(this.shadowRoot);
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
-  static get observedAttributes() {
-    return ['resume'];
-  }
-
+class JsonResumeElement extends styles.withInjectedStyles(HTMLElement)({
+  mode: 'open',
+}) {
   connectedCallback() {
-    if (!this.attributes.resume?.value) return;
-    this.#initializeChildren(this.attributes.resume.value);
-  }
+    const resume = JSON.parse(resumeJson),
+      linkedInLink = resume.basics.profiles.find(
+        profile => profile.network.toLowerCase() === 'linkedin',
+      )?.url;
+    const template = document.createElement('template');
+    // language=html
+    template.innerHTML = `
+            <main class="${clsx('tw-container tw-mx-auto tw-my-2 tw-rounded-md tw-border-t-4 tw-border-t-primary tw-bg-gray-50 tw-px-1 md:tw-px-4 print:tw-my-0')}">
+                <resume-header data='${json.withQuoteEscape(JSON.stringify)(resume.basics)}'></resume-header>
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'resume' && !!newValue) {
-      this.#initializeChildren(JSON.parse(newValue));
-    }
-  }
-
-  #initializeChildren(resume) {
-    this.resume = resume;
-    this.#setupHeader();
-    this.#setupAboutSection();
-    this.#setupSkillsSection();
-    this.#setupSummarySection();
-    this.#setupApplicationSection();
-    this.#setupWorkSection();
-    this.#setupReferenceSection();
-    this.#setupProjectsSection();
-    this.#setupEducationSection();
-    this.#setupLanguageSection();
-  }
-
-  #setupApplicationSection() {
-    if (!this.resume.meta?.application) return;
-    const element = document.createElement(resumeApplicationElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.meta.application));
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeApplicationElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupHeader() {
-    if (!this.resume.basics) return;
-    const element = document.createElement(headerElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.basics));
-
-    this.shadowRoot
-      .querySelector(`slot[name="${headerElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupAboutSection() {
-    if (!this.resume.basics) return;
-    const element = document.createElement(resumeAboutElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.basics));
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeAboutElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupWorkSection() {
-    if (!this.resume.work) return;
-    const skills = this.resume.skills || [];
-    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
-
-    const element = document.createElement(resumeWorkElementName);
-    element.setAttribute(
-      'data',
-      JSON.stringify({ skillWanted, skills, work: this.resume.work }),
-    );
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeWorkElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupSkillsSection() {
-    if (!this.resume.skills) return;
-    const skills = this.resume.skills;
-    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
-    const element = document.createElement(resumeSkillsElementName);
-    element.setAttribute(
-      'data',
-      JSON.stringify({
-        skillWanted,
-        skills,
-      }),
-    );
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeSkillsElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupLanguageSection() {
-    if (!this.resume.languages) return;
-    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
-    const languages = this.resume.languages;
-    const element = document.createElement(resumeLanguagesElementName);
-    element.setAttribute(
-      'data',
-      JSON.stringify({
-        languages,
-        skillWanted,
-      }),
-    );
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeLanguagesElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupSummarySection() {
-    if (!this.resume.basics?.summary) return;
-    const element = document.createElement(resumeSummaryElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.basics.summary));
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeSummaryElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupProjectsSection() {
-    if (!this.resume.projects) return;
-    const skillWanted = this.resume.meta.application?.role?.skillWanted ?? [];
-    const skills = this.resume.skills || [];
-    const element = document.createElement(resumeProjectsElementName);
-    element.setAttribute(
-      'data',
-      JSON.stringify({ projects: this.resume.projects, skillWanted, skills }),
-    );
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeProjectsElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupReferenceSection() {
-    if (!this.resume.references) return;
-    const element = document.createElement(resumeReferencesElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.references));
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeReferencesElementName}"]`)
-      .replaceChildren(element);
-  }
-
-  #setupEducationSection() {
-    if (!this.resume.education) return;
-    const element = document.createElement(resumeEducationElementName);
-    element.setAttribute('data', JSON.stringify(this.resume.education));
-
-    this.shadowRoot
-      .querySelector(`slot[name="${resumeEducationElementName}"]`)
-      .replaceChildren(element);
+                <section class="${clsx('tw-grid tw-gap-2 md:tw-grid-cols-[16rem_minmax(0,1fr)] md:tw-gap-8 ')}">
+                    <div class="${clsx('tw-flex tw-flex-col tw-gap-3')}">
+                        <resume-about data='${json.withQuoteEscape(JSON.stringify)(resume.basics)}'></resume-about>
+                        <resume-skills skills='${json.withQuoteEscape(JSON.stringify)(resume.skills)}'
+                                       languages='${json.withQuoteEscape(JSON.stringify)(resume.languages)}'></resume-skills>
+                        <resume-skill-explained
+                                github-link='${json.withQuoteEscape(
+                                  JSON.stringify,
+                                )(
+                                  (() => {
+                                    const githubProfile =
+                                      resume.basics.profiles.find(
+                                        profile =>
+                                          profile.network.toLowerCase() ===
+                                          'github',
+                                      );
+                                    if (!githubProfile) return null;
+                                    return githubProfile.url;
+                                  })(),
+                                )}'></resume-skill-explained>
+                    </div>
+                    <div class="${clsx('tw-flex tw-flex-col tw-gap-3 md:tw-border-l md:tw-border-primary md:tw-pl-4')}">
+                        <resume-summary summary='${json.withQuoteEscape(JSON.stringify)(resume.basics.summary)}'></resume-summary>
+                        <resume-experiences works='${json.withQuoteEscape(JSON.stringify)(resume.work)}' skills='${JSON.stringify(resume.skills)}'></resume-experiences>
+                        <resume-references references='${json.withQuoteEscape(JSON.stringify)(resume.references)}' linkedin-link="${linkedInLink}"></resume-references>
+                        <resume-projects projects='${json.withQuoteEscape(JSON.stringify)(resume.projects)}' skills='${json.withQuoteEscape(JSON.stringify)(resume.skills)}'></resume-projects>
+                        <resume-education educations='${json.withQuoteEscape(JSON.stringify)(resume.education)}'></resume-education>
+                    </div>
+                </section>
+            </main>`;
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
 
-customElements.define(elementName, JsonResumeElement);
+customElements.define('json-resume', JsonResumeElement);

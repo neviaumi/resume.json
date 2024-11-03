@@ -11,8 +11,9 @@ const browser = await playwright.chromium.launch({
 });
 const page = await browser.newPage();
 await page.emulateMedia({ media: 'print' });
-await page.goto('http://localhost:3000/');
-
+await page.goto('http://localhost:3000/', {
+  waitUntil: 'networkidle',
+});
 await page.pdf({
   format: 'a4',
   margin: {

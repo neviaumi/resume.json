@@ -1,33 +1,20 @@
-import { injectSharedStyles } from '../styles.js';
+import clsx from 'clsx';
 
-const template = document.createElement('template');
-template.innerHTML = `
-<article data-testid="resume-summary-element">
-<h1 class="text-decoration-underline">Summary</h1>
-<p slot="summary"></p>
-</article>`;
+import { styles } from '../helpers.js';
 
-export const elementName = 'resume-summary';
-class ResumeSummaryElement extends HTMLElement {
-  data = [];
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    injectSharedStyles(this.shadowRoot);
-
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
+class ResumeSummaryElement extends styles.withInjectedStyles(HTMLElement)({
+  mode: 'open',
+}) {
   connectedCallback() {
-    this.data = JSON.parse(this.attributes.data.value);
-    this.#setupSummary();
-  }
-
-  #setupSummary() {
-    if (!this.data) return;
-    this.shadowRoot.querySelector("[slot='summary']").innerText = this.data;
+    const summary = JSON.parse(this.attributes.summary.value);
+    const template = document.createElement('template');
+    template.innerHTML = `
+<section class="${clsx('print:tw-break-inside-avoid')}">
+  <header class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-semibold tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Summary</header>
+  <p class="${clsx('tw-text-base tw-font-medium tw-text-primary')}">${summary}</p>
+</section>`;
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
 
-customElements.define(elementName, ResumeSummaryElement);
+customElements.define('resume-summary', ResumeSummaryElement);

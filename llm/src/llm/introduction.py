@@ -15,18 +15,18 @@ Time spend: {round(time_spent, 4)} seconds
 """)
 
 
-with open("../docs/resume.json", "r") as resume, open("../docs/jd.md", "r") as jd, open(
-    "../docs/draft-introduction.md") as draft_introudction:
+with open("../public/resume.json", "r") as resume, open("../docs/jd.md", "r") as jd, open(
+        "../docs/draft-introduction.md") as draft_introudction:
     resume_json = json.loads(resume.read())
     resume_str = json.dumps(resume_json)
     resume_json_schema = json.dumps(httpx.get(resume_json["$schema"]).json())
     draft_introudction_str = draft_introudction.read()
     jd_str = jd.read()
     start = time.perf_counter()
-    open_ai_responses = open_ai.prompt_init(
-        "You are Software engineer preparing go to interview.",
-        f"""Opmitze my introduction speech in Markdown format below and advise what i can do better.
-Response the enhanced speech in plain-text and keep your wording simple and professional.
+    open_ai_responses = open_ai.prompt(
+        [{'role': 'system', "content": 'You are Software engineer preparing job interview.'},
+         {'role': 'user', 'content': f"""Generate introduction speech in Markdown format .
+Response the enhanced speech in Markdown format and keep your wording simple and professional.
 i not a native english speaker and i want to speech finish within 2 minutes.
 you can read my resume and JD from assistant content.
 
@@ -96,27 +96,27 @@ Lyft was Grab's sister company! In fact they even had a partnership in the past.
 
 Acknowledge that you work with others. Building a non-trivial system with just 2 people in 3 months is quite good for a non-trivial system. Lyft also uses Golang for their high performance systems.
 
-I have drafted the introduction here, feel free to change it.
+"""},
+         {"role": 'assistant', 'content': draft_introudction_str},
+         {"role": 'user',
+          'content': "Optimize the introduction speech around 2 minutes and keep it simple no too much 'i am so exciting' bull shit and advise what i am missing on that introduction. Keep in mind i am not native english speaker"}])
 
-{draft_introudction_str}
-""", [])
-
-end = time.perf_counter()
-
-print_api_response(open_ai_responses, end - start)
-
-should_finish = False
-
-while not should_finish:
-    feedback = input("Type EOP if no more feedbacks: ").strip()
-    if not feedback:
-        continue
-    should_finish = feedback == 'EOP'
-    if should_finish:
-        print("This is final version of generated result:")
-        print_api_response(open_ai_responses, end - start)
-        continue
-    start = time.perf_counter()
-    open_ai_responses = open_ai.prompt_follow_up(open_ai_responses, feedback)
     end = time.perf_counter()
+
     print_api_response(open_ai_responses, end - start)
+
+    should_finish = False
+
+    while not should_finish:
+        feedback = input("Type EOP if no more feedbacks: ").strip()
+        if not feedback:
+            continue
+        should_finish = feedback == 'EOP'
+        if should_finish:
+            print("This is final version of generated result:")
+            print_api_response(open_ai_responses, end - start)
+            continue
+        start = time.perf_counter()
+        open_ai_responses = open_ai.prompt(open_ai_responses + [{"role": "user", "content": feedback}])
+        end = time.perf_counter()
+        print_api_response(open_ai_responses, end - start)

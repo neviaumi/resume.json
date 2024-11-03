@@ -1,49 +1,39 @@
-import { formatDate } from '../date.helper.js';
-import { injectSharedStyles } from '../styles.js';
+import clsx from 'clsx';
 
-const template = document.createElement('template');
-template.innerHTML = `
-<article class="print-break-inside-avoid" data-testid="resume-education-element">
-<h1 class="text-decoration-underline">Education</h1>
-<ul class="list-group list-group-flush d-print-block" slot="education"/>
-</article>`;
+import { date, styles } from '../helpers.js';
 
-export const elementName = 'resume-education';
-class ResumeEducationElement extends HTMLElement {
-  data = [];
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    injectSharedStyles(this.shadowRoot);
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
+class ResumeEducationElement extends styles.withInjectedStyles(HTMLElement)({
+  mode: 'open',
+}) {
   connectedCallback() {
-    this.data = JSON.parse(this.attributes.data.value);
-    this.#setupReferences();
-  }
+    const educations = JSON.parse(this.attributes.educations.value);
+    const template = document.createElement('template');
+    template.innerHTML = `
+<section aria-labelledby="resume-educations-section-header">
+<ul class="${clsx('tw-flex tw-flex-col tw-gap-2')}">
+${educations
+  .map((education, index) => {
+    const { area, endDate, institution, startDate, studyType, url } = education;
+    return `<li class="${clsx('tw-border-b tw-border-gray-200 tw-py-2 print:tw-break-inside-avoid')}" title="${institution}">
+${index === 0 ? `<header id="resume-educations-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-semibold tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Education</header>` : ''}
+<a 
+href="${url}" 
+target="_blank"
+ >
+<header class="${clsx('tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-rounded-xl tw-px-3 tw-py-2')}">
 
-  #setupReferences() {
-    this.shadowRoot.querySelector("[slot='education']").innerHTML = this.data
-      .map(education => {
-        const { area, endDate, institution, startDate, studyType, url } =
-          education;
-        return `<li class="list-group-item d-print-block ">
-<a href="${url}" class="text-decoration-none text-reset">
-<h2 class="d-flex justify-content-between align-items-center">
-    <span>${institution}</span>
-    <span class="text-secondary fs-3">${formatDate(startDate)} - ${formatDate(
-      endDate,
-    )}</span>
-</h2>
-<h3 class="text-secondary">${studyType} ${area}</h3>
+<p class="${clsx('tw-text-2xl tw-font-semibold tw-text-primary')}">${institution}</p>
+<p class="${clsx('tw-text-base tw-font-medium tw-text-primary')}">${date.formatDate(startDate)} - ${date.formatDate(endDate)}</p>
+</header>
+<p class="${clsx('tw-p-2 tw-text-xl tw-font-medium tw-text-primary')}">${studyType} ${area}</p>
+
 </a>
 
 </li>`;
-      })
-      .join('');
+  })
+  .join('\n')}</ul>
+</section>`;
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
-
-customElements.define(elementName, ResumeEducationElement);
+customElements.define('resume-education', ResumeEducationElement);
