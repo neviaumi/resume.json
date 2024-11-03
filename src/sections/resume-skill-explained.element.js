@@ -29,7 +29,7 @@ class ResumeSkillExplainedElement extends styles.withInjectedStyles(
     <skill-badge skill="Skill" level="Intermediate" element="span"></skill-badge>
     Means I am at an intermediate level in this skill.
 </p>
-<a href="${readmeLink}" target="_blank" class="${clsx('tw-text-base tw-font-semibold tw-text-primary tw-underline')}">Check the README for a detailed definition of 'mastered' and 'intermediate.'</a>
+<a href="${readmeLink}" target="_blank" class="${clsx('tw-text-base tw-font-bold tw-text-primary tw-underline')}">Check the README for a detailed definition of 'mastered' and 'intermediate.'</a>
 
 </section>`;
     this.shadowRoot.appendChild(template.content.cloneNode(true));

@@ -18,7 +18,7 @@ class ResumeAboutElement extends styles.withInjectedStyles(HTMLElement)({
     const template = document.createElement('template');
     template.innerHTML = `
 <section class="${clsx('print:tw-break-inside-avoid')}">
-<header class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-semibold')}">About</header>
+<header class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-black')}">About</header>
 <div class="${clsx('tw-px-1')}">
 <p class="${clsx('tw-mb-1 tw-flex tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-text-primary')}" >
     <span class="${clsx('tw-text-lg')}">${countryCodeToFlag(resumeBasic.location.countryCode)}</span>
