@@ -20,10 +20,7 @@
 
 
 @layer base {
-    html {
-        font-family: Roboto, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
-    }
     * {
-        font-family: Roboto, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+        font-family: Roboto, ui-sans-serif, system-ui, sans-serif;
     }
 }
