@@ -94,7 +94,8 @@
         "CSS",
         "TailwindCSS",
         "LLAMA.cpp",
-        "Monorepos"
+        "Monorepos",
+        "Playwright"
       ],
       "name": "Made in UK",
       "roles": ["Maintainer", "Code Owner"],
