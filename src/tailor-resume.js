@@ -20,6 +20,9 @@ const SAMPLE_JD = {
       encoding: 'utf-8',
     },
   ),
+  Katkin: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'katkin.md'), {
+    encoding: 'utf-8',
+  }),
   Neutreeno: await fs.readFile(
     path.join(DOCS_FOLDER, 'sample-jd', 'neutreeno.md'),
     {
@@ -128,6 +131,47 @@ ${SAMPLE_JD.Neutreeno}
             'Cloud infrastructures',
             'Building reusable and modular components',
             'Debugging and troubleshooting skills',
+          ],
+          work: works.map(work => ({
+            highlights: work.highlights,
+            summary: work.summary,
+          })),
+        }),
+        role: 'assistant',
+      },
+      {
+        content: `
+Sample JD here:
+${SAMPLE_JD.Katkin}
+`,
+        role: 'user',
+      },
+      {
+        content: JSON.stringify({
+          company: {
+            name: 'Katkin',
+            position: 'Mid-level Full-Stack Engineer',
+          },
+          highlightedKeywords: [
+            'TypeScript',
+            'React',
+            'NodeJS',
+            'NestJS',
+            'NextJS',
+            'REST API',
+            'PostgreSQL',
+            'RabbitMQ',
+            'Test automation',
+            'GitHub Actions',
+            'AWS',
+            'Monorepos',
+            'Pulumi',
+          ],
+          suggestedKeywords: [
+            'eCommerce and/or payments experience',
+            'OOP and/or functional programming paradigms',
+            'Terraform or CDK usage',
+            'Observability and metrics tooling',
           ],
           work: works.map(work => ({
             highlights: work.highlights,
