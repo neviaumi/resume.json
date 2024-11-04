@@ -8,6 +8,12 @@ const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../'),
   PUBLIC_ASSETS_FOLDER = path.join(WORKSPACE_ROOT, 'public'),
   DOCS_FOLDER = path.join(WORKSPACE_ROOT, 'docs');
 const SAMPLE_JD = {
+  Dialpad: await fs.readFile(
+    path.join(DOCS_FOLDER, 'sample-jd', 'dialpad.md'),
+    {
+      encoding: 'utf-8',
+    },
+  ),
   Neutreeno: await fs.readFile(
     path.join(DOCS_FOLDER, 'sample-jd', 'neutreeno.md'),
     {
@@ -47,6 +53,7 @@ Do the following 4 tasks and response in JSON format:
 - Highlight the skills matching the JD
 - On each work experence re-summary the summary and highlight fields base on the description field and the given JD
 - Extract the company name from JD in key path 'company.name'
+- Extract the opening position name from JD in key path 'company.position'
 - Advise what skills wasn't in my skills and i should consider add to my resume in key 'highlightedKeywords'
 `,
         role: 'system',
@@ -61,6 +68,7 @@ ${SAMPLE_JD.Neutreeno}
         content: JSON.stringify({
           company: {
             name: 'Neutreeno',
+            position: 'Senior Full Stack Software Engineer',
           },
           highlightedKeywords: [
             'React',
@@ -77,12 +85,47 @@ ${SAMPLE_JD.Neutreeno}
             'Microservice architecture',
             'Contributions to open-source projects',
           ],
-          work: works.map(work =>
-            Object.assign(work, {
-              highlights: ['Generated content'],
-              summary: 'Generated content',
-            }),
-          ),
+          work: works.map(() => ({
+            highlights: ['Generated content'],
+            summary: 'Generated content',
+          })),
+        }),
+        role: 'assistant',
+      },
+      {
+        content: `The JD here:
+      ${SAMPLE_JD.Dialpad}`,
+        role: 'user',
+      },
+      {
+        content: JSON.stringify({
+          company: {
+            name: 'Dialpad',
+            position: 'Software Engineer, Fullstack',
+          },
+          highlightedKeywords: [
+            'Python',
+            'NodeJS',
+            'React',
+            'TypeScript',
+            'GraphQL',
+            'CSS',
+            'HTML',
+            'Javascript',
+            'RESTful APIs',
+            'SQL/NoSQL',
+            'Agile',
+          ],
+          suggestedKeywords: [
+            'Vue',
+            'Cloud infrastructures',
+            'Building reusable and modular components',
+            'Debugging and troubleshooting skills',
+          ],
+          work: works.map(() => ({
+            highlights: ['Generated content'],
+            summary: 'Generated content',
+          })),
         }),
         role: 'assistant',
       },
@@ -103,7 +146,7 @@ ${jd}
 
 async function main() {
   const resume = await fs
-      .readFile(path.join(PUBLIC_ASSETS_FOLDER, 'resume.json'), {
+      .readFile(path.join(PUBLIC_ASSETS_FOLDER, 'resume.base.json'), {
         encoding: 'utf-8',
       })
       .then(resume => JSON.parse(resume)),
@@ -118,10 +161,18 @@ async function main() {
     path.join(PUBLIC_ASSETS_FOLDER, 'tailored-resume.json'),
     JSON.stringify(
       Object.assign(resume, {
+        basics: Object.assign(resume.basics, {
+          label: tailorResume.company.position,
+        }),
         meta: {
           highlightedKeywords: tailorResume.highlightedKeywords,
         },
-        work: [...tailorResume.work, ...resume.work.slice(3)],
+        work: [
+          ...tailorResume.work.map((work, index) =>
+            Object.assign(resume.work[index], work),
+          ),
+          ...resume.work.slice(3),
+        ],
       }),
       null,
       4,
@@ -133,7 +184,7 @@ async function main() {
   );
   // eslint-disable-next-line no-console
   console.log(`Check ${path.join(PUBLIC_ASSETS_FOLDER, `${tailorResume.company.name}.pdf`)} for the result.
-For apply job on ${tailorResume.company.name}
+For apply ${tailorResume.company.position} on ${tailorResume.company.name}
 I suggested include follow skills in your resume.
 ${JSON.stringify(tailorResume.suggestedKeywords, null, 2)}
 `);
