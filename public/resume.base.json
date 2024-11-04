@@ -67,7 +67,7 @@
         "TailwindCSS",
         "CSS",
         "Web Component",
-        "GitHub Action",
+        "Github Actions",
         "OpenAI"
       ],
       "name": "resume.json",
@@ -87,13 +87,14 @@
         "Remix",
         "React",
         "GraphQL",
-        "GitHub Action",
+        "Github Actions",
         "Pulumi",
         "TypeScript",
         "Docker",
         "CSS",
         "TailwindCSS",
-        "LLAMA.cpp"
+        "LLAMA.cpp",
+        "Monorepos"
       ],
       "name": "Made in UK",
       "roles": ["Maintainer", "Code Owner"],
@@ -137,7 +138,7 @@
         "HTML"
       ],
       "level": "Master",
-      "name": "Web Development"
+      "name": "Development"
     },
     {
       "keywords": [
@@ -148,16 +149,25 @@
         "PostgresSQL",
         "RabbitMQ",
         "Remix",
+        "NextJS",
         "TailwindCSS",
         "SQL/NoSQL"
       ],
       "level": "Intermediate",
-      "name": "Web Development"
+      "name": "Development"
     },
     {
-      "keywords": ["AWS", "Docker", "CI", "GitHub", "Pulumi", "GCP"],
+      "keywords": [
+        "AWS",
+        "Docker",
+        "CI/CD",
+        "GitHub",
+        "Pulumi",
+        "GCP",
+        "Github Actions"
+      ],
       "level": "Intermediate",
-      "name": "Cloud Deployment"
+      "name": "Deployment"
     },
     {
       "keywords": ["Agile", "Scrum"],
@@ -165,7 +175,7 @@
       "name": "Project Management"
     },
     {
-      "keywords": ["TDD", "Unit Test", "Integration Test", "Jest", "Cypress"],
+      "keywords": ["Test automation", "Jest", "Cypress", "Playwright"],
       "level": "Master",
       "name": "Automated testing"
     }
