@@ -52,7 +52,7 @@ function listAllKeywordsFromResume(resume) {
   );
 }
 
-function listLastThreeWorkExperences(resume) {
+function listLastThreeWorkExperiences(resume) {
   return resume.work.slice(0, 3);
 }
 
@@ -60,7 +60,14 @@ function listColleagueRecommendations(resume) {
   return resume.references.slice(0, 3);
 }
 
-async function extractTailorResumeFromJD(jd, { keywords, references, works }) {
+function listOpenSourceProjects(resume) {
+  return resume.projects;
+}
+
+async function extractTailorResumeFromJD(
+  jd,
+  { keywords, projects, references, works },
+) {
   let promptHistory = await openAI.prompt(
     [
       {
@@ -74,9 +81,12 @@ ${JSON.stringify(works)}
 Here is colleague recommendations in JSON format:
 ${JSON.stringify(references)}
 
-Do the following 6 tasks and response in JSON format:
+Here is open-source project you are code owner in JSON format:
+${JSON.stringify(projects)} 
+
+Do the following tasks and response in JSON format:
 - Highlight the skills matching the JD
-- Generate the summary about why you are suitable for the position and which experience make you stand out in key path 'summary' according to JD, working experiences, colleague recommendations and skills. Keep your wording simple and easy limit your response in 50 words.
+- Generate the summary about why you are suitable for the position and which experience make you stand out in key path 'summary' according to JD, working experiences,open source projects, colleague recommendations and skills. Keep your wording simple and easy limit your response in 50 words.
 - Extract the company name from JD in key path 'company.name'
 - Extract the opening position name from JD in key path 'company.position'
 - Advise what skills wasn't in my skills and i should consider add to my resume in key 'highlightedKeywords'
@@ -111,7 +121,7 @@ ${SAMPLE_JD.Neutreeno}
             'Contributions to open-source projects',
           ],
           summary:
-            'Dynamic Senior Full Stack Engineer with 7+ years of experience in building scalable applications. Expertise in TypeScript, React, and Node.js, with a strong focus on optimizing user interfaces and backend performance. Proven success at PlayStation and Emma, making significant contributions to complex projects aimed at improving user experience and system efficiency.',
+            'With extensive experience in TypeScript, React, and full-stack development, I excel in building responsive and modular applications. My roles at Emma App and PlayStation showcase my skill in creating performant, user-centered interfaces. Open-source contributions and strong CI/CD knowledge make me a standout candidate for Neutreeno’s front-end-focused engineering role.',
         }),
         role: 'assistant',
       },
@@ -145,8 +155,7 @@ ${SAMPLE_JD.Neutreeno}
             'Building reusable and modular components',
             'Debugging and troubleshooting skills',
           ],
-          summary:
-            'Results-driven Full Stack Software Engineer with 7+ years of experience in developing scalable applications using Python, React, and Node.js. Proven track record at PlayStation and Emma, leading projects from concept to delivery. Experienced in mentoring junior engineers at Neat and passionate about leveraging AI to enhance user experiences.',
+          summary: `With 7+ years of full-stack experience, I bring strong skills in scalable web applications, leveraging TypeScript, React, GraphQL, and cloud platforms. My work at Emma App and PlayStation on end-to-end feature development and CI/CD aligns well with Dialpad's needs. Additionally, I have experience mentoring at Neat, helping junior engineers grow.`,
         }),
         role: 'assistant',
       },
@@ -184,8 +193,7 @@ ${SAMPLE_JD.Katkin}
             'Terraform or CDK usage',
             'Observability and metrics tooling',
           ],
-          summary:
-            'Dynamic Full Stack Engineer with expertise in TypeScript, React, and Node.js, committed to transforming the pet food industry through innovative technology. Passionate about building scalable solutions and enhancing user experiences, with hands-on experience in delivering end-to-end features in fast-paced environments. Proven track record of collaborating with cross-functional teams to drive project success and maintain high-quality codebases. Eager to contribute to KatKin’s mission of improving cat health and wellbeing while embracing a tech-driven approach to scale the business.',
+          summary: `With 7+ years in full-stack development, I specialize in TypeScript, React, and Node.js, aligning well with KatKin’s stack. My experience in scalable product features, CI/CD, and mission-driven environments equips me to support KatKin’s growth in cat health and create a top-tier digital experience for cat parents.`,
         }),
         role: 'assistant',
       },
@@ -219,7 +227,7 @@ ${SAMPLE_JD.Goodlord}
             'Automated testing frameworks',
             'Mentoring less experienced developers',
           ],
-          summary: `Intermediate Software Engineer with experience in TypeScript and React. I thrive in transparent environments, deliver high-quality solutions, and mentor others. Passionate about continuous improvement, I align with Goodlord’s values and am eager to contribute to enhancing the renting experience for all.`,
+          summary: `Full-stack software engineer with extensive experience in TypeScript, React, and building reusable, testable components. Skilled in collaborating with cross-functional teams to deliver impactful, user-focused solutions. Proven ability to enhance code quality and security, while mentoring junior developers. Eager to leverage skills to support Goodlord’s mission to redefine the rental experience.`,
         }),
         role: 'assistant',
       },
@@ -250,7 +258,7 @@ ${SAMPLE_JD.Zensai}
             'Performance optimization',
             'User experience design',
           ],
-          summary: `Creative Full Stack Engineer proficient in React and Python, with strong experience in delivering quality web applications. Proven ability to collaborate across cross-functional teams at Emma and PlayStation, enhancing user experiences. Passionate about continuous learning and innovation, keen to contribute to Zensai’s mission of empowering individuals through technology.`,
+          summary: `As a full-stack engineer with expertise in React and Python, I am passionate about creating innovative web applications. My experience includes developing scalable solutions, collaborating with cross-functional teams, and optimizing PostgreSQL databases. I thrive in dynamic environments and am excited about the opportunity to contribute to Zensai's mission of empowering individuals through personalized learning.`,
         }),
         role: 'assistant',
       },
@@ -301,8 +309,9 @@ async function main() {
     });
   const tailorResume = await extractTailorResumeFromJD(jobDescription, {
     keywords: listAllKeywordsFromResume(resume),
+    projects: listOpenSourceProjects(resume),
     references: listColleagueRecommendations(resume),
-    works: listLastThreeWorkExperences(resume),
+    works: listLastThreeWorkExperiences(resume),
   });
   await fs.writeFile(
     path.join(PUBLIC_ASSETS_FOLDER, 'tailored-resume.json'),
