@@ -194,9 +194,10 @@ async function main() {
         basics: Object.assign(resume.basics, {
           label: tailorResume.company.position,
         }),
-        meta: {
+        meta: Object.assign(resume.meta, {
+          company: tailorResume.company,
           highlightedKeywords: tailorResume.highlightedKeywords,
-        },
+        }),
         work: [
           ...tailorResume.work.map((work, index) =>
             Object.assign(resume.work[index], work),
