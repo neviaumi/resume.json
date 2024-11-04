@@ -147,7 +147,7 @@
         "Python",
         "MongoDB",
         "Redis",
-        "PostgresSQL",
+        "PostgreSQL",
         "RabbitMQ",
         "Remix",
         "NextJS",
@@ -233,7 +233,7 @@
         "Docker",
         "Circle CI",
         "Cypress",
-        "PostgresSQL",
+        "PostgreSQL",
         "AWS"
       ],
       "location": "Hong Kong / UK (Remote)",
@@ -261,7 +261,8 @@
         "Travis CI",
         "RabbitMQ",
         "Redis",
-        "AWS"
+        "AWS",
+        "NestJS"
       ],
       "location": "Hong Kong (on-site)",
       "position": "Software Engineer",
