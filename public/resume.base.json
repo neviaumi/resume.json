@@ -152,7 +152,8 @@
         "Remix",
         "NextJS",
         "TailwindCSS",
-        "SQL/NoSQL"
+        "SQL/NoSQL",
+        "Microservices"
       ],
       "level": "Intermediate",
       "name": "Development"
@@ -176,8 +177,13 @@
       "name": "Project Management"
     },
     {
-      "keywords": ["Test automation", "Jest", "Cypress", "Playwright"],
+      "keywords": ["Jest", "Testing library"],
       "level": "Master",
+      "name": "Automated testing"
+    },
+    {
+      "keywords": ["Test automation", "Vitest", "Cypress", "Playwright"],
+      "level": "Intermediate",
       "name": "Automated testing"
     }
   ],
