@@ -213,6 +213,11 @@ ${SAMPLE_JD.Goodlord}
         }),
         role: 'assistant',
       },
+      {
+        content: `Consider JD your want to apply here:
+${jd}`,
+        role: 'user',
+      },
     ],
     {
       json: true,
