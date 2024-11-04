@@ -23,5 +23,7 @@ const resumePDFPath = useTailoredResume
   : path.join(PUBLIC_ASSETS_FOLDER, '/resume.pdf');
 
 await resumeToPdf.generateResumeToPDF(resumePDFPath, {
-  useTailoredResume: process.env['VITE_USE_TAILORED_RESUME'] ? true : false,
+  useTailoredResume: useTailoredResume,
 });
+// eslint-disable-next-line no-console
+console.log(`Check ${resumePDFPath} for the result.`);

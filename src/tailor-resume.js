@@ -20,6 +20,12 @@ const SAMPLE_JD = {
       encoding: 'utf-8',
     },
   ),
+  Goodlord: await fs.readFile(
+    path.join(DOCS_FOLDER, 'sample-jd', 'goodlord.md'),
+    {
+      encoding: 'utf-8',
+    },
+  ),
   Katkin: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'katkin.md'), {
     encoding: 'utf-8',
   }),
@@ -52,7 +58,7 @@ async function extractTailorResumeFromJD(jd, { keywords, works }) {
     [
       {
         content: `You are Software engineer who are looking on JD and want tailor your resume to increase the chance to get the screening
-Here is all skills you avaiable:
+Here is all skills you available:
 ${JSON.stringify(keywords)}
 
 Here is last 3 working experiences in JSON format:
@@ -60,8 +66,7 @@ ${JSON.stringify(works)}
 
 Do the following 6 tasks and response in JSON format:
 - Highlight the skills matching the JD
-- Generate work.summary base on the work.description and JD, summary was summery of the role responsibilities on the experience
-- Generate work.highlights base on the work.description and JD, highlights was the key achievements or projects that you have done in the role
+- Generate the summary about why you are suitable for the position and which experience make you stand out in key path 'summary'. Keep your wording simple and easy limit your response in 50 words.
 - Extract the company name from JD in key path 'company.name'
 - Extract the opening position name from JD in key path 'company.position'
 - Advise what skills wasn't in my skills and i should consider add to my resume in key 'highlightedKeywords'
@@ -95,10 +100,8 @@ ${SAMPLE_JD.Neutreeno}
             'Microservice architecture',
             'Contributions to open-source projects',
           ],
-          work: works.map(work => ({
-            highlights: work.highlights,
-            summary: work.summary,
-          })),
+          summary:
+            'Dynamic Senior Full Stack Engineer with 7+ years of experience in building scalable applications. Expertise in TypeScript, React, and Node.js, with a strong focus on optimizing user interfaces and backend performance. Proven success at PlayStation and Emma, making significant contributions to complex projects aimed at improving user experience and system efficiency.',
         }),
         role: 'assistant',
       },
@@ -132,10 +135,8 @@ ${SAMPLE_JD.Neutreeno}
             'Building reusable and modular components',
             'Debugging and troubleshooting skills',
           ],
-          work: works.map(work => ({
-            highlights: work.highlights,
-            summary: work.summary,
-          })),
+          summary:
+            'Results-driven Full Stack Software Engineer with 7+ years of experience in developing scalable applications using Python, React, and Node.js. Proven track record at PlayStation and Emma, leading projects from concept to delivery. Experienced in mentoring junior engineers at Neat and passionate about leveraging AI to enhance user experiences.',
         }),
         role: 'assistant',
       },
@@ -173,18 +174,48 @@ ${SAMPLE_JD.Katkin}
             'Terraform or CDK usage',
             'Observability and metrics tooling',
           ],
-          work: works.map(work => ({
-            highlights: work.highlights,
-            summary: work.summary,
-          })),
+          summary:
+            'Dynamic Full Stack Engineer with expertise in TypeScript, React, and Node.js, committed to transforming the pet food industry through innovative technology. Passionate about building scalable solutions and enhancing user experiences, with hands-on experience in delivering end-to-end features in fast-paced environments. Proven track record of collaborating with cross-functional teams to drive project success and maintain high-quality codebases. Eager to contribute to KatKin’s mission of improving cat health and wellbeing while embracing a tech-driven approach to scale the business.',
         }),
         role: 'assistant',
       },
       {
         content: `
-Consider JD here:
-${jd}
+Sample JD here:
+${SAMPLE_JD.Goodlord}
 `,
+        role: 'user',
+      },
+      {
+        content: JSON.stringify({
+          company: {
+            name: 'Goodlord',
+            position: 'Intermediate Software Engineer (TypeScript)',
+          },
+          highlightedKeywords: [
+            'TypeScript',
+            'React',
+            'Jest',
+            'React Testing Library',
+            'Cypress',
+            'Web application security',
+            'Microservices',
+            'State management',
+            'Test automation',
+            'Mentorship',
+          ],
+          suggestedKeywords: [
+            'Domain-Driven Design (DDD)',
+            'Automated testing frameworks',
+            'Mentoring less experienced developers',
+          ],
+          summary: `Intermediate Software Engineer with experience in TypeScript and React. I thrive in transparent environments, deliver high-quality solutions, and mentor others. Passionate about continuous improvement, I align with Goodlord’s values and am eager to contribute to enhancing the renting experience for all.`,
+        }),
+        role: 'assistant',
+      },
+      {
+        content: `Consider JD your want to apply here:
+${jd}`,
         role: 'user',
       },
     ],
@@ -237,20 +268,15 @@ async function main() {
       Object.assign(resume, {
         basics: Object.assign(resume.basics, {
           label: tailorResume.company.position,
+          summary: tailorResume.summary,
         }),
         meta: Object.assign(resume.meta, {
           company: tailorResume.company,
           highlightedKeywords: tailorResume.highlightedKeywords,
         }),
-        work: [
-          ...tailorResume.work.map((work, index) =>
-            Object.assign(resume.work[index], work),
-          ),
-          ...resume.work.slice(3),
-        ],
       }),
       null,
-      4,
+      2,
     ),
   );
   await resumeToPdf.generateResumeToPDF(
