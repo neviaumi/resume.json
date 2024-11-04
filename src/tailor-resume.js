@@ -35,6 +35,9 @@ const SAMPLE_JD = {
       encoding: 'utf-8',
     },
   ),
+  Zensai: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'zensai.md'), {
+    encoding: 'utf-8',
+  }),
 };
 
 function listAllKeywordsFromResume(resume) {
@@ -217,6 +220,37 @@ ${SAMPLE_JD.Goodlord}
             'Mentoring less experienced developers',
           ],
           summary: `Intermediate Software Engineer with experience in TypeScript and React. I thrive in transparent environments, deliver high-quality solutions, and mentor others. Passionate about continuous improvement, I align with Goodlord’s values and am eager to contribute to enhancing the renting experience for all.`,
+        }),
+        role: 'assistant',
+      },
+      {
+        content: `
+Sample JD here:
+${SAMPLE_JD.Zensai}
+`,
+        role: 'user',
+      },
+      {
+        content: JSON.stringify({
+          company: {
+            name: 'Zensai',
+            position: 'Full Stack Engineer',
+          },
+          highlightedKeywords: [
+            'React',
+            'Python',
+            'Django',
+            'PostgreSQL',
+            'CI',
+            'Collaboration',
+            'Agile',
+          ],
+          suggestedKeywords: [
+            'Azure DevOps',
+            'Performance optimization',
+            'User experience design',
+          ],
+          summary: `Creative Full Stack Engineer proficient in React and Python, with strong experience in delivering quality web applications. Proven ability to collaborate across cross-functional teams at Emma and PlayStation, enhancing user experiences. Passionate about continuous learning and innovation, keen to contribute to Zensai’s mission of empowering individuals through technology.`,
         }),
         role: 'assistant',
       },
