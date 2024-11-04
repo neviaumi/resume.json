@@ -3,6 +3,9 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ mode }) => {
   return {
     base: mode === 'development' ? '/' : '/resume.json',
+    define: {
+      'import.meta.env.VITE_USE_TAILORED_RESUME': JSON.stringify(false),
+    },
     esbuild: {
       supported: {
         'top-level-await': true,

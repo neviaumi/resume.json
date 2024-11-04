@@ -7,7 +7,10 @@ class ResumeProjectsElement extends styles.withInjectedStyles(HTMLElement)({
 }) {
   connectedCallback() {
     const projects = JSON.parse(this.attributes.projects.value).slice(0, 3),
-      skills = JSON.parse(this.attributes.skills.value);
+      skills = JSON.parse(this.attributes.skills.value),
+      highlightedSkills = JSON.parse(
+        this.attributes['highlighted-skills'].value,
+      );
     const template = document.createElement('template');
     template.innerHTML = `
 <section aria-labelledby="resume-projects-section-header">
@@ -37,9 +40,30 @@ ${index === 0 ? `<header id="resume-projects-section-header" class="${clsx('tw-m
 <p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}">${description}</p>
 <ul class="${clsx('tw-flex tw-flex-wrap tw-gap-1')}">
 ${[
-  ['Master', categorizedKeywords.Master ?? []],
-  ['Intermediate', categorizedKeywords.Intermediate ?? []],
-  ['Unknown', categorizedKeywords.Unknown ?? []],
+  [
+    'Highlight',
+    keywords
+      .filter(skillsHelper.includeHighlightedSkills(highlightedSkills))
+      .sort(),
+  ],
+  [
+    'Master',
+    (categorizedKeywords.Master ?? []).filter(
+      skillsHelper.excludeHighlightedSkills(highlightedSkills),
+    ),
+  ],
+  [
+    'Intermediate',
+    (categorizedKeywords.Intermediate ?? []).filter(
+      skillsHelper.excludeHighlightedSkills(highlightedSkills),
+    ),
+  ],
+  [
+    'Unknown',
+    (categorizedKeywords.Unknown ?? []).filter(
+      skillsHelper.excludeHighlightedSkills(highlightedSkills),
+    ),
+  ],
 ]
   .map(([level, keywords]) => {
     return keywords.map(

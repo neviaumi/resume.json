@@ -8,8 +8,11 @@ class ResumeExperiencesElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
-    const works = JSON.parse(this.attributes.works.value);
-    const skills = JSON.parse(this.attributes.skills.value);
+    const works = JSON.parse(this.attributes.works.value),
+      skills = JSON.parse(this.attributes.skills.value),
+      highlightedSkills = JSON.parse(
+        this.attributes['highlighted-skills'].value,
+      );
     const template = document.createElement('template');
     template.innerHTML = `
 <section aria-labelledby="resume-experiences-section-header">
@@ -30,6 +33,7 @@ class ResumeExperiencesElement extends styles.withInjectedStyles(HTMLElement)({
           categorizedKeywords = skillsHelper.categorizeKeywordsBySkillLevel(
             keywords,
             skills,
+            highlightedSkills,
           ),
           shouldRenderSectionHeader = index === 0,
           shouldRenderExperienceInDetail = index <= 2;
@@ -53,9 +57,30 @@ ${shouldRenderSectionHeader ? `<header id="resume-experiences-section-header" cl
 <section class="${clsx('tw-flex tw-flex-col tw-gap-1.5 tw-p-2')}">
 ${shouldRenderExperienceInDetail ? `<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}">${summary}</p>` : ''}
 <ul class="${clsx('tw-flex tw-flex-wrap tw-gap-1')}">${[
-          ['Master', categorizedKeywords.Master ?? []],
-          ['Intermediate', categorizedKeywords.Intermediate ?? []],
-          ['Unknown', categorizedKeywords.Unknown ?? []],
+          [
+            'Highlight',
+            keywords
+              .filter(skillsHelper.includeHighlightedSkills(highlightedSkills))
+              .sort(),
+          ],
+          [
+            'Master',
+            (categorizedKeywords.Master ?? []).filter(
+              skillsHelper.excludeHighlightedSkills(highlightedSkills),
+            ),
+          ],
+          [
+            'Intermediate',
+            (categorizedKeywords.Intermediate ?? []).filter(
+              skillsHelper.excludeHighlightedSkills(highlightedSkills),
+            ),
+          ],
+          [
+            'Unknown',
+            (categorizedKeywords.Unknown ?? []).filter(
+              skillsHelper.excludeHighlightedSkills(highlightedSkills),
+            ),
+          ],
         ]
           .map(([level, keywords]) => {
             return keywords.map(
