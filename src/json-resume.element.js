@@ -15,7 +15,7 @@ import { json, styles } from './helpers.js';
 const shouldUseTailoredResume = import.meta.env.VITE_USE_TAILORED_RESUME;
 const resume = await (
   shouldUseTailoredResume
-    ? import('/tailored-resume.json?url&raw')
+    ? import('/tailored-resume.json?url&raw').catch(() => {})
     : import('/resume.json?url&raw')
 ).then(mod => JSON.parse(mod.default));
 
@@ -37,24 +37,27 @@ class JsonResumeElement extends styles.withInjectedStyles(HTMLElement)({
                 <section class="${clsx('tw-grid tw-gap-2 md:tw-grid-cols-[16rem_minmax(0,1fr)] md:tw-gap-8 ')}">
                     <div class="${clsx('tw-flex tw-flex-col tw-gap-3')}">
                         <resume-about data='${json.withQuoteEscape(JSON.stringify)(resume.basics)}'></resume-about>
+                        <resume-skill-explained
+                                highlighted-skills='${json.withQuoteEscape(JSON.stringify)(highlightedSkills)}'
+                                github-link='${json.withQuoteEscape(
+                                  JSON.stringify,
+                                )(
+                                  (() => {
+                                    const githubProfile =
+                                      resume.basics.profiles.find(
+                                        profile =>
+                                          profile.network.toLowerCase() ===
+                                          'github',
+                                      );
+                                    if (!githubProfile) return null;
+                                    return githubProfile.url;
+                                  })(),
+                                )}'></resume-skill-explained>
                         <resume-skills skills='${json.withQuoteEscape(JSON.stringify)(resume.skills)}'
                                        languages='${json.withQuoteEscape(JSON.stringify)(resume.languages)}'
                                        highlighted-skills='${json.withQuoteEscape(JSON.stringify)(highlightedSkills)}'
                         ></resume-skills>
-                        <resume-skill-explained
-                            highlighted-skills='${json.withQuoteEscape(JSON.stringify)(highlightedSkills)}'
-                            github-link='${json.withQuoteEscape(JSON.stringify)(
-                              (() => {
-                                const githubProfile =
-                                  resume.basics.profiles.find(
-                                    profile =>
-                                      profile.network.toLowerCase() ===
-                                      'github',
-                                  );
-                                if (!githubProfile) return null;
-                                return githubProfile.url;
-                              })(),
-                            )}'></resume-skill-explained>
+                        
                     </div>
                     <div class="${clsx('tw-flex tw-flex-col tw-gap-3 md:tw-border-l md:tw-border-primary md:tw-pl-4')}">
                         <resume-summary

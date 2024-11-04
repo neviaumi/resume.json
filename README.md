@@ -11,6 +11,14 @@ bash ./scripts/setup.sh
 npx vite dev
 ```
 
+### Generate tailor resume.pdf
+
+```base
+OPENAI_API_KEY= node ./src/tailor-resume.js
+# Do debug the tailor resume
+# VITE_USE_TAILORED_RESUME=true vite dev
+```
+
 ### Generate resume.pdf
 
 ```bash
