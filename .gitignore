@@ -117,10 +117,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-docs/resume.private.json
-docs/resume.private.pdf
-docs/private.json
 test-results/
 docs/jd.md
 docs/draft-introduction.md
 dist/
+
+public/*.pdf
+public/tailored-resume.json
+!public/resume.pdf

@@ -133,7 +133,8 @@
         "NestJS",
         "NodeJS",
         "REST API",
-        "Typescript"
+        "Typescript",
+        "HTML"
       ],
       "level": "Master",
       "name": "Web Development"
@@ -147,7 +148,8 @@
         "PostgresSQL",
         "RabbitMQ",
         "Remix",
-        "TailwindCSS"
+        "TailwindCSS",
+        "SQL/NoSQL"
       ],
       "level": "Intermediate",
       "name": "Web Development"
@@ -171,7 +173,7 @@
   "work": [
     {
       "company": "Emma App Technologies",
-      "description": "A all-in-one mobile app to manage personal finance",
+      "description": "At Emma App Technologies, I helped build a personal finance super-app. Working with the CTO, I improved backend performance and integrated Open Banking connections using TypeScript and Node.js, making it easier for users to connect their banks. I also created a referral page and a QR code generator with Cloudflare Workers and migrated onboarding and subscription flows to the web platform with Next.js",
       "endDate": "2024-05-17",
       "highlights": [
         "Enhanced backend performance and integrated Open Banking connections with TypeScript and Node.js, streamlining bank connections for users.",
@@ -188,7 +190,7 @@
     },
     {
       "company": "PlayStation",
-      "description": "Platform for game develop partner to manage member access in game development component",
+      "description": "At PlayStation, I developed an Access Control System used by partners like EA and FromSoftware to manage access to tools and environments. I focused on the frontend with TypeScript and React, collaborating with product, development, and QA teams to break down features, prepare for sprints, and handle deployments. I also maintained a shared component library for consistent design across internal systems, working closely with designers. Additionally, I improved our MicroFrontend setup by implementing Module Federation, reducing bundle size by 10% and making code sharing easier.",
       "endDate": "2024-03-01",
       "highlights": [
         "Developed frontend for the Access Control System using TypeScript and React, collaborating with product, development, and QA teams on feature planning and deployments.",
@@ -205,7 +207,7 @@
     },
     {
       "company": "Neat",
-      "description": "A digital wallet for companies to manage expenses through the issuance of company VISA debit cards and virtual bank accounts.",
+      "description": "At Neat, I developed the registration system for companies accessing our digital wallet platform. I worked on both front-end and back-end development, implementing the registration interface based on Figma designs. I also created an admin dashboard for the compliance team to efficiently review and verify registration requests. \nIn addition to my development tasks, I mentored junior team members, helping them resolve technical issues. I also established testing frameworks, implementing both backend and frontend testing with Jest to ensure reliability and a smooth user experience.",
       "endDate": "2022-05-01",
       "highlights": [
         "Built the registration system interface based on Figma designs and developed an admin dashboard for compliance review and verification.",
@@ -213,6 +215,7 @@
         "Mentored junior team members, providing guidance on technical challenges and fostering skill development."
       ],
       "keywords": [
+        "Mentorship",
         "GraphQL",
         "NodeJS",
         "React",

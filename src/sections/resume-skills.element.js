@@ -2,25 +2,28 @@ import './skill-badge.element.js';
 
 import clsx from 'clsx';
 
-import { styles } from '../helpers.js';
+import { skills as skillHelper, styles } from '../helpers.js';
 
 class ResumeSkillsElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
     const skills = Object.entries(
-      JSON.parse(this.attributes.skills.value).reduce(
-        (acc, { keywords, level, name }) => {
-          acc[name] = {
-            ...(acc[name] || {}),
-            [level]: keywords,
-          };
-          return acc;
-        },
-        {},
+        JSON.parse(this.attributes.skills.value).reduce(
+          (acc, { keywords, level, name }) => {
+            acc[name] = {
+              ...(acc[name] || {}),
+              [level]: keywords,
+            };
+            return acc;
+          },
+          {},
+        ),
       ),
-    );
-    const languages = JSON.parse(this.attributes.languages.value);
+      highlightedSkills = JSON.parse(
+        this.attributes['highlighted-skills'].value,
+      ),
+      languages = JSON.parse(this.attributes.languages.value);
     const template = document.createElement('template');
     template.innerHTML = `
 <article title="skills">
@@ -36,10 +39,12 @@ ${[
     if (!skillsOnLevel || skillsOnLevel.length < 1) return '';
     return `<header class="${clsx('tw-mb-0.5 tw-text-base tw-font-bold', level === 'Master' ? 'tw-text-primary' : 'tw-text-secondary')}" title="${level}">${level}</header>
 <ul class="${clsx('tw-mb-1 tw-flex tw-w-32 tw-flex-wrap tw-gap-1 tw-px-1')}">${skillsOnLevel
-      .map(
-        skill =>
-          `<skill-badge skill="${skill}" level="${level}" element="li"></skill-badge>`,
-      )
+      .toSorted(skillHelper.highlightedSkillsFirst(highlightedSkills))
+      .map(skill => {
+        const skillShouldHighlighted =
+          skillHelper.includeHighlightedSkills(highlightedSkills)(skill);
+        return `<skill-badge skill="${skill}" level="${skillShouldHighlighted ? 'Highlight' : level}" element="li"></skill-badge>`;
+      })
       .join('')}</ul>
 `;
   })

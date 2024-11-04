@@ -81,4 +81,32 @@ export const skills = {
       .sort();
     return result;
   },
+  excludeHighlightedSkills(highlightedSkills) {
+    return function filterFunction(skill) {
+      return !highlightedSkills.some(highlightedSkill => {
+        return highlightedSkill.toLowerCase() === skill.toLowerCase();
+      });
+    };
+  },
+  highlightedSkillsFirst(highlightedSkills) {
+    return function sortFunction(skillA, skillB) {
+      const isSkillAShouldHighlighted =
+          skills.includeHighlightedSkills(highlightedSkills)(skillA),
+        isSkillBShouldHighlighted =
+          skills.includeHighlightedSkills(highlightedSkills)(skillB),
+        shouldKeepCurrentOrder =
+          (!isSkillAShouldHighlighted && !isSkillBShouldHighlighted) ||
+          (isSkillAShouldHighlighted && isSkillBShouldHighlighted);
+      if (shouldKeepCurrentOrder) return 0;
+      if (isSkillAShouldHighlighted) return -1;
+      if (isSkillBShouldHighlighted) return 1;
+    };
+  },
+  includeHighlightedSkills(highlightedSkills) {
+    return function filterFunction(skill) {
+      return highlightedSkills.some(highlightedSkill => {
+        return highlightedSkill.toLowerCase() === skill.toLowerCase();
+      });
+    };
+  },
 };

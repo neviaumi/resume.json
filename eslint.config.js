@@ -3,13 +3,7 @@ import { useTailwindCSSEslintConfig } from '@busybox/eslint-config-tailwindcss';
 
 export default [
   {
-    ignores: [
-      'package-lock.json',
-      'llm/**/*',
-      'docs/jd.md',
-      'docs/draft-introduction.md',
-      'dist/**/*',
-    ],
+    ignores: ['package-lock.json', 'llm/**/*', 'docs/**/*.md', 'dist/**/*'],
   },
   {
     languageOptions: {
