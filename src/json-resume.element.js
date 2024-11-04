@@ -13,13 +13,18 @@ import clsx from 'clsx';
 import { json, styles } from './helpers.js';
 
 const shouldUseTailoredResume = import.meta.env.VITE_USE_TAILORED_RESUME;
+
 const resume = await (async () => {
+  const baseUrl = `${new URL(
+    import.meta.env.BASE_URL,
+    new URL(import.meta.url).origin,
+  ).toString()}/`;
   if (shouldUseTailoredResume) {
     // eslint-disable-next-line n/no-unsupported-features/node-builtins
-    return fetch('/tailored-resume.json');
+    return fetch(new URL('tailored-resume.json', baseUrl));
   }
   // eslint-disable-next-line n/no-unsupported-features/node-builtins
-  return fetch('/resume.json');
+  return fetch(new URL('resume.base.json', baseUrl));
 })().then(resp => resp.json());
 
 class JsonResumeElement extends styles.withInjectedStyles(HTMLElement)({
