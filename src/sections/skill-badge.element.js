@@ -12,13 +12,13 @@ class SkillBadgeElement extends styles.withInjectedStyles(HTMLElement)({
     const template = document.createElement('template');
     const styleByLevel = {
       Highlight: clsx(
-        'tw-border tw-border-pink-700 tw-bg-pink-500 tw-font-bold tw-text-white',
+        'tw-border tw-border-emerald-700 tw-bg-emerald-500 tw-font-bold tw-text-white',
       ),
       Intermediate: clsx('tw-bg-sky-300 tw-font-medium tw-text-white'),
       Master: clsx(
-        'tw-border tw-border-emerald-700 tw-bg-emerald-500 tw-font-bold tw-text-white',
+        'tw-border tw-border-amber-700 tw-bg-amber-500 tw-font-bold tw-text-white',
       ),
-      Unknown: clsx('tw-border tw-border-gray-200 tw-text-gray-600'),
+      Unknown: clsx('tw-border tw-border-gray-300 tw-text-gray-600'),
     };
     // language=html
     template.innerHTML = `
