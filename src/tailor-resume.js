@@ -1,5 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+// Import the readline and process modules
+import { stdin as input, stdout as output } from 'node:process';
+// eslint-disable-next-line n/no-unsupported-features/node-builtins
+import readline from 'node:readline/promises';
+
+import { colorize } from 'json-colorizer';
 
 import * as openAI from './open-ai.js';
 import * as resumeToPdf from './resume-to-pdf.js';
@@ -14,6 +20,9 @@ const SAMPLE_JD = {
       encoding: 'utf-8',
     },
   ),
+  Katkin: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'katkin.md'), {
+    encoding: 'utf-8',
+  }),
   Neutreeno: await fs.readFile(
     path.join(DOCS_FOLDER, 'sample-jd', 'neutreeno.md'),
     {
@@ -39,19 +48,20 @@ function listLastThreeWorkExperences(resume) {
 }
 
 async function extractTailorResumeFromJD(jd, { keywords, works }) {
-  const response = await openAI.prompt(
+  let promptHistory = await openAI.prompt(
     [
       {
         content: `You are Software engineer who are looking on JD and want tailor your resume to increase the chance to get the screening
 Here is all skills you avaiable:
 ${JSON.stringify(keywords)}
 
-Here is last 3 working experences in JSON format:
+Here is last 3 working experiences in JSON format:
 ${JSON.stringify(works)}
 
-Do the following 4 tasks and response in JSON format:
+Do the following 6 tasks and response in JSON format:
 - Highlight the skills matching the JD
-- On each work experence re-summary the summary and highlight fields base on the description field and the given JD
+- Generate work.summary base on the work.description and JD, summary was summery of the role responsibilities on the experience
+- Generate work.highlights base on the work.description and JD, highlights was the key achievements or projects that you have done in the role
 - Extract the company name from JD in key path 'company.name'
 - Extract the opening position name from JD in key path 'company.position'
 - Advise what skills wasn't in my skills and i should consider add to my resume in key 'highlightedKeywords'
@@ -59,7 +69,7 @@ Do the following 4 tasks and response in JSON format:
         role: 'system',
       },
       {
-        content: `The JD here:
+        content: `Sample JD here:
 ${SAMPLE_JD.Neutreeno}
 `,
         role: 'user',
@@ -85,15 +95,15 @@ ${SAMPLE_JD.Neutreeno}
             'Microservice architecture',
             'Contributions to open-source projects',
           ],
-          work: works.map(() => ({
-            highlights: ['Generated content'],
-            summary: 'Generated content',
+          work: works.map(work => ({
+            highlights: work.highlights,
+            summary: work.summary,
           })),
         }),
         role: 'assistant',
       },
       {
-        content: `The JD here:
+        content: `Sample JD here:
       ${SAMPLE_JD.Dialpad}`,
         role: 'user',
       },
@@ -122,9 +132,50 @@ ${SAMPLE_JD.Neutreeno}
             'Building reusable and modular components',
             'Debugging and troubleshooting skills',
           ],
-          work: works.map(() => ({
-            highlights: ['Generated content'],
-            summary: 'Generated content',
+          work: works.map(work => ({
+            highlights: work.highlights,
+            summary: work.summary,
+          })),
+        }),
+        role: 'assistant',
+      },
+      {
+        content: `
+Sample JD here:
+${SAMPLE_JD.Katkin}
+`,
+        role: 'user',
+      },
+      {
+        content: JSON.stringify({
+          company: {
+            name: 'Katkin',
+            position: 'Mid-level Full-Stack Engineer',
+          },
+          highlightedKeywords: [
+            'TypeScript',
+            'React',
+            'NodeJS',
+            'NestJS',
+            'NextJS',
+            'REST API',
+            'PostgreSQL',
+            'RabbitMQ',
+            'Test automation',
+            'GitHub Actions',
+            'AWS',
+            'Monorepos',
+            'Pulumi',
+          ],
+          suggestedKeywords: [
+            'eCommerce and/or payments experience',
+            'OOP and/or functional programming paradigms',
+            'Terraform or CDK usage',
+            'Observability and metrics tooling',
+          ],
+          work: works.map(work => ({
+            highlights: work.highlights,
+            summary: work.summary,
           })),
         }),
         role: 'assistant',
@@ -141,7 +192,30 @@ ${jd}
       json: true,
     },
   );
-  return JSON.parse(response.slice(-1)[0].content);
+  const rl = readline.createInterface({ input, output });
+
+  let shouldReadLine = true;
+  while (shouldReadLine) {
+    const response = JSON.parse(promptHistory.slice(-1)[0].content);
+    // eslint-disable-next-line no-console
+    console.log(`OpenAI response:
+${colorize(JSON.stringify(response, null, 2))}`);
+    const answer = await rl.question('Type EOP if no more feedbacks: ');
+    if (answer === 'EOP') {
+      shouldReadLine = false;
+      break;
+    }
+    if (!answer) {
+      continue;
+    }
+    promptHistory = await openAI.prompt(
+      promptHistory.concat({ content: answer, role: 'user' }),
+      { json: true },
+    );
+  }
+  rl.close();
+
+  return JSON.parse(promptHistory.slice(-1)[0].content);
 }
 
 async function main() {
@@ -164,9 +238,10 @@ async function main() {
         basics: Object.assign(resume.basics, {
           label: tailorResume.company.position,
         }),
-        meta: {
+        meta: Object.assign(resume.meta, {
+          company: tailorResume.company,
           highlightedKeywords: tailorResume.highlightedKeywords,
-        },
+        }),
         work: [
           ...tailorResume.work.map((work, index) =>
             Object.assign(resume.work[index], work),
