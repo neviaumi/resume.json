@@ -36,6 +36,28 @@
 - 🌴 25 days holiday (plus UK Bank holidays) plus 1 day per full holiday year up to 32 days: We believe regular breaks are essential for well-being and we encourage (some may say expect!) all Goodlordians to take full advantage of their annual leave entitlement.
 - 🤗 Supporting your family: we offer Goodlordians of all genders a generous 3 months of fully-paid time off to look after their new arrivals
 
+## Core values
+
+### We stand up and deliver
+
+Goodlordians get things done. Everyone has freedom and space to be creative and do what they do best, and takes full accountability for getting their job done.
+
+### We set the pace
+
+Our ambition and desire to be thought-leaders and industry experts drive us to stay ahead of the game - not our job descriptions. We push boundaries, we shake things up and we aim to inspire.
+
+### We are an open book
+
+Transparency is key. We don’t have time for politics and there’s no red tape. We’re honest, we act with integrity and we respect one another. Weekly company-wide updates keep everyone in the loop and, if you want to find out what another team is working on, you’re welcome to jump into their meetings.
+
+### We bring our whole selves to work
+
+Every Goodlordian brings something unique to the team - we’re open about our strengths, weaknesses and little quirks. We’re all in this together and leave our egos at the door.
+
+### We listen, learn and improve
+
+We’re daring, we take risks and we are constantly striving to improve. We learn from our mistakes, share lessons to help us get better and welcome feedback from inside and outside the company.
+
 ## What’s next?
 
 If you’re ready to help us provide the best renting experience in the world, then click apply (2-3 minutes)!

@@ -101,7 +101,7 @@ ${SAMPLE_JD.Neutreeno}
             'Contributions to open-source projects',
           ],
           summary:
-            'Dynamic Senior Full Stack Engineer with 5+ years of experience in building scalable applications. Expertise in TypeScript, React, and Node.js, with a strong focus on optimizing user interfaces and backend performance. Proven success at PlayStation and Emma, making significant contributions to complex projects aimed at improving user experience and system efficiency.',
+            'Dynamic Senior Full Stack Engineer with 7+ years of experience in building scalable applications. Expertise in TypeScript, React, and Node.js, with a strong focus on optimizing user interfaces and backend performance. Proven success at PlayStation and Emma, making significant contributions to complex projects aimed at improving user experience and system efficiency.',
         }),
         role: 'assistant',
       },
@@ -136,7 +136,7 @@ ${SAMPLE_JD.Neutreeno}
             'Debugging and troubleshooting skills',
           ],
           summary:
-            'Results-driven Full Stack Software Engineer with 5+ years of experience in developing scalable applications using Python, React, and Node.js. Proven track record at PlayStation and Emma, leading projects from concept to delivery. Experienced in mentoring junior engineers at Neat and passionate about leveraging AI to enhance user experiences.',
+            'Results-driven Full Stack Software Engineer with 7+ years of experience in developing scalable applications using Python, React, and Node.js. Proven track record at PlayStation and Emma, leading projects from concept to delivery. Experienced in mentoring junior engineers at Neat and passionate about leveraging AI to enhance user experiences.',
         }),
         role: 'assistant',
       },
@@ -209,8 +209,7 @@ ${SAMPLE_JD.Goodlord}
             'Automated testing frameworks',
             'Mentoring less experienced developers',
           ],
-          summary:
-            'Results-driven Intermediate Software Engineer with significant commercial experience in building web applications using TypeScript and React. Adept at collaborating with cross-functional teams to identify user needs and implement effective solutions. Strong understanding of state management, component reuse, and architectural patterns. Proficient in writing automated tests with frameworks such as Jest and Cypress, while ensuring web application security against vulnerabilities. Passionate about contributing to Goodlord’s mission of improving the renting experience and eager to mentor junior developers while driving continuous improvement in the team.',
+          summary: `Intermediate Software Engineer with experience in TypeScript and React. I thrive in transparent environments, deliver high-quality solutions, and mentor others. Passionate about continuous improvement, I align with Goodlord’s values and am eager to contribute to enhancing the renting experience for all.`,
         }),
         role: 'assistant',
       },
