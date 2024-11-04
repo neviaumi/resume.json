@@ -13,11 +13,14 @@ import clsx from 'clsx';
 import { json, styles } from './helpers.js';
 
 const shouldUseTailoredResume = import.meta.env.VITE_USE_TAILORED_RESUME;
-const resume = await (
-  shouldUseTailoredResume
-    ? import('/tailored-resume.json?url&raw').catch(() => {})
-    : import('/resume.json?url&raw')
-).then(mod => JSON.parse(mod.default));
+const resume = await (async () => {
+  if (shouldUseTailoredResume) {
+    // eslint-disable-next-line n/no-unsupported-features/node-builtins
+    return fetch('/tailored-resume.json');
+  }
+  // eslint-disable-next-line n/no-unsupported-features/node-builtins
+  return fetch('/resume.json');
+})().then(resp => resp.json());
 
 class JsonResumeElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
