@@ -95,7 +95,8 @@
         "TailwindCSS",
         "LLAMA.cpp",
         "Monorepos",
-        "Playwright"
+        "Playwright",
+        "Serverless"
       ],
       "name": "Made in UK",
       "roles": ["Maintainer", "Code Owner"],
@@ -214,7 +215,16 @@
         "Maintained a shared component library for consistent design across internal systems, working closely with designers.",
         "Improved MicroFrontend setup by implementing Module Federation, reducing bundle size by 10% and simplifying code sharing."
       ],
-      "keywords": ["AWS", "Jenkins", "NodeJS", "React", "SCSS", "TypeScript"],
+      "keywords": [
+        "AWS",
+        "Jenkins",
+        "NodeJS",
+        "React",
+        "SCSS",
+        "TypeScript",
+        "ZeroHeight",
+        "Storybook"
+      ],
       "location": "Liverpool, UK (remote)",
       "position": "Software Engineer II",
       "startDate": "2022-05-01",
@@ -240,7 +250,8 @@
         "Circle CI",
         "Cypress",
         "PostgreSQL",
-        "AWS"
+        "AWS",
+        "Ruby"
       ],
       "location": "Hong Kong / UK (Remote)",
       "position": "Software Engineer",
@@ -278,29 +289,20 @@
     },
     {
       "company": "AfterShip",
-      "description": "SaaS provider offering post-purchase experiences such as shipment visibility, analytics, etc.",
       "endDate": "2018-09-01",
-      "highlights": ["Fixed bugs in the platform using NodeJS."],
       "keywords": ["MongoDB", "NodeJS", "Beanstalk", "Redis", "Crawler"],
       "location": "Hong Kong (hybird)",
       "position": "Software Engineer",
       "startDate": "2017-05-01",
-      "summary": "Enabled users to track shipment status through the tracking number.",
       "website": "https://www.aftership.com/"
     },
     {
       "company": "PCCW Now Media Limited",
-      "description": "Subscription based regional video streaming platform",
       "endDate": "2017-04-01",
-      "highlights": [
-        "Designed the Data Transform Pipeline & reporting system for Video on Demand (VOD) application for Mobile, Tablet and PC. ",
-        "This application covered cross regionally; it covered Hong Kong, Singapore, Philippines and Thailand."
-      ],
       "keywords": ["NodeJS", "AWS", "Python", "MS Excel"],
       "location": "Hong Kong (on-site)",
       "position": "Data Developer",
       "startDate": "2015-05-01",
-      "summary": "Setup data tracking and reporting system for the streaming platform",
       "url": "https://www.viu.com/ott/hk/en-us/",
       "website": "https://www.viu.com/ott/hk/en-us/"
     }
