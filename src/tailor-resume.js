@@ -1,68 +1,19 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { jobDescription, SAMPLE_JD } from './job-description.js';
 import * as openAI from './open-ai.js';
+import {
+  listAllKeywordsFromResume,
+  listColleagueRecommendations,
+  listOpenSourceProjects,
+  listWorkExperiences,
+  resume,
+} from './resume.js';
 import * as resumeToPdf from './resume-to-pdf.js';
 
 const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../'),
-  PUBLIC_ASSETS_FOLDER = path.join(WORKSPACE_ROOT, 'public'),
-  DOCS_FOLDER = path.join(WORKSPACE_ROOT, 'docs');
-const SAMPLE_JD = {
-  Dialpad: await fs.readFile(
-    path.join(DOCS_FOLDER, 'sample-jd', 'dialpad.md'),
-    {
-      encoding: 'utf-8',
-    },
-  ),
-  Goodlord: await fs.readFile(
-    path.join(DOCS_FOLDER, 'sample-jd', 'goodlord.md'),
-    {
-      encoding: 'utf-8',
-    },
-  ),
-  Katkin: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'katkin.md'), {
-    encoding: 'utf-8',
-  }),
-  Neutreeno: await fs.readFile(
-    path.join(DOCS_FOLDER, 'sample-jd', 'neutreeno.md'),
-    {
-      encoding: 'utf-8',
-    },
-  ),
-  Zensai: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'zensai.md'), {
-    encoding: 'utf-8',
-  }),
-  Zeroheight: await fs.readFile(
-    path.join(DOCS_FOLDER, 'sample-jd', 'zeroheight.md'),
-    {
-      encoding: 'utf-8',
-    },
-  ),
-};
-
-function listAllKeywordsFromResume(resume) {
-  return Array.from(
-    new Set(
-      [
-        resume.projects.map(project => project.keywords).flat(),
-        resume.skills.map(skill => skill.keywords).flat(),
-        resume.work.map(work => work.keywords).flat(),
-      ].flat(),
-    ),
-  );
-}
-
-function listWorkExperiences(resume) {
-  return resume.work;
-}
-
-function listColleagueRecommendations(resume) {
-  return resume.references.slice(0, 3);
-}
-
-function listOpenSourceProjects(resume) {
-  return resume.projects;
-}
+  PUBLIC_ASSETS_FOLDER = path.join(WORKSPACE_ROOT, 'public');
 
 async function extractTailorResumeFromJD(
   jd,
@@ -305,14 +256,6 @@ ${jd}`,
 }
 
 async function main() {
-  const resume = await fs
-      .readFile(path.join(PUBLIC_ASSETS_FOLDER, 'resume.base.json'), {
-        encoding: 'utf-8',
-      })
-      .then(resume => JSON.parse(resume)),
-    jobDescription = await fs.readFile(path.join(DOCS_FOLDER, 'jd.md'), {
-      encoding: 'utf-8',
-    });
   const tailorResume = await extractTailorResumeFromJD(jobDescription, {
     keywords: listAllKeywordsFromResume(resume),
     projects: listOpenSourceProjects(resume),
