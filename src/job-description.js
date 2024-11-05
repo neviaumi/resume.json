@@ -33,6 +33,10 @@ export const SAMPLE_JD = {
       encoding: 'utf-8',
     },
   ),
+  Privasee: await fs.readFile(
+    path.join(DOCS_FOLDER, 'sample-jd', 'privasee.md'),
+    { encoding: 'utf-8' },
+  ),
   Zensai: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'zensai.md'), {
     encoding: 'utf-8',
   }),
