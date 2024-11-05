@@ -38,6 +38,12 @@ const SAMPLE_JD = {
   Zensai: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'zensai.md'), {
     encoding: 'utf-8',
   }),
+  Zeroheight: await fs.readFile(
+    path.join(DOCS_FOLDER, 'sample-jd', 'zeroheight.md'),
+    {
+      encoding: 'utf-8',
+    },
+  ),
 };
 
 function listAllKeywordsFromResume(resume) {
@@ -52,8 +58,8 @@ function listAllKeywordsFromResume(resume) {
   );
 }
 
-function listLastThreeWorkExperiences(resume) {
-  return resume.work.slice(0, 3);
+function listWorkExperiences(resume) {
+  return resume.work;
 }
 
 function listColleagueRecommendations(resume) {
@@ -263,6 +269,34 @@ ${SAMPLE_JD.Zensai}
         role: 'assistant',
       },
       {
+        content: `
+Sample JD here:
+${SAMPLE_JD.Zeroheight}
+`,
+        role: 'user',
+      },
+      {
+        content: JSON.stringify({
+          company: {
+            name: 'zeroheight',
+            position: 'Full Stack Product Engineer',
+          },
+          highlightedKeywords: [
+            'JavaScript',
+            'React',
+            'Ruby',
+            'AWS',
+            'Storybook',
+            'ZeroHeight',
+            'Serverless',
+          ],
+          suggestedKeywords: ['Marionette (Backbone.js)', 'API integration'],
+          summary:
+            'As a full-stack engineer, I bring over 7 years of experience in JavaScript and React, specializing in creating user-friendly applications. My previous work in agile environments equips me to take ownership of features from start to finish. I am excited about the opportunity to contribute to the innovative projects at zeroheight.',
+        }),
+        role: 'assistant',
+      },
+      {
         content: `Consider JD your want to apply here:
 ${jd}`,
         role: 'user',
@@ -311,7 +345,7 @@ async function main() {
     keywords: listAllKeywordsFromResume(resume),
     projects: listOpenSourceProjects(resume),
     references: listColleagueRecommendations(resume),
-    works: listLastThreeWorkExperiences(resume),
+    works: listWorkExperiences(resume),
   });
   await fs.writeFile(
     path.join(PUBLIC_ASSETS_FOLDER, 'tailored-resume.json'),
