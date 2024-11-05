@@ -2,7 +2,6 @@ import { stdin as input, stdout as output } from 'node:process';
 // eslint-disable-next-line n/no-unsupported-features/node-builtins
 import readline from 'node:readline/promises';
 
-import { colorize } from 'json-colorizer';
 import OpenAI from 'openai';
 
 const apiKey = process.env['OPENAI_API_KEY'];
@@ -42,7 +41,8 @@ export function readMessageFromPrompt(prompts) {
   return lastPrompt.content;
 }
 
-export function withFeedbackLoop(promptFunction) {
+export function withFeedbackLoop(promptFunction, feedbackLoopOptions) {
+  const onPromptGenerated = feedbackLoopOptions.onPromptGenerated;
   return async function promptFunctionWithFeedbackLoop(
     initialPrompts,
     options,
@@ -51,9 +51,7 @@ export function withFeedbackLoop(promptFunction) {
     let shouldKeepFeedbackLoop = true;
     let prompts = await promptFunction(initialPrompts, options);
     while (shouldKeepFeedbackLoop) {
-      // eslint-disable-next-line no-console
-      console.log(`OpenAI response:
-${colorize(JSON.stringify(JSON.parse(readMessageFromPrompt(prompts)), null, 2))}`);
+      onPromptGenerated(readMessageFromPrompt(prompts));
       const feedback = await rl.question('Type EOP if no more feedbacks: ');
       if (feedback === 'EOP') {
         shouldKeepFeedbackLoop = false;

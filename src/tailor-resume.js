@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { colorize } from 'json-colorizer';
+
 import { jobDescription, SAMPLE_JD } from './job-description.js';
 import * as openAI from './open-ai.js';
 import {
@@ -19,7 +21,13 @@ async function extractTailorResumeFromJD(
   jd,
   { keywords, projects, references, works },
 ) {
-  const prompts = await openAI.withFeedbackLoop(openAI.prompt)(
+  const prompts = await openAI.withFeedbackLoop(openAI.prompt, {
+    onPromptGenerated: response => {
+      // eslint-disable-next-line no-console
+      console.log(`OpenAI response:
+${colorize(JSON.stringify(JSON.parse(response), null, 2))}`);
+    },
+  })(
     [
       {
         content: `You are Software engineer who are looking on JD and want tailor your resume to increase the chance to get the screening
