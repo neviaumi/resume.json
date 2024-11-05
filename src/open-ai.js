@@ -1,3 +1,8 @@
+import { stdin as input, stdout as output } from 'node:process';
+// eslint-disable-next-line n/no-unsupported-features/node-builtins
+import readline from 'node:readline/promises';
+
+import { colorize } from 'json-colorizer';
 import OpenAI from 'openai';
 
 const apiKey = process.env['OPENAI_API_KEY'];
@@ -27,4 +32,42 @@ export async function prompt(messages, options) {
     ),
   );
   return [...messages, chatCompletion.choices[0].message];
+}
+
+export function readMessageFromPrompt(prompts) {
+  const lastPrompt = prompts.slice(-1)[0];
+  if (lastPrompt.role !== 'assistant') {
+    throw new Error('The last prompt should be from the assistant');
+  }
+  return lastPrompt.content;
+}
+
+export function withFeedbackLoop(promptFunction) {
+  return async function promptFunctionWithFeedbackLoop(
+    initialPrompts,
+    options,
+  ) {
+    const rl = readline.createInterface({ input, output });
+    let shouldKeepFeedbackLoop = true;
+    let prompts = await promptFunction(initialPrompts, options);
+    while (shouldKeepFeedbackLoop) {
+      // eslint-disable-next-line no-console
+      console.log(`OpenAI response:
+${colorize(JSON.stringify(JSON.parse(readMessageFromPrompt(prompts)), null, 2))}`);
+      const feedback = await rl.question('Type EOP if no more feedbacks: ');
+      if (feedback === 'EOP') {
+        shouldKeepFeedbackLoop = false;
+        break;
+      }
+      if (!feedback) {
+        continue;
+      }
+      prompts = await promptFunction(
+        prompts.concat({ content: feedback, role: 'user' }),
+        options,
+      );
+    }
+    rl.close();
+    return prompts;
+  };
 }

@@ -1,11 +1,5 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-// Import the readline and process modules
-import { stdin as input, stdout as output } from 'node:process';
-// eslint-disable-next-line n/no-unsupported-features/node-builtins
-import readline from 'node:readline/promises';
-
-import { colorize } from 'json-colorizer';
 
 import * as openAI from './open-ai.js';
 import * as resumeToPdf from './resume-to-pdf.js';
@@ -61,7 +55,7 @@ function listColleagueRecommendations(resume) {
 }
 
 async function extractTailorResumeFromJD(jd, { keywords, references, works }) {
-  let promptHistory = await openAI.prompt(
+  const prompts = await openAI.withFeedbackLoop(openAI.prompt)(
     [
       {
         content: `You are Software engineer who are looking on JD and want tailor your resume to increase the chance to get the screening
@@ -264,30 +258,7 @@ ${jd}`,
       json: true,
     },
   );
-  const rl = readline.createInterface({ input, output });
-
-  let shouldReadLine = true;
-  while (shouldReadLine) {
-    const response = JSON.parse(promptHistory.slice(-1)[0].content);
-    // eslint-disable-next-line no-console
-    console.log(`OpenAI response:
-${colorize(JSON.stringify(response, null, 2))}`);
-    const answer = await rl.question('Type EOP if no more feedbacks: ');
-    if (answer === 'EOP') {
-      shouldReadLine = false;
-      break;
-    }
-    if (!answer) {
-      continue;
-    }
-    promptHistory = await openAI.prompt(
-      promptHistory.concat({ content: answer, role: 'user' }),
-      { json: true },
-    );
-  }
-  rl.close();
-
-  return JSON.parse(promptHistory.slice(-1)[0].content);
+  return JSON.parse(openAI.readMessageFromPrompt(prompts));
 }
 
 async function main() {
