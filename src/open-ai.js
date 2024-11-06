@@ -2,6 +2,7 @@ import { stdin as input, stdout as output } from 'node:process';
 // eslint-disable-next-line n/no-unsupported-features/node-builtins
 import readline from 'node:readline/promises';
 
+import { colorize } from 'json-colorizer';
 import OpenAI from 'openai';
 
 const apiKey = process.env['OPENAI_API_KEY'];
@@ -39,6 +40,12 @@ export function readMessageFromPrompt(prompts) {
     throw new Error('The last prompt should be from the assistant');
   }
   return lastPrompt.content;
+}
+
+export function fallbackOfPrintPromptMessage(response) {
+  // eslint-disable-next-line no-console
+  console.log(`OpenAI response:
+${colorize(JSON.stringify(JSON.parse(response), null, 2))}`);
 }
 
 export function withFeedbackLoop(promptFunction, feedbackLoopOptions) {
