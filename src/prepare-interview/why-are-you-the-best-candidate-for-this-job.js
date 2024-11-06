@@ -15,12 +15,17 @@ async function generateAnswerFromJD(
   await openAI.withFeedbackLoop(openAI.prompt, {
     onPromptGenerated: response => {
       const { companyName, whyIAmBestCandidate, whyOurCompany } = (() => {
-        const {
-          company: { name },
-          response: { markdown },
-        } = JSON.parse(response);
-        return { ...markdown, companyName: name };
+        const jsonResponse = JSON.parse(response);
+        return {
+          ...(jsonResponse.response?.markdown ?? {}),
+          companyName: jsonResponse.company?.name,
+        };
       })();
+      if (!whyIAmBestCandidate && !whyOurCompany) {
+        // eslint-disable-next-line no-console
+        console.log(JSON.parse(response));
+        return;
+      }
       // eslint-disable-next-line no-console
       console.log(
         `# Why are you the best candidate for this job?
@@ -61,7 +66,7 @@ Do the following tasks and response in JSON format:
 
 All the answer should keep it short and simple as much as possible. you only have 60 seconds to speech on each question.
 Also you are not native english speaker, so please keep it simple and easy to understand.
-
+Try not to use some wording excited , passionate, eager ...etc when it was very robotics response.
 `,
         role: 'system',
       },
@@ -76,9 +81,9 @@ ${SAMPLE_JD.Neutreeno}`,
           response: {
             markdown: {
               whyIAmBestCandidate:
-                "I am the best candidate for this role because of my extensive experience in full-stack development with a strong focus on front-end technologies, particularly using React and TypeScript. I have successfully built responsive and modular single-page applications while collaborating closely with UX/UI designers. My experience with CI/CD pipelines ensures smooth deployment and integration. Additionally, my background in working with cloud services like AWS and PostgreSQL aligns perfectly with Neutreeno's requirements. I am passionate about leveraging technology for impactful solutions, especially in sustainability.",
+                'I have strong experience in both front-end and back-end technologies, particularly with React, TypeScript, and Node.js. My background includes developing responsive, modular single-page applications and maintaining cross-browser compatibility. I’m familiar with CI/CD environments and can implement efficient deployment practices. My experience with cloud services like AWS and databases like PostgreSQL aligns well with your requirements. Additionally, I have a record of mentoring team members and contributing to open-source projects, which suits Neutreeno’s collaborative culture.',
               whyOurCompany:
-                "I am excited about Neutreeno because of its groundbreaking approach to tackling global decarbonization efforts. The opportunity to work alongside leading sustainability scientists and contribute to a platform that provides data-driven insights for reducing emissions resonates with my personal and professional values. I admire Neutreeno's commitment to innovation and collaboration, and I want to be part of a team that makes a real difference in the world.",
+                "Neutreeno's focus on real emissions reduction and innovative technology resonates with my goal to make a positive impact through software. I appreciate the opportunity to work with leading sustainability scientists and contribute to a meaningful cause. Joining Neutreeno means being part of a forward-thinking team that is incredibly aligned with my values of sustainability and technological advancement.",
             },
           },
         }),
@@ -86,7 +91,7 @@ ${SAMPLE_JD.Neutreeno}`,
       },
       {
         content: `Read the sample Jod description here:
-${SAMPLE_JD.Dialpad}`,
+      ${SAMPLE_JD.Dialpad}`,
         role: 'user',
       },
       {
@@ -95,9 +100,9 @@ ${SAMPLE_JD.Dialpad}`,
           response: {
             markdown: {
               whyIAmBestCandidate:
-                "I am the best candidate for this role due to my 7+ years of experience in full-stack software engineering. I have a strong background in both frontend and backend technologies including React, Node.js, and Python. My experience with building reusable components, RESTful APIs, and GraphQL schemas matches the requirements perfectly. Additionally, I am skilled in collaborating with cross-functional teams, which ensures that features are delivered on time with high quality. My passion for mentoring junior engineers aligns with Dialpad's team culture.",
+                'I possess extensive experience in full-stack software engineering, with over 8 years of diverse background in technologies including Python, Node.js, and modern frontend frameworks like React. I have successfully developed scalable applications and maintained code quality through best practices. My proficiency with databases, RESTful APIs, and cloud solutions aligns closely with the needs of this role. Additionally, I have a solid history of mentoring junior engineers, fostering skill development, and promoting a collaborative working environment.',
               whyOurCompany:
-                'I am excited about Dialpad because of its innovative approach to AI-powered customer communications. The opportunity to work on a platform that enhances business communication and optimizes customer experience strongly resonates with me. I admire Dialpad’s commitment to collaboration and professional development, and I want to contribute my skills to a company that values diversity and inclusion. I believe this position would allow me to grow while making a meaningful impact.',
+                "Dialpad's innovative approach to AI-powered communications and its commitment to enhancing business interactions aligns with my goals as a software engineer. I appreciate Dialpad's emphasis on collaboration and continuous improvement, as well as its focus on diversity and inclusion, making it a workplace where I can thrive and contribute positively.",
             },
           },
         }),
@@ -105,7 +110,7 @@ ${SAMPLE_JD.Dialpad}`,
       },
       {
         content: `Read the sample Jod description here:
-${SAMPLE_JD.Zeroheight}`,
+      ${SAMPLE_JD.Zeroheight}`,
         role: 'user',
       },
       {
@@ -114,9 +119,9 @@ ${SAMPLE_JD.Zeroheight}`,
           response: {
             markdown: {
               whyIAmBestCandidate:
-                'I am the best candidate for this role due to my experience in full-stack development and my passion for creating user-friendly products. With over 7 years of experience working with JavaScript and React, I have a strong background in building beautiful and functional applications from start to finish. I appreciate the emphasis on quality and user experience that zeroheight values, and my ability to relate closely with designers and product managers will help in executing features effectively. Additionally, I enjoy being involved in planning and project management, which fits your culture of ownership and collaboration.',
+                'I have over 7 years of experience as a full-stack engineer, specializing in JavaScript and React. My background in building user-friendly applications and my ability to handle both frontend and backend tasks align perfectly with the responsibilities in this role. I thrive in flexible environments and enjoy collaborating with designers and product managers to deliver high-quality features. Additionally, my proactive attitude and experience in Agile methodologies make me an ideal fit for the dynamic team at zeroheight.',
               whyOurCompany:
-                'I am excited about joining zeroheight because of its commitment to creating a user-centric product and its focus on mental wellness in the workplace. The remote-first approach and innovative environment align perfectly with my working style. I admire zeroheight’s values of humility, connection, and ownership, and I want to be part of a team that encourages personal growth and collaboration. Being able to contribute to features that enhance user experience while working alongside talented colleagues is something I am truly looking forward to.',
+                "I am drawn to zeroheight's commitment to creating excellent user experiences and the focus on collaboration. The remote-first approach and the culture of experimentation resonate with my work style. I appreciate the emphasis on personal growth and mental wellbeing, which creates a strong and supportive work environment. Being part of a team that values ownership and quality excites me, and I want to contribute to building products that users love.",
             },
           },
         }),
@@ -124,7 +129,7 @@ ${SAMPLE_JD.Zeroheight}`,
       },
       {
         content: `Read the Job Description here:
-${jobDescription}`,
+      ${jobDescription}`,
         role: 'user',
       },
     ],

@@ -3,18 +3,18 @@ import path from 'node:path';
 
 import { colorize } from 'json-colorizer';
 
-import { jobDescription, SAMPLE_JD } from './job-description.js';
-import * as openAI from './open-ai.js';
+import { jobDescription, SAMPLE_JD } from '../job-description.js';
+import * as openAI from '../open-ai.js';
 import {
   listAllKeywordsFromResume,
   listColleagueRecommendations,
   listOpenSourceProjects,
   listWorkExperiences,
   resume,
-} from './resume.js';
-import * as resumeToPdf from './resume-to-pdf.js';
+} from '../resume.js';
+import * as resumeToPdf from '../resume-to-pdf.js';
 
-const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../'),
+const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../..'),
   PUBLIC_ASSETS_FOLDER = path.join(WORKSPACE_ROOT, 'public');
 
 async function extractTailorResumeFromJD(
@@ -41,7 +41,7 @@ Here is colleague recommendations in JSON format:
 ${JSON.stringify(references)}
 
 Here is open-source project you are code owner in JSON format:
-${JSON.stringify(projects)} 
+${JSON.stringify(projects)}
 
 Do the following tasks and response in JSON format:
 - Highlight the skills matching the JD
@@ -49,6 +49,8 @@ Do the following tasks and response in JSON format:
 - Extract the company name from JD in key path 'company.name'
 - Extract the opening position name from JD in key path 'company.position'
 - Advise what skills wasn't in my skills and i should consider add to my resume in key 'highlightedKeywords'
+
+Try not to use some wording excited , passionate, eager ...etc when it was very robotics response.
 `,
         role: 'system',
       },
