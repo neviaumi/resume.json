@@ -49,6 +49,8 @@ Do the following tasks and response in JSON format:
 - Extract the company name from JD in key path 'company.name'
 - Extract the opening position name from JD in key path 'company.position'
 - Advise what skills wasn't in my skills and i should consider add to my resume in key 'highlightedKeywords'
+
+Try not to use some wording excited , passionate, eager ...etc when it was very robotics response.
 `,
         role: 'system',
       },
