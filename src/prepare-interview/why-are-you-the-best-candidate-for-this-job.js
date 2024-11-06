@@ -22,9 +22,7 @@ async function generateAnswerFromJD(
         };
       })();
       if (!whyIAmBestCandidate && !whyOurCompany) {
-        // eslint-disable-next-line no-console
-        console.log(JSON.parse(response));
-        return;
+        return openAI.fallbackOfPrintPromptMessage(response);
       }
       // eslint-disable-next-line no-console
       console.log(

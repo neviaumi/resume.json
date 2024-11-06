@@ -27,6 +27,12 @@ export const SAMPLE_JD = {
   Katkin: await fs.readFile(path.join(DOCS_FOLDER, 'sample-jd', 'katkin.md'), {
     encoding: 'utf-8',
   }),
+  Loomery: await fs.readFile(
+    path.join(DOCS_FOLDER, 'sample-jd', 'loomery.md'),
+    {
+      encoding: 'utf-8',
+    },
+  ),
   Neutreeno: await fs.readFile(
     path.join(DOCS_FOLDER, 'sample-jd', 'neutreeno.md'),
     {

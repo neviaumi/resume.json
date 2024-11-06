@@ -14,6 +14,7 @@ async function generateLinkedInJobSearchFilterFromUserPreferences(
   await openAI.withFeedbackLoop(openAI.prompt, {
     onPromptGenerated: response => {
       const { explain, linkedInFilter } = JSON.parse(response);
+      if (!linkedInFilter) return openAI.fallbackOfPrintPromptMessage(response);
       // eslint-disable-next-line no-console
       console.log(`You can filter job by this expression:
 ${linkedInFilter}`);
@@ -24,7 +25,7 @@ ${explain}`);
   })(
     [
       {
-        content: `You are Software engineer who are preparing the job interview
+        content: `You are Software engineer who are looking for job in LinkedIn
 Here is all skills you knows in JSON format:
 ${JSON.stringify(keywords)}
 
