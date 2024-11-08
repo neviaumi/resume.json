@@ -27,15 +27,13 @@ async function generateAnswerFromJD(
       // eslint-disable-next-line no-console
       console.log(
         `# Why are you the best candidate for this job?
-
-      ${whyIAmBestCandidate}
+${whyIAmBestCandidate}
       `,
       );
       // eslint-disable-next-line no-console
       console.log(
         `# Why ${companyName}?
-
-      ${whyOurCompany}
+${whyOurCompany}
       `,
       );
     },

@@ -13,12 +13,14 @@ async function generateFromJD(jd, { keywords, projects, references, works }) {
     onPromptGenerated: response => {
       const { followUpQuestions, introduction, wordCount } =
         JSON.parse(response);
+      if (!introduction) return openAI.fallbackOfPrintPromptMessage(response);
       // eslint-disable-next-line no-console
       console.log(`${introduction}
+Word Count: ${Math.min(introduction.split(' ').filter(word => word.trim().length > 0).length, wordCount)}
 
 Follow-up Questions:
-${followUpQuestions.join('\n\n')}
-Word Count: ${wordCount}
+${followUpQuestions.map(q => `- ${q}`).join('\n\n')}
+
 `);
     },
   })(
