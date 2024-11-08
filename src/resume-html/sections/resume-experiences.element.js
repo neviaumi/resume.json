@@ -8,11 +8,11 @@ class ResumeExperiencesElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
-    const works = JSON.parse(this.attributes.works.value),
-      skills = JSON.parse(this.attributes.skills.value),
-      highlightedSkills = JSON.parse(
+    const highlightedSkills = JSON.parse(
         this.attributes['highlighted-skills'].value,
-      );
+      ),
+      skills = JSON.parse(this.attributes.skills.value),
+      works = JSON.parse(this.attributes.works.value);
     const template = document.createElement('template');
     template.innerHTML = `
 <section aria-labelledby="resume-experiences-section-header">
@@ -35,8 +35,8 @@ class ResumeExperiencesElement extends styles.withInjectedStyles(HTMLElement)({
             skills,
             highlightedSkills,
           ),
-          shouldRenderSectionHeader = index === 0,
-          shouldRenderExperienceInDetail = index <= 2;
+          shouldRenderExperienceInDetail = index <= 2,
+          shouldRenderSectionHeader = index === 0;
 
         return `<li class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${position} in ${company}">
 ${shouldRenderSectionHeader ? `<header id="resume-experiences-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-black tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Experience</header>` : ''}

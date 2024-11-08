@@ -6,10 +6,10 @@ class ResumeReferencesElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
-    const references = JSON.parse(
+    const linkedInLink = this.attributes['linkedin-link'].value,
+      references = JSON.parse(
         decodeURIComponent(this.attributes.references.value),
-      ).slice(0, 3),
-      linkedInLink = this.attributes['linkedin-link'].value;
+      ).slice(0, 3);
     const template = document.createElement('template');
     template.innerHTML = `
 <section aria-labelledby="resume-references-section-header">

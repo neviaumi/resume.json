@@ -8,7 +8,11 @@ class ResumeSkillsElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
-    const skills = Object.entries(
+    const highlightedSkills = JSON.parse(
+        this.attributes['highlighted-skills'].value,
+      ),
+      languages = JSON.parse(this.attributes.languages.value),
+      skills = Object.entries(
         JSON.parse(this.attributes.skills.value).reduce(
           (acc, { keywords, level, name }) => {
             acc[name] = {
@@ -19,11 +23,7 @@ class ResumeSkillsElement extends styles.withInjectedStyles(HTMLElement)({
           },
           {},
         ),
-      ),
-      highlightedSkills = JSON.parse(
-        this.attributes['highlighted-skills'].value,
-      ),
-      languages = JSON.parse(this.attributes.languages.value);
+      );
     const template = document.createElement('template');
     template.innerHTML = `
 <article title="skills">

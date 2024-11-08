@@ -6,11 +6,11 @@ class ResumeProjectsElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
-    const projects = JSON.parse(this.attributes.projects.value).slice(0, 3),
-      skills = JSON.parse(this.attributes.skills.value),
-      highlightedSkills = JSON.parse(
+    const highlightedSkills = JSON.parse(
         this.attributes['highlighted-skills'].value,
-      );
+      ),
+      projects = JSON.parse(this.attributes.projects.value).slice(0, 3),
+      skills = JSON.parse(this.attributes.skills.value);
     const template = document.createElement('template');
     template.innerHTML = `
 <section aria-labelledby="resume-projects-section-header">

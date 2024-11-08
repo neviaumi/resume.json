@@ -1,10 +1,10 @@
+import { colorize } from 'json-colorizer';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { colorize } from 'json-colorizer';
-
 import { jobDescription, SAMPLE_JD } from '../job-description.js';
 import * as openAI from '../open-ai.js';
+import * as resumeToPdf from '../resume-to-pdf.js';
 import {
   listAllKeywordsFromResume,
   listColleagueRecommendations,
@@ -12,7 +12,6 @@ import {
   listWorkExperiences,
   resume,
 } from '../resume.js';
-import * as resumeToPdf from '../resume-to-pdf.js';
 
 const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../..'),
   PUBLIC_ASSETS_FOLDER = path.join(WORKSPACE_ROOT, 'public');
