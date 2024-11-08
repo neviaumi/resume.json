@@ -138,25 +138,28 @@ Earlier, at Neat, I focused on onboarding and compliance features, working with 
       },
       {
         content: `Read the sample Jod description here:
-${SAMPLE_JD.Dialpad}`,
+${SAMPLE_JD.Cloudsinc}`,
         role: 'user',
       },
       {
         content: JSON.stringify({
           followUpQuestions: [
-            `The role requires strong experience with Python, Vue/React, and cloud infrastructures like GCP. Can you share specific projects where you utilized these technologies? What challenges did you encounter, and how did you overcome them?`,
-            `You mentioned mentoring junior developers in your previous roles. Can you describe a situation where your mentorship made a significant impact on a team member's growth or the overall project? How do you approach mentoring in a collaborative environment?`,
-            `The position emphasizes strong debugging skills. Could you provide an example of a complex issue you encountered in a past project? What steps did you take to troubleshoot and resolve the problem, and what was the outcome?`,
+            `Can you share your experience designing and delivering a single-page application (SPA)? What specific technologies did you use, and how did you ensure the application's scalability and data accuracy?`,
+            `The role emphasizes experience with Infrastructure as Code (IaC) and AWS services. Can you describe a project where you implemented IaC? What tools did you use, and what challenges did you face during the implementation?`,
+            `This position requires strong problem-solving skills and a proactive approach. Can you provide an example of a technical challenge you encountered in a previous project and how you resolved it? What was the outcome?`,
+            `Given the emphasis on collaboration, can you describe a situation where you worked closely with a cross-functional team? What was your role, and how did you ensure alignment with the overall platform architecture and requirements?`,
           ],
           introduction: `# Introduction
-Hello, I’m David, a full-stack web developer with over seven years of experience.
+
+Hello, I'm David, a full-stack developer with over seven years of experience.
 
 ## Recent Work Experience
-Most recently, I contributed to Emma, a personal finance app, where I worked with the CTO on backend performance tuning and collaborated with UX and mobile teams to bring mobile app features to the web. This role emphasized cross-team collaboration and rapid delivery under deadlines.
 
-Before Emma, I spent two years at PlayStation, where I helped develop an access control system for game development partners. I collaborated with teams to manage features, communicate updates to stakeholders, and maintain our internal component library. My efforts to optimize web configurations enhanced load speed and developer experience, underscoring the value of continuous improvement.
+I recently worked at Emma App Technologies, where I contributed to the development of a personal finance super-app. Collaborating with the CTO, I focused on improving backend performance and integrating Open Banking connections using TypeScript and Node.js. I also played a key role in migrating onboarding processes to a web platform using Next.js, enhancing user experience and accessibility.
 
-At Neat, I focused on onboarding and compliance features. I worked with UX and product teams to design a user-friendly interface for both the web app and an internal dashboard. I also mentored junior team members and implemented automated testing to boost code quality. This experience sharpened my skills in both high-speed development and effective mentorship, contributing to an improved and collaborative coding culture.`,
+Before Emma, I spent two years at PlayStation, where I developed an access control system for game developers. I utilized TypeScript and React to build frontend components, optimizing loading speeds and maintaining a shared component library for design consistency. Collaborating with cross-functional teams allowed us to improve system functionality and user engagement.
+
+Prior to PlayStation, I worked at Neat, where I developed a registration system for a digital wallet platform, focusing on creating an intuitive interface and building an admin dashboard for compliance review. I have experience with JavaScript and Python, and I believe my skills align well with the full-stack developer role at CloudSinc, especially in building scalable applications and working collaboratively with teams.`,
           wordCount: 183,
         }),
         role: 'assistant',
