@@ -1,6 +1,5 @@
 import { colorize } from 'json-colorizer';
 import { stdin as input, stdout as output } from 'node:process';
-// eslint-disable-next-line n/no-unsupported-features/node-builtins
 import readline from 'node:readline/promises';
 import OpenAI from 'openai';
 
