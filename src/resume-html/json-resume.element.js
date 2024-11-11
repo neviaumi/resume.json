@@ -20,10 +20,8 @@ const resume = await (async () => {
     new URL(import.meta.url).origin,
   ).toString()}/`;
   if (shouldUseTailoredResume) {
-    // eslint-disable-next-line n/no-unsupported-features/node-builtins
     return fetch(new URL('tailored-resume.json', baseUrl));
   }
-  // eslint-disable-next-line n/no-unsupported-features/node-builtins
   return fetch(new URL('resume.base.json', baseUrl));
 })().then(resp => resp.json());
 
