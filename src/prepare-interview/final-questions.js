@@ -18,7 +18,7 @@ async function generateFromJD(jd, { keywords, projects, references, works }) {
 ${questions
   .map(
     q => `- ${q.content}
-${q.explain}`,
+  Explain: ${q.explain}`,
   )
   .join('\n\n')}
 

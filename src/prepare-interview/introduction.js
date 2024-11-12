@@ -18,8 +18,13 @@ async function generateFromJD(jd, { keywords, projects, references, works }) {
       console.log(`${introduction}
 Word Count: ${Math.min(introduction.split(' ').filter(word => word.trim().length > 0).length, wordCount)}
 
-Follow-up Questions:
-${followUpQuestions.map(q => `- ${q}`).join('\n\n')}
+# Follow-up Questions:
+${followUpQuestions
+  .map(
+    q => `- ${q.question}
+  Explain: ${q.explain}`,
+  )
+  .join('\n\n')}
 
 `);
     },
@@ -45,7 +50,7 @@ Do the following tasks and response in JSON format:
 - Generate the response about introduction in markdown format in the key path 'introduction'.
 - Show word count in the key path 'wordCount'.
 - The introduction must not exceed 200 words.
-- Generate possible 4 follow-up questions that interviewer might ask based on the introduction in the key path 'followUpQuestions'. 
+- Generate possible 4 follow-up questions that interviewer might ask based on the introduction in the key path 'followUpQuestions[].question' and explain why this question was asked in the key path 'followUpQuestions[].explain' 
 
 The generated introduction should keep it short and simple as much as possible. you must limit the total speech of introduction with-in 200 words .
 Also you are not native english speaker, so please keep it simple and easy to understand.
@@ -119,79 +124,143 @@ ${SAMPLE_JD.Neutreeno}`,
       {
         content: JSON.stringify({
           followUpQuestions: [
-            `Can you describe a specific project where you implemented a responsive, modular single-page application? What technologies did you use, and what were some of the challenges you faced during the development process?`,
-            `Given your experience working closely with UX teams, how do you approach translating design specifications into functional code? Can you provide an example of how your collaboration led to improvements in user experience or application performance?`,
-            `You mentioned working on code quality and optimizations. How have you contributed to a continuous integration/continuous deployment (CI/CD) pipeline in your previous roles? Can you discuss how this practice impacted your team's development process and overall application performance?`,
+            {
+              explain:
+                'This question helps assess your expertise with TypeScript, which is listed as important in the job description. It offers a chance to gain deeper insights into your technical skills.',
+              question:
+                "Can you elaborate on your experience with TypeScript and how you've utilized it in your projects?",
+            },
+
+            {
+              explain:
+                'This question aims to understand your problem-solving abilities and how you tackle challenges during project implementations, showcasing your resilience and adaptability.',
+              question:
+                'What challenges did you face while integrating Open Banking connections at Emma App Technologies?',
+            },
+            {
+              explain:
+                'Given the importance of user experience in the role, this question probes your strategies and methodologies for optimizing application performance, allowing the interviewer to gauge your design sensibility.',
+              question:
+                'How do you ensure performance and user experience in the applications you develop?',
+            },
+            {
+              explain:
+                'Since experience with CI/CD pipelines is a requirement, this question is crucial to assess your familiarity with these processes and your ability to integrate smoothly into their development environment.',
+              question:
+                'Have you worked in CI/CD environments before, and what tools do you prefer?',
+            },
           ],
           introduction: `# Introduction
-Hello, I'm David, a full-stack web developer with over seven years of experience.
+      Hello, I'm David, a full-stack web developer with over seven years of experience.
 
-## Recent Work Experience
-Most recently, I worked at Emma, where I contributed to a personal finance app. Working closely with the CTO and UX team, I helped optimize backend performance and transition mobile app features to the website. This role emphasized efficient cross-functional collaboration and delivering results under tight deadlines.
+      ## Recent Work Experience
+      Most recently, I worked at Emma, where I contributed to a personal finance app. Working closely with the CTO and UX team, I helped optimize backend performance and transition mobile app features to the website. This role emphasized efficient cross-functional collaboration and delivering results under tight deadlines.
 
-Before Emma, I spent two years at PlayStation, where I helped build an access control system for game development partners. I collaborated with global teams to manage features, update our component library, and improve code quality. My optimizations on web configurations enhanced loading speeds and streamlined the developer experience, highlighting the importance of continuous improvement.
+      Before Emma, I spent two years at PlayStation, where I helped build an access control system for game development partners. I collaborated with global teams to manage features, update our component library, and improve code quality. My optimizations on web configurations enhanced loading speeds and streamlined the developer experience, highlighting the importance of continuous improvement.
 
-Earlier, at Neat, I focused on onboarding and compliance features, working with UX designers and product owners to build a user-friendly interface for our web app and internal dashboard. I also mentored junior developers, troubleshooting and implementing automated testing to raise code quality standards. This experience honed my abilities to excel in fast-paced settings and foster a collaborative, high-quality coding culture.`,
+      Earlier, at Neat, I focused on onboarding and compliance features, working with UX designers and product owners to build a user-friendly interface for our web app and internal dashboard. I also mentored junior developers, troubleshooting and implementing automated testing to raise code quality standards. This experience honed my abilities to excel in fast-paced settings and foster a collaborative, high-quality coding culture.`,
           wordCount: 180,
         }),
         role: 'assistant',
       },
       {
         content: `Read the sample Jod description here:
-${SAMPLE_JD.Cloudsinc}`,
+      ${SAMPLE_JD.Cloudsinc}`,
         role: 'user',
       },
       {
         content: JSON.stringify({
           followUpQuestions: [
-            `Can you share your experience designing and delivering a single-page application (SPA)? What specific technologies did you use, and how did you ensure the application's scalability and data accuracy?`,
-            `The role emphasizes experience with Infrastructure as Code (IaC) and AWS services. Can you describe a project where you implemented IaC? What tools did you use, and what challenges did you face during the implementation?`,
-            `This position requires strong problem-solving skills and a proactive approach. Can you provide an example of a technical challenge you encountered in a previous project and how you resolved it? What was the outcome?`,
-            `Given the emphasis on collaboration, can you describe a situation where you worked closely with a cross-functional team? What was your role, and how did you ensure alignment with the overall platform architecture and requirements?`,
+            {
+              explain:
+                "This question is crucial to evaluate your experience and comfort level with serverless architectures, which are defined as integral to CloudSinc's tech stack. Understanding your familiarity helps gauge your capabilities to contribute effectively.",
+              question:
+                'What experience do you have with serverless architectures like AWS Lambda?',
+            },
+            {
+              explain:
+                'Given the emphasis on Automation and Infrastructure as Code in the role, this question determines your practical knowledge and past experiences implementing these practices, which are key to the company’s operations.',
+              question:
+                'Can you describe a project where you implemented Infrastructure as Code?',
+            },
+
+            {
+              explain:
+                'Since the role involves a focus on both front-end and back-end development, this question seeks to determine your experience with modern JavaScript frameworks and how you approach developing single-page applications (SPAs).',
+              question:
+                'What frameworks are you most comfortable with for developing single-page applications?',
+            },
+            {
+              explain:
+                'This question assesses your problem-solving skills, as well as how you tackle technical issues in a fast-paced environment, which is a significant part of the job description.',
+              question:
+                'Can you share a challenging technical problem you encountered in a past project and how you resolved it?',
+            },
           ],
           introduction: `# Introduction
 
-Hello, I'm David, a full-stack developer with over seven years of experience.
+      Hello, I'm David, a full-stack developer with over seven years of experience.
 
-## Recent Work Experience
+      ## Recent Work Experience
 
-I recently worked at Emma App Technologies, where I contributed to the development of a personal finance super-app. Collaborating with the CTO, I focused on improving backend performance and integrating Open Banking connections using TypeScript and Node.js. I also played a key role in migrating onboarding processes to a web platform using Next.js, enhancing user experience and accessibility.
+      I recently worked at Emma App Technologies, where I contributed to the development of a personal finance super-app. Collaborating with the CTO, I focused on improving backend performance and integrating Open Banking connections using TypeScript and Node.js. I also played a key role in migrating onboarding processes to a web platform using Next.js, enhancing user experience and accessibility.
 
-Before Emma, I spent two years at PlayStation, where I developed an access control system for game developers. I utilized TypeScript and React to build frontend components, optimizing loading speeds and maintaining a shared component library for design consistency. Collaborating with cross-functional teams allowed us to improve system functionality and user engagement.
+      Before Emma, I spent two years at PlayStation, where I developed an access control system for game developers. I utilized TypeScript and React to build frontend components, optimizing loading speeds and maintaining a shared component library for design consistency. Collaborating with cross-functional teams allowed us to improve system functionality and user engagement.
 
-Prior to PlayStation, I worked at Neat, where I developed a registration system for a digital wallet platform, focusing on creating an intuitive interface and building an admin dashboard for compliance review. I have experience with JavaScript and Python, and I believe my skills align well with the full-stack developer role at CloudSinc, especially in building scalable applications and working collaboratively with teams.`,
+      Prior to PlayStation, I worked at Neat, where I developed a registration system for a digital wallet platform, focusing on creating an intuitive interface and building an admin dashboard for compliance review. I have experience with JavaScript and Python, and I believe my skills align well with the full-stack developer role at CloudSinc, especially in building scalable applications and working collaboratively with teams.`,
           wordCount: 183,
         }),
         role: 'assistant',
       },
       {
         content: `Read the sample Jod description here:
-${SAMPLE_JD.Privasee}`,
+      ${SAMPLE_JD.Privasee}`,
         role: 'user',
       },
       {
         content: JSON.stringify({
           followUpQuestions: [
-            'The role emphasizes designing and managing robust APIs. Can you describe a project where you developed an API? What were the main challenges you faced in ensuring its scalability and security, and how did you address them?',
-            'Given your experience with React and the need for pixel-perfect applications at Privasee, can you share a specific example of a project where you implemented responsive designs? What tools and techniques did you use to ensure cross-browser compatibility and a seamless user experience?',
-            'Privasee highlights the importance of being a self-directed and proactive contributor in a fast-paced startup environment. Can you provide an example from your previous work where you took initiative to drive a project forward or solve a problem independently? What was the outcome?',
+            {
+              explain:
+                'This question seeks to determine your hands-on experience in designing and implementing APIs, which is a central responsibility in the role. Understanding your background can help gauge your readiness to take on significant decisions regarding technologies.',
+              question:
+                'Can you describe your experience in designing and managing robust APIs?',
+            },
+            {
+              explain:
+                'The role emphasizes collaboration with the CTO and significant decision-making power, so understanding your approach to tech stack selection will provide insight into your strategic thinking and collaborative skills.',
+              question:
+                'How do you approach making technology and architecture decisions in your projects?',
+            },
+            {
+              explain:
+                'Given that the company values curiosity and embraces challenges, this question helps assess your problem-solving methodology and practicality in addressing complex issues during development.',
+              question:
+                'Can you discuss a complex problem you faced in a previous project and how you approached finding a solution?',
+            },
+            {
+              explain:
+                'Since the role requires maintaining performance and system environments, this question is vital to understanding your experience with CI/CD and how you manage deployment pipelines, ensuring that you fit well within their operational processes.',
+              question:
+                'What tools and practices have you used in continuous development and deployment?',
+            },
           ],
           introduction: `# Introduction
-Hello, I'm David, a full-stack web developer with over seven years of experience.
+      Hello, I'm David, a full-stack web developer with over seven years of experience.
 
-## Recent Work Experience
-Most recently, I worked at Emma App Technologies, building a personal finance super-app. Collaborating with the CTO, I optimized backend efficiency and integrated Open Banking connections using TypeScript and Node.js for seamless bank connectivity. I also developed a referral page and a QR code generator using Cloudflare Workers and migrated onboarding and subscription flows to the web with Next.js. This role enhanced my ability to deliver high-quality results under tight deadlines.
+      ## Recent Work Experience
+      Most recently, I worked at Emma App Technologies, building a personal finance super-app. Collaborating with the CTO, I optimized backend efficiency and integrated Open Banking connections using TypeScript and Node.js for seamless bank connectivity. I also developed a referral page and a QR code generator using Cloudflare Workers and migrated onboarding and subscription flows to the web with Next.js. This role enhanced my ability to deliver high-quality results under tight deadlines.
 
-Prior to Emma, I spent two years at PlayStation, developing the frontend for an access control system for game development partners. I worked with cross-functional teams to break down features and present demos to stakeholders. I maintained an internal component library and improved our Micro-Frontend architecture by reducing duplicate modules and streamlining the build pipeline, strengthening my skills in large-scale projects and event-driven architecture.
+      Prior to Emma, I spent two years at PlayStation, developing the frontend for an access control system for game development partners. I worked with cross-functional teams to break down features and present demos to stakeholders. I maintained an internal component library and improved our Micro-Frontend architecture by reducing duplicate modules and streamlining the build pipeline, strengthening my skills in large-scale projects and event-driven architecture.
 
-My core skills include JavaScript, TypeScript, Node.js, and React, with expertise in API development and CI/CD tools—aligning well with the requirements for the Full Stack Engineer role at Privasee.`,
+      My core skills include JavaScript, TypeScript, Node.js, and React, with expertise in API development and CI/CD tools—aligning well with the requirements for the Full Stack Engineer role at Privasee.`,
           wordCount: 200,
         }),
         role: 'assistant',
       },
       {
         content: `Read the Job Description here:
-${jobDescription}`,
+      ${jobDescription}`,
         role: 'user',
       },
     ],
