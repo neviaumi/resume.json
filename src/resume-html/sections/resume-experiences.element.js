@@ -35,10 +35,10 @@ class ResumeExperiencesElement extends styles.withInjectedStyles(HTMLElement)({
             skills,
             highlightedSkills,
           ),
-          shouldRenderExperienceInDetail = index <= 2,
+          shouldRenderExperienceInDetail = index <= 3,
           shouldRenderSectionHeader = index === 0;
 
-        return `<li class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${position} in ${company}">
+        return `<li class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${position} in ${company}" aria-describedby="work-experience-${index}">
 ${shouldRenderSectionHeader ? `<header id="resume-experiences-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-black tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Experience</header>` : ''}
 
 <header>
@@ -55,7 +55,7 @@ ${shouldRenderSectionHeader ? `<header id="resume-experiences-section-header" cl
 </a>
 </header>
 <section class="${clsx('tw-flex tw-flex-col tw-gap-1.5 tw-p-2')}">
-${shouldRenderExperienceInDetail ? `<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}">${summary}</p>` : ''}
+${shouldRenderExperienceInDetail ? `<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}" id="work-experience-${index}">${summary}</p>` : ''}
 <ul class="${clsx('tw-flex tw-flex-wrap tw-gap-1')}">${[
           [
             'Highlight',
