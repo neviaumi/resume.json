@@ -23,7 +23,7 @@ ${projects
         skills,
       );
     // language=html
-    return `<li class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${name}">
+    return `<li class="${clsx('tw-border-b tw-border-primary print:tw-break-inside-avoid')}" title="${name}" aria-describedby="project-${index}">
 ${index === 0 ? `<header id="resume-projects-section-header" class="${clsx('tw-mb-1.5 tw-text-3xl tw-font-black tw-underline tw-underline-offset-8 print:tw-underline-offset-4')}">Open Source Projects</header>` : ''}
 
 <header>
@@ -37,7 +37,7 @@ ${index === 0 ? `<header id="resume-projects-section-header" class="${clsx('tw-m
 </header>
 <section class="${clsx('tw-flex tw-flex-col tw-gap-1.5 tw-p-2')}">
 
-<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}">${description}</p>
+<p class="${clsx('tw-text-xl tw-font-bold tw-text-primary')}" id="project-${index}">${description}</p>
 <ul class="${clsx('tw-flex tw-flex-wrap tw-gap-1')}">
 ${[
   [

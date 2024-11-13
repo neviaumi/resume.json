@@ -261,13 +261,12 @@
     },
     {
       "company": "HK01",
-      "description": "Online media outlet ranked #22 on Alexa and #1 on Hong Kong Apple App Store and Google Play Store.",
+      "description": "At HK01, a leading online media platform, I worked closely with two engineers and a Product Owner to build and improve internal systems. I handled feature planning, development, QA, and demos. One key project was developing an SSO system, making staff login seamless across different internal tools, boosting productivity and simplifying HR access management. I also built an internal messaging system that allowed staff to send various notifications (WebPush, In-App, SMS, etc.) to app users. These improvements streamlined workflows, enhanced communication, and made internal operations smoother and more efficient.",
       "endDate": "2021-05-01",
       "highlights": [
-        "Collaborated with team lead and product owner to prioritize and break down features into valuable deliverables",
-        "Created the system for editor delivery notifications to end users, including push notifications, SMS, email, etc.",
-        "Created the company’s internal Single Sign-On (SSO) system.",
-        "Created the Content Management System (CMS) for non-technical staff to create content for the company application."
+        "Created internal SSO for efficient staff login and productivity boost.",
+        "Built messaging system for varied staff-triggered notifications.",
+        "Improved HR access management and streamlined internal operations."
       ],
       "keywords": [
         "MongoDB",
@@ -284,7 +283,7 @@
       "location": "Hong Kong (on-site)",
       "position": "Software Engineer",
       "startDate": "2018-11-01",
-      "summary": "Enabled editors to log in across company sub-systems with given permission, deliver notifications to end users through different channels, and create content for campaigns.",
+      "summary": "Developed internal SSO for seamless staff login, boosting productivity. Built a messaging platform for WebPush, In-App, and SMS notifications, enhancing communication and streamlining internal operations with improved HR access management.",
       "website": "https://www.hk01.com"
     },
     {
