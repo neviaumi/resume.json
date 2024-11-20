@@ -153,7 +153,8 @@
         "Remix",
         "NextJS",
         "TailwindCSS",
-        "SQL/NoSQL",
+        "SQL",
+        "NoSQL",
         "Microservices"
       ],
       "level": "Intermediate",

@@ -18,10 +18,14 @@ async function generateCoverLetterFromJD(
       if (!coverLetter) return openAI.fallbackOfPrintPromptMessage(response);
       // eslint-disable-next-line no-console
       console.log(`Cover letter:
-${coverLetter}`);
-      // eslint-disable-next-line no-console
-      console.log(`Cover letter explain:
-${explain}`);
+${coverLetter}
+
+Work count:
+${coverLetter.split(' ').length}
+
+Cover letter explain:
+${explain}
+`);
     },
   })(
     [
