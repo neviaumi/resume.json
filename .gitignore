@@ -124,4 +124,3 @@ dist/
 
 public/*.pdf
 public/tailored-resume.json
-!public/resume.pdf

@@ -12,6 +12,12 @@ export const jobDescription = await fs.readFile(
 );
 
 export const SAMPLE_JD = {
+  Airlinen: await fs.readFile(
+    path.join(DOCS_FOLDER, 'sample-jd', 'airlinen.md'),
+    {
+      encoding: 'utf-8',
+    },
+  ),
   Cloudsinc: await fs.readFile(
     path.join(DOCS_FOLDER, 'sample-jd', 'cloudsinc.md'),
     {
