@@ -96,7 +96,8 @@
         "LLAMA.cpp",
         "Monorepos",
         "Playwright",
-        "Serverless"
+        "Serverless",
+        "Python"
       ],
       "name": "Made in UK",
       "roles": ["Maintainer", "Code Owner"],
