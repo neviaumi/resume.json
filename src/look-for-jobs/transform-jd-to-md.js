@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 
-import { getSampleJD } from '../job-description.js';
+import { getSampleJD, SAMPLE_JD } from '../job-description.js';
 import * as openAI from '../open-ai.js';
 import { DOCS_FOLDER } from '../workspace.js';
 
@@ -38,7 +38,7 @@ Do the following on given JD and response in JSON format:
       },
       {
         content: `Transform below JD to MD format:
-${await getSampleJD('faculty', 'txt')}`,
+${await getSampleJD(SAMPLE_JD.Faculty, 'txt')}`,
         role: 'user',
       },
       {
@@ -49,14 +49,14 @@ ${await getSampleJD('faculty', 'txt')}`,
             position: 'Software Engineer - Full-Stack',
           },
           jd: {
-            markdown: await getSampleJD('faculty', 'md'),
+            markdown: await getSampleJD(SAMPLE_JD.Faculty, 'md'),
           },
         }),
         role: 'assistant',
       },
       {
         content: `Transform below JD to MD format:
-${await getSampleJD('eight-sleep', 'txt')}`,
+${await getSampleJD(SAMPLE_JD.EightSleep, 'txt')}`,
         role: 'user',
       },
       {
@@ -67,14 +67,14 @@ ${await getSampleJD('eight-sleep', 'txt')}`,
             position: 'Full Stack Engineer, Web',
           },
           jd: {
-            markdown: await getSampleJD('eight-sleep', 'md'),
+            markdown: await getSampleJD(SAMPLE_JD.EightSleep, 'md'),
           },
         }),
         role: 'assistant',
       },
       {
         content: `Transform below JD to MD format:
-${await getSampleJD('goodlord', 'txt')}`,
+${await getSampleJD(SAMPLE_JD.Goodlord, 'txt')}`,
         role: 'user',
       },
       {
@@ -91,7 +91,7 @@ ${await getSampleJD('goodlord', 'txt')}`,
             position: 'Front End Engineer (TypeScript)',
           },
           jd: {
-            markdown: await getSampleJD('goodlord', 'md'),
+            markdown: await getSampleJD(SAMPLE_JD.Goodlord, 'md'),
           },
         }),
         role: 'assistant',

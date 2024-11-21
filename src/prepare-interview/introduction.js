@@ -1,4 +1,4 @@
-import { jobDescription, SAMPLE_JD } from '../job-description.js';
+import { getSampleJD, jobDescription, SAMPLE_JD } from '../job-description.js';
 import * as openAI from '../open-ai.js';
 import {
   listAllKeywordsFromResume,
@@ -118,7 +118,7 @@ Acknowledge that you work with others. Building a non-trivial system with just 2
       },
       {
         content: `Read the sample Jod description here:
-${SAMPLE_JD.Neutreeno}`,
+${await getSampleJD(SAMPLE_JD.Neutreeno)}`,
         role: 'user',
       },
       {
@@ -165,7 +165,7 @@ ${SAMPLE_JD.Neutreeno}`,
       },
       {
         content: `Read the sample Jod description here:
-      ${SAMPLE_JD.Cloudsinc}`,
+      ${await getSampleJD(SAMPLE_JD.Cloudsinc)}`,
         role: 'user',
       },
       {
@@ -214,7 +214,7 @@ ${SAMPLE_JD.Neutreeno}`,
       },
       {
         content: `Read the sample Jod description here:
-      ${SAMPLE_JD.Privasee}`,
+      ${await getSampleJD(SAMPLE_JD.Privasee)}`,
         role: 'user',
       },
       {

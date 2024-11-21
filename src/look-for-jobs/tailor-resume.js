@@ -2,7 +2,7 @@ import { colorize } from 'json-colorizer';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import { jobDescription, SAMPLE_JD } from '../job-description.js';
+import { getSampleJD, jobDescription, SAMPLE_JD } from '../job-description.js';
 import * as openAI from '../open-ai.js';
 import * as resumeToPdf from '../resume-to-pdf.js';
 import {
@@ -53,7 +53,7 @@ Try not to use some wording excited , passionate, eager ...etc when it was very 
       },
       {
         content: `Sample JD here:
-${SAMPLE_JD.Neutreeno}
+${await getSampleJD(SAMPLE_JD.Neutreeno)}
 `,
         role: 'user',
       },
@@ -85,7 +85,7 @@ ${SAMPLE_JD.Neutreeno}
       },
       {
         content: `Sample JD here:
-      ${SAMPLE_JD.Dialpad}`,
+${await getSampleJD(SAMPLE_JD.Dialpad)}`,
         role: 'user',
       },
       {
@@ -120,7 +120,7 @@ ${SAMPLE_JD.Neutreeno}
       {
         content: `
 Sample JD here:
-${SAMPLE_JD.Katkin}
+${await getSampleJD(SAMPLE_JD.Katkin)}
 `,
         role: 'user',
       },
@@ -158,7 +158,7 @@ ${SAMPLE_JD.Katkin}
       {
         content: `
 Sample JD here:
-${SAMPLE_JD.Goodlord}
+${await getSampleJD(SAMPLE_JD.Goodlord)}
 `,
         role: 'user',
       },
@@ -192,7 +192,7 @@ ${SAMPLE_JD.Goodlord}
       {
         content: `
 Sample JD here:
-${SAMPLE_JD.Zensai}
+${await getSampleJD(SAMPLE_JD.Zensai)}
 `,
         role: 'user',
       },
@@ -223,7 +223,7 @@ ${SAMPLE_JD.Zensai}
       {
         content: `
 Sample JD here:
-${SAMPLE_JD.Zeroheight}
+${await getSampleJD(SAMPLE_JD.Zeroheight)}
 `,
         role: 'user',
       },

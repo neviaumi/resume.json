@@ -1,4 +1,4 @@
-import { jobDescription, SAMPLE_JD } from '../job-description.js';
+import { getSampleJD, jobDescription, SAMPLE_JD } from '../job-description.js';
 import * as openAI from '../open-ai.js';
 import {
   listAllKeywordsFromResume,
@@ -56,7 +56,7 @@ Cover letter should include why you are right for this role and introducing your
       },
       {
         content: `Sameple JD here:
-${SAMPLE_JD.Loomery}`,
+${await getSampleJD(SAMPLE_JD.Loomery)}`,
         role: 'user',
       },
       {
