@@ -13,7 +13,7 @@ const resumePDFPath = useTailoredResume
       PUBLIC_ASSETS_FOLDER,
       `${await (async () => {
         return fs
-          .readFile(path.join(PUBLIC_ASSETS_FOLDER, 'tailored-resume.json'), {
+          .readFile(path.join(PUBLIC_ASSETS_FOLDER, 'resume.tailored.json'), {
             encoding: 'utf-8',
           })
           .then(resume => JSON.parse(resume))

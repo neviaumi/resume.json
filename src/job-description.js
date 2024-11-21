@@ -1,8 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../'),
-  DOCS_FOLDER = path.join(WORKSPACE_ROOT, 'docs');
+import { DOCS_FOLDER } from './workspace.js';
 
 export const jobDescription = await fs.readFile(
   path.join(DOCS_FOLDER, 'jd.md'),

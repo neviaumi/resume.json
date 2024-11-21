@@ -12,9 +12,7 @@ import {
   listWorkExperiences,
   resume,
 } from '../resume.js';
-
-const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../..'),
-  PUBLIC_ASSETS_FOLDER = path.join(WORKSPACE_ROOT, 'public');
+import { PUBLIC_ASSETS_FOLDER } from '../workspace.js';
 
 async function extractTailorResumeFromJD(
   jd,
@@ -272,7 +270,7 @@ async function main() {
     works: listWorkExperiences(resume),
   });
   await fs.writeFile(
-    path.join(PUBLIC_ASSETS_FOLDER, 'tailored-resume.json'),
+    path.join(PUBLIC_ASSETS_FOLDER, 'resume.tailored.json'),
     JSON.stringify(
       Object.assign(resume, {
         basics: Object.assign(resume.basics, {
