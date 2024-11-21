@@ -20,7 +20,7 @@ const resume = await (async () => {
     new URL(import.meta.url).origin,
   ).toString()}/`;
   if (shouldUseTailoredResume) {
-    return fetch(new URL('tailored-resume.json', baseUrl));
+    return fetch(new URL('resume.tailored.json', baseUrl));
   }
   return fetch(new URL('resume.base.json', baseUrl));
 })().then(resp => resp.json());

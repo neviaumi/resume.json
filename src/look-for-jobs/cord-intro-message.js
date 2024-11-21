@@ -1,4 +1,4 @@
-import { jobDescription, SAMPLE_JD } from '../job-description.js';
+import { getSampleJD, jobDescription, SAMPLE_JD } from '../job-description.js';
 import * as openAI from '../open-ai.js';
 import {
   listAllKeywordsFromResume,
@@ -155,7 +155,7 @@ PS check out my GitHub profile which has several personal projects on it - the l
       },
       {
         content: `Sample JD here:
-${SAMPLE_JD.Airlinen}`,
+${await getSampleJD(SAMPLE_JD.Airlinen)}`,
         role: 'user',
       },
       {

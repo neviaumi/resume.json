@@ -119,8 +119,8 @@ dist
 
 test-results/
 docs/jd.md
-docs/draft-introduction.md
+docs/jd.txt
 dist/
 
 public/*.pdf
-public/tailored-resume.json
+public/resume.tailored.json

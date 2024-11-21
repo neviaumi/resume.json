@@ -1,4 +1,4 @@
-import { jobDescription, SAMPLE_JD } from '../job-description.js';
+import { getSampleJD, jobDescription, SAMPLE_JD } from '../job-description.js';
 import * as openAI from '../open-ai.js';
 import {
   listAllKeywordsFromResume,
@@ -71,7 +71,7 @@ Cut the crap by try not say something 'I am so excited, I am passionate, i am so
       },
       {
         content: `Read the sample Jod description here:
-${SAMPLE_JD.Neutreeno}`,
+${await getSampleJD(SAMPLE_JD.Neutreeno)}`,
         role: 'user',
       },
       {
@@ -101,7 +101,7 @@ ${SAMPLE_JD.Neutreeno}`,
       },
       {
         content: `Read the sample Jod description here:
-      ${SAMPLE_JD.Dialpad}`,
+      ${await getSampleJD(SAMPLE_JD.Dialpad)}`,
         role: 'user',
       },
       {
@@ -131,7 +131,7 @@ ${SAMPLE_JD.Neutreeno}`,
       },
       {
         content: `Read the sample Jod description here:
-      ${SAMPLE_JD.Privasee}`,
+      ${await getSampleJD(SAMPLE_JD.Privasee)}`,
         role: 'user',
       },
       {
@@ -162,7 +162,7 @@ ${SAMPLE_JD.Neutreeno}`,
 
       {
         content: `Read the Job Description here:
-      ${jobDescription}`,
+      ${await getSampleJD(jobDescription)}`,
         role: 'user',
       },
     ],

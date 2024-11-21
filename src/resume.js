@@ -1,8 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const WORKSPACE_ROOT = path.resolve(import.meta.dirname, '../'),
-  PUBLIC_ASSETS_FOLDER = path.join(WORKSPACE_ROOT, 'public');
+import { PUBLIC_ASSETS_FOLDER } from './workspace.js';
 
 export const resume = await fs
   .readFile(path.join(PUBLIC_ASSETS_FOLDER, 'resume.base.json'), {
