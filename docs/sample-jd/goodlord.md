@@ -17,6 +17,23 @@ Our platform is built with multiple PHP 8 applications running on Symfony (5.4/6
 Our UI is a mixture of jQuery and React (using Typescript) and we’re actively pushing to have everything in React.
 We use Github for version control and Github Actions for building, testing and deploying code to the staging and production environments.
 
+## ABOUT THE ROLE
+
+Goodlord’s mission is to provide the best renting experience in the world and we’re on the hunt for a Front End Engineer, reporting directly to our Tech Lead, to help us achieve this.
+No two days are ever the same at Goodlord so what you’ll be up to will vary. The pace we move at also means priorities will change and you’ll need to be comfortable with this (we’ll support you!). But these are the things that will be core to your role and will keep you busy.
+
+The day to day stuff:
+Work with product managers, designers, business colleagues and other engineers to understand end user problems and implement appropriate solutions
+
+- Assist your squad by delivering features and with them
+- Use your knowledge on React and Typescript to continuously identify areas of
+  improvement and propose fixes
+- Review the code of your colleagues
+- Offer mentoring to less experienced developers
+- Expand our library of reusable components
+- Continuously develop your skill set via tailored professional development
+- objectives and budget
+
 ## About You
 
 You should apply if you have/are:

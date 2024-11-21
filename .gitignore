@@ -119,6 +119,7 @@ dist
 
 test-results/
 docs/jd.md
+docs/jd.txt
 dist/
 
 public/*.pdf

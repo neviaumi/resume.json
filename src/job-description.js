@@ -10,6 +10,15 @@ export const jobDescription = await fs.readFile(
   },
 );
 
+export function getSampleJD(companyName, format = 'md') {
+  return fs.readFile(
+    path.join(DOCS_FOLDER, 'sample-jd', `${companyName}.${format}`),
+    {
+      encoding: 'utf-8',
+    },
+  );
+}
+
 export const SAMPLE_JD = {
   Airlinen: await fs.readFile(
     path.join(DOCS_FOLDER, 'sample-jd', 'airlinen.md'),
