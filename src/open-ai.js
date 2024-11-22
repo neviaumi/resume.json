@@ -32,6 +32,31 @@ export async function prompt(messages, options) {
   return [...messages, chatCompletion.choices[0].message];
 }
 
+export function regeneratePrompt(promptFunction, options = {}) {
+  const regenerateFrom = options?.regenerateFrom ?? 0;
+  return async function warpingPromptFunction(messages, options) {
+    const userMessages = messages.filter(message => message.role === 'user');
+    let initialMessage = (() => {
+      let skipped = 0;
+      const keep = messages.findIndex(message => {
+        if (message.role === 'user') {
+          if (skipped === regenerateFrom) return true;
+          skipped += 1;
+        }
+        return false;
+      });
+      return messages.slice(0, keep);
+    })();
+    for (let i = regenerateFrom; i < userMessages.length; i++) {
+      initialMessage = await promptFunction(
+        initialMessage.concat(userMessages[i]),
+        options,
+      );
+    }
+    return initialMessage;
+  };
+}
+
 export function readMessageFromPrompt(prompts) {
   const lastPrompt = prompts.slice(-1)[0];
   if (lastPrompt.role !== 'assistant') {

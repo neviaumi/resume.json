@@ -14,7 +14,7 @@ async function generateFromJD(jd, { keywords, projects, references, works }) {
       const { questions } = JSON.parse(response);
       if (!questions) return openAI.fallbackOfPrintPromptMessage(response);
       // eslint-disable-next-line no-console
-      console.log(`Questions:
+      console.log(`# Questions
 ${questions
   .map(
     q => `- ${q.content}
@@ -43,7 +43,7 @@ ${JSON.stringify(projects)}
 Job Description will provided in user input, 
 
 Do the following tasks and response in JSON format:
-- Generate the 3 question you should ask at the end of interview in markdown format in the key path 'questions[].content'.
+- Generate the 4 question you should ask at the end of interview in markdown format in the key path 'questions[].content'.
 - Generate the explanation of why the question should be asked in key path 'questions[].explain'. 
 
 The generated question should keep it short and simple as much as possible. you must limit the total speech of introduction with-in 20 words .
@@ -95,6 +95,12 @@ ${await getSampleJD(SAMPLE_JD.Neutreeno)}`,
               explain:
                 'This question reveals the key criteria that determine the success of the applications, which is important for your role.',
             },
+            {
+              content:
+                'What are the biggest technical challenges the team is currently facing?',
+              explain:
+                'This question helps understand the challenges the team faces and how I can contribute.',
+            },
           ],
         }),
         role: 'assistant',
@@ -124,6 +130,12 @@ ${await getSampleJD(SAMPLE_JD.Neutreeno)}`,
                 'Can you describe the mentorship process for junior engineers in the team?',
               explain:
                 'This provides clarity on the support structure in place for skill development.',
+            },
+            {
+              content:
+                'How does Dialpad prioritize features for development across teams?',
+              explain:
+                'This reveals how the company aligns engineering efforts with business goals.',
             },
           ],
         }),
@@ -155,14 +167,19 @@ ${await getSampleJD(SAMPLE_JD.Neutreeno)}`,
               explain:
                 'This helps you understand how much influence you would have on technology choices.',
             },
+            {
+              content:
+                'What role does the AI engineering team play in developing the overall platform?',
+              explain:
+                'This clarifies collaboration between teams, which is essential in a cross-functional environment.',
+            },
           ],
         }),
         role: 'assistant',
       },
-
       {
         content: `Read the Job Description here:
-      ${await getSampleJD(jobDescription)}`,
+      ${jobDescription}`,
         role: 'user',
       },
     ],

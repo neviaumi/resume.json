@@ -31,6 +31,7 @@ export const SAMPLE_JD = {
   Dialpad: Symbol('dialpad'),
   EightSleep: Symbol('eight-sleep'),
   Faculty: Symbol('faculty'),
+  Fonoa: Symbol('fonoa'),
   Goodlord: Symbol('goodlord'),
   Katkin: Symbol('katkin'),
   Loomery: Symbol('loomery'),
