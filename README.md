@@ -14,7 +14,7 @@ npx vite dev
 ### Generate tailor resume.pdf
 
 ```bash
-OPENAI_API_KEY= node ./src/look-for-jobs/tailor-resume.js
+OPENAI_API_KEY= node ./src/apply-for-job/tailor-resume.js
 ```
 
 ### Debug tailor resume
