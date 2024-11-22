@@ -14,7 +14,8 @@ class ResumeAboutElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
 }) {
   connectedCallback() {
-    const resumeBasic = JSON.parse(this.attributes.data.value);
+    const resumeBasic = JSON.parse(this.attributes.data.value),
+      name = resumeBasic.name;
     const template = document.createElement('template');
     template.innerHTML = `
 <section class="${clsx('print:tw-break-inside-avoid')}">
@@ -37,8 +38,8 @@ ${resumeBasic.profiles
   .map(profile => {
     const network = profile.network.toLowerCase();
     const icon = network === 'github' ? githubIcon : linkedInIcon;
-    return `<a href="${profile.url}" target="_blank" class='${clsx('tw-text-base tw-font-medium tw-text-primary', 'tw-items-center', 'tw-flex', 'tw-gap-2', network === 'github' ? 'tw-mb-1' : '')}'>
-        <img src="${icon}" alt="home icon" class="${clsx('tw-h-2.5')}"/>
+    return `<a title="${name} ${profile.network}" href="${profile.url}" target="_blank" class='${clsx('tw-text-base tw-font-medium tw-text-primary', 'tw-items-center', 'tw-flex', 'tw-gap-2', network === 'github' ? 'tw-mb-1' : '')}'>
+        <img src="${icon}" alt="${profile.network}" class="${clsx('tw-h-2.5')}"/>
         ${profile.username}
       </a>`;
   })
