@@ -105,8 +105,7 @@ Acknowledge that you work with others. Building a non-trivial system with just 2
       {
         content: `Read the sample Jod description here:
 ${await getSampleJD(SAMPLE_JD.Neutreeno)}
-
-You are doing culture fit interview with Operations and Finance at Neutreeno.
+You are conducting a culture-fit interview with the Operations and Finance team lead at Neutreeno.
 `,
         role: 'user',
       },
@@ -157,7 +156,7 @@ My experiences in both tech development and team collaboration have equipped me 
       {
         content: `Read the sample Jod description here:
       ${await getSampleJD(SAMPLE_JD.Cloudsinc)}
-You are doing interview with Founder and Engineer lead at Cloudsince.`,
+You are interviewing the Founder and Lead Engineer at Cloudsince.`,
         role: 'user',
       },
       {
@@ -209,7 +208,7 @@ I also played a key role in mentoring junior developers, discussing best practic
       {
         content: `Read the sample Jod description here:
       ${await getSampleJD(SAMPLE_JD.Privasee)}
-You are doing interview with CTO at Privasee.`,
+You are interviewing the CTO at Privasee.`,
         role: 'user',
       },
       {
@@ -259,7 +258,7 @@ I am passionate about leveraging technology to create impactful solutions and am
       {
         content: `Read the Job Description here:
       ${await getSampleJD(SAMPLE_JD.Fonoa)}
-You are doing introduction interview with Talent Partner`,
+You are conducting an introductory interview with the Talent Partner at Fonoa.`,
         role: 'user',
       },
       {
@@ -309,7 +308,7 @@ I am enthusiastic about the opportunity at Fonoa to contribute to innovative tax
       {
         content: `Read the Job Description here:
       ${jobDescription}
-You are doing ${interviewType} interview with ${interviewerRole}`,
+${interviewType ? `You are conducting an ${interviewType} interview with the ${interviewerRole}` : `You are interviewing the ${interviewerRole}`}`,
         role: 'user',
       },
     ];
