@@ -125,7 +125,7 @@ ${await getSampleJD(SAMPLE_JD.Zeroheight)}`,
       },
       {
         content: `Read the Job Description here:
-${await getSampleJD(jobDescription)}`,
+${jobDescription}`,
         role: 'user',
       },
     ],
