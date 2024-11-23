@@ -20,10 +20,11 @@ ${jd.markdown}
           `Polite reminder:
 Missing company value on JD! Better check company site to include core value on JD before generate resume as it would provide better result!`,
         );
-      }
-      // eslint-disable-next-line no-console
-      console.log(`Company core value:
+      } else {
+        // eslint-disable-next-line no-console
+        console.log(`Company core value:
 ${company.coreValue.join('\n')}`);
+      }
     },
   })(
     [
