@@ -32,3 +32,7 @@ export function listColleagueRecommendations(resume) {
 export function listOpenSourceProjects(resume) {
   return resume.projects;
 }
+
+export function getPersonalWebSiteUrl(resume) {
+  return resume.basics.website;
+}

@@ -29,7 +29,7 @@ ${introMessage.explain}
   })(
     [
       {
-        content: `You are Software engineer who are preparing the job interview
+        content: `You are Software engineer who are going to apply the job your found on Cord.co
 Here is all skills you knows in JSON format:
 ${JSON.stringify(keywords)}
 
