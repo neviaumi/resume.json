@@ -27,6 +27,7 @@ export function getSampleJD(sampleName, format = 'md') {
 
 export const SAMPLE_JD = {
   Airlinen: Symbol('airlinen'),
+  AmalInitiative: Symbol('amal-initiative'),
   Cloudsinc: Symbol('cloudsinc'),
   Dialpad: Symbol('dialpad'),
   EightSleep: Symbol('eight-sleep'),
