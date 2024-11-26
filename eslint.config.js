@@ -4,6 +4,7 @@ import { useTailwindCSSEslintConfig } from '@busybox/eslint-config-tailwindcss';
 import {
   useJSONEslintConfig,
   useMarkdownEslintConfig,
+  usePackageJsonEslintConfig,
   useYamlEslintConfig,
 } from '@busybox/eslint-config-text-document';
 import globals from 'globals';
@@ -31,5 +32,6 @@ export default [
   }),
   useYamlEslintConfig(),
   useJSONEslintConfig(),
+  usePackageJsonEslintConfig(),
   useMarkdownEslintConfig(),
 ].flat();
