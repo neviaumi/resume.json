@@ -38,6 +38,7 @@ export const SAMPLE_JD = {
   Loomery: Symbol('loomery'),
   Neutreeno: Symbol('neutreeno'),
   Privasee: Symbol('privasee'),
+  Railway: Symbol('railway'),
   Zensai: Symbol('zensai'),
   Zeroheight: Symbol('zeroheight'),
 };
