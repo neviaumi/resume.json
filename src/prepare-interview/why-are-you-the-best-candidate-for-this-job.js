@@ -124,8 +124,53 @@ ${await getSampleJD(SAMPLE_JD.Zeroheight)}`,
         role: 'assistant',
       },
       {
+        content: `Read the sample Jod description here:
+${await getSampleJD(SAMPLE_JD.Railway)}
+
+Here is what workers inside mention why they keep working as Railway:
+
+Faraz:
+I can relate to the problem we're solving which when simplified to its core (imo) is ‘if someone's solved this (infra) problem once, why do I need to solve it again? 
+I want to instead focus on solving the problem (insert startup idea) I am trying to solve.’ 
+The team is also full of exceptionally talented people who are incredibly kind and we actually make an effort to keep it that way. 
+The working culture allows me to live my life the way I want without any interference as long as I deliver on the things I am supposed to deliver on.
+
+Evan:
+After running my own startup for the past 4 years, working at Railway provides the same sense of autonomy and ownership. 
+We have an interest-oriented ownership principle: work in the problem space that you’re passionate about. 
+The work falls into place very quickly when you’re working on something you care deeply about. 
+Tacking on the great people on the team makes it even better!
+
+Jake:
+I've long wished for a platform like Railway to exist. Helping to build something that I would personally use all the time is a tremendous source of motivation. 
+Working at Railway allows me to work in the two areas that I really enjoy: 
+building enjoyable web experiences and making complex systems simple to use. I believe in the vision. The current product is one thing. 
+But we all have big ideas on where to take it over the next 5-10 years. 
+I really really want to see it happen, and helping create it is even better.
+`,
+        role: 'user',
+      },
+      {
+        content: JSON.stringify({
+          company: { name: 'railway' },
+          response: {
+            markdown: {
+              whyIAmBestCandidate: `I bring over 6 years of experience in full-stack development, with strong skills in TypeScript, React, and backend technologies. 
+I have a solid understanding of building scalable products from end-to-end, including creating intuitive user interfaces and managing complex backend services.
+My experience in writing Engineering Requirement Documents and collaborating across teams fits well with Railway's mission. 
+I'm eager to contribute my knowledge of microservices and asynchronous processing to help unlock productivity for other developers.`,
+              whyOurCompany: `Railway's focus on empowering engineers with the tools they need to be more productive resonates deeply with my values as a developer.
+I appreciate the high ownership and autonomy that Railway promotes, alongside a culture that embraces growth and creative problem-solving.
+The opportunity to work on meaningful projects that simplify complex systems aligns perfectly with my professional aspirations.
+I want to be part of a team that is passionate about building innovative solutions and making a real impact in the developer community.`,
+            },
+          },
+        }),
+        role: 'assistant',
+      },
+      {
         content: `Read the Job Description here:
-${jobDescription}`,
+      ${jobDescription}`,
         role: 'user',
       },
     ],
