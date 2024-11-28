@@ -200,7 +200,14 @@
         "Developed key features including a referral page and QR code generator using Cloudflare Workers.",
         "Migrated onboarding and subscription flows to a web-based platform using Next.js, improving accessibility and user experience."
       ],
-      "keywords": ["React", "NodeJS", "Open Banking", "TypeScript", "NextJS"],
+      "keywords": [
+        "React",
+        "NodeJS",
+        "Open Banking",
+        "TypeScript",
+        "NextJS",
+        "FinTech"
+      ],
       "location": "London, UK (on-site)",
       "position": "Backend Engineer",
       "startDate": "2024-03-17",
@@ -254,7 +261,8 @@
         "Cypress",
         "PostgreSQL",
         "AWS",
-        "Ruby"
+        "Ruby",
+        "FinTech"
       ],
       "location": "Hong Kong / UK (Remote)",
       "position": "Software Engineer",
