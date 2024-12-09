@@ -21,7 +21,7 @@
     "eslint": "9.16.0",
     "globals": "15.13.0",
     "husky": "9.1.7",
-    "is-ci": "3.0.1",
+    "is-ci": "4.1.0",
     "lint-staged": "15.2.10",
     "postcss": "8.4.49",
     "prettier": "3.4.2",
