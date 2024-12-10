@@ -22,7 +22,7 @@
     "globals": "15.13.0",
     "husky": "9.1.7",
     "is-ci": "4.1.0",
-    "lint-staged": "15.2.10",
+    "lint-staged": "15.2.11",
     "postcss": "8.4.49",
     "prettier": "3.4.2",
     "resume-schema": "1.0.1",
