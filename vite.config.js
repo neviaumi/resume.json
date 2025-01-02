@@ -3,6 +3,9 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ mode }) => {
   return {
     base: mode === 'development' ? '/' : '/resume.json',
+    build: {
+      manifest: true,
+    },
     define: {
       'import.meta.env.VITE_USE_TAILORED_RESUME': JSON.stringify(
         process.env['VITE_USE_TAILORED_RESUME'] ? true : false,
