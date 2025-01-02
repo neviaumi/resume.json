@@ -26,11 +26,11 @@ class ResumeHeaderElement extends styles.withInjectedStyles(HTMLElement)({
                 <img class="${clsx('tw-h-3')}" src="${envelopeIcon}" alt="email-icon">
                 ${resumeBasic.email}
               </a>
-              <a href="resume.pdf" target="_blank" class="${clsx('tw-flex tw-gap-2 tw-text-base tw-font-medium  tw-no-underline print:tw-hidden')}">
+              <a href="/resume.json/resume.pdf" target="_blank" class="${clsx('tw-flex tw-gap-2 tw-text-base tw-font-medium  tw-no-underline print:tw-hidden')}">
                 <img class="${clsx('tw-h-3')}" src="${printerIcon}" alt="printer-icon">
                 <span>PDF version</span>
               </a>
-            <a href="${resumeBasic.website}" target="_blank" class="${clsx('tw-hidden tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-no-underline print:tw-flex')}">
+            <a href="/resume.json" target="_blank" class="${clsx('tw-hidden tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-no-underline print:tw-flex')}">
               <img class="${clsx('tw-h-3')}" src="${wwwIcon}" alt="www-icon">
               <span>Web version</span>
             </a>
