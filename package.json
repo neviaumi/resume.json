@@ -27,7 +27,7 @@
     "prettier": "3.4.2",
     "resume-schema": "1.0.1",
     "tailwindcss": "3.4.17",
-    "vitest": "2.1.8"
+    "vitest": "3.0.0"
   },
   "engines": {
     "node": ">=20",
