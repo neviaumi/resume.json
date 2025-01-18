@@ -36,8 +36,15 @@ class ResumeAboutElement extends styles.withInjectedStyles(HTMLElement)({
 
 ${resumeBasic.profiles
   .map(profile => {
+    const isDev = import.meta.env.MODE === 'development';
+
     const network = profile.network.toLowerCase();
-    const icon = network === 'github' ? githubIcon : linkedInIcon;
+    const icon =
+      network === 'github'
+        ? githubIcon
+        : isDev
+          ? linkedInIcon
+          : new URL(linkedInIcon, 'https://neviaumi.github.io/').toString();
     return `<a title="${name} ${profile.network}" href="${profile.url}" target="_blank" class='${clsx('tw-text-base tw-font-medium tw-text-primary', 'tw-items-center', 'tw-flex', 'tw-gap-2', network === 'github' ? 'tw-mb-1' : '')}'>
         <img src="${icon}" alt="${profile.network}" class="${clsx('tw-h-2.5')}"/>
         ${profile.username}
