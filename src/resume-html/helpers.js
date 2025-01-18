@@ -37,9 +37,15 @@ export const styles = {
         constructor() {
           super();
           this.attachShadow(options);
+          const isDev = import.meta.env.MODE === 'development';
           const link = document.createElement('link');
           link.setAttribute('rel', 'stylesheet');
-          link.setAttribute('href', css);
+          link.setAttribute(
+            'href',
+            isDev
+              ? css
+              : new URL(css, 'https://neviaumi.github.io/').toString(),
+          );
           this.shadowRoot.appendChild(link);
         }
       };
