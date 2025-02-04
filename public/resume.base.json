@@ -22,7 +22,7 @@
         "username": "Kong Chor Ng"
       }
     ],
-    "summary": "Accomplished software engineer with over 7 years of experience in full-stack development, web automation, and project management. Proven track record in mentoring junior developers, optimizing team productivity, and delivering robust, high-quality solutions. Seeking a dynamic company with a clear mission and a hybrid work environment.",
+    "summary": "I am a passionate software engineer with a diverse background in web development, starting from small local businesses to tech giants. With over nine years of experience, I focus on crafting scalable, maintainable solutions utilizing Agile methodologies. I emphasize collaboration, effectively communicating with cross-functional teams to deliver valuable features that align with business goals. My journey has taught me the importance of simplicity in design, alongside automated testing for robust systems. I thrive on continuous improvement, constantly seeking out new technologies and best practices to enhance team productivity. My commitment to mentorship reflects my desire to foster growth within teams, making me a valuable asset to any organization. With a solid understanding of both backend and frontend processes, I am excited about opportunities that challenge my skills and contribute positively to the development landscape.",
     "website": "https://neviaumi.github.io/portfolio?utm_source=resume"
   },
   "education": [
@@ -74,6 +74,29 @@
       "roles": ["Maintainer", "Code Owner"],
       "type": "project",
       "url": "https://github.com/neviaumi/resume.json"
+    },
+    {
+      "description": "This portfolio showcases my journey as a software engineer. It highlights my core values, experiences, and skills developed over the years. I've collaborated on various projects and focused on continuous learning and improvement, leveraging Agile methodologies to build scalable solutions. My background spans diverse environments like tech startups and multinational corporations, demonstrating a commitment to impactful software development.",
+      "highlights": [
+        "A showcase of my diverse professional experiences across tech startups and corporations.",
+        "Summary of the core values that guide my career and decision-making.",
+        "An overview of the technical skills I am confident in and continue to refine."
+      ],
+      "keywords": [
+        "Figma",
+        "Astro",
+        "TinaCMS",
+        "React",
+        "Github Actions",
+        "TypeScript",
+        "Docker",
+        "MUI",
+        "Playwright"
+      ],
+      "name": "Portfolio",
+      "roles": ["Maintainer", "Code Owner"],
+      "type": "project",
+      "url": "https://neviaumi.github.io/portfolio?utm_source=resume"
     },
     {
       "description": "Built a price comparison tool for online grocery shopping that tracks product prices across supermarkets, with country-of-origin filtering and custom alerts. Designed to streamline shopping while leveraging cloud and serverless technologies",
