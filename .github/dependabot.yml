@@ -2,6 +2,7 @@ updates:
   - directory: /
     ignore:
       - dependency-name: playwright
+      - dependency-name: tailwindcss
     package-ecosystem: npm
     schedule:
       interval: daily
