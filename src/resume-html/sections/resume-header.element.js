@@ -30,7 +30,7 @@ class ResumeHeaderElement extends styles.withInjectedStyles(HTMLElement)({
                 <img class="${clsx('tw-h-3')}" src="${printerIcon}" alt="printer-icon">
                 <span>PDF version</span>
               </a>
-            <a href="/resume.json" target="_blank" class="${clsx('tw-hidden tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-no-underline print:tw-flex')}">
+            <a href="https://neviaumi.github.io/resume.json/" target="_blank" class="${clsx('tw-hidden tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-no-underline print:tw-flex')}">
               <img class="${clsx('tw-h-3')}" src="${wwwIcon}" alt="www-icon">
               <span>Web version</span>
             </a>

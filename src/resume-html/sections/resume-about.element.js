@@ -31,7 +31,7 @@ class ResumeAboutElement extends styles.withInjectedStyles(HTMLElement)({
 </p>
 <a href="${resumeBasic.website}" target="_blank" class="${clsx('tw-mb-1 tw-flex tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-text-primary')}">
     <img src="${homeIcon}" alt="home icon" class="${clsx('tw-h-2.5')}"/>
-    Home Page
+    About me
 </a>
 
 ${resumeBasic.profiles

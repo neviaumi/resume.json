@@ -32,7 +32,7 @@ ${index === 0 ? `<header id="resume-projects-section-header" class="${clsx('tw-m
         href="${url}"
     >
         <p class="${clsx('tw-text-2xl tw-font-black')}">${name}</p>
-        <p class="${clsx('tw-text-base tw-font-medium')}">${url}</p>
+        <p class="${clsx('tw-text-base tw-font-medium')}">${new URL(url).protocol}//${new URL(url).hostname}${new URL(url).pathname}</p>
     </a>
 </header>
 <section class="${clsx('tw-flex tw-flex-col tw-gap-1.5 tw-p-2')}">
