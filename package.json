@@ -3,7 +3,7 @@
   "dependencies": {
     "clsx": "2.1.1",
     "json-colorizer": "3.0.1",
-    "openai": "4.84.0",
+    "openai": "4.84.1",
     "playwright": "1.48.2",
     "vite": "6.1.0"
   },
