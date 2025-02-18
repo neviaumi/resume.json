@@ -7,10 +7,23 @@
         <title>David resume</title>
         <link rel="stylesheet" href="./src/resume-html/main.css" title="tailwind-css">
         <script type="module" src="./src/resume-html/json-resume.element.js"></script>
+        <script type="module">
+            import {baseUrl} from "./src/resume-html/helpers.js"
+            const shouldUseTailoredResume = import.meta.env.VITE_USE_TAILORED_RESUME;
+
+            const resume = (() => {
+                if (shouldUseTailoredResume) {
+                    return new URL('resume.tailored.json', baseUrl);
+                }
+                return new URL('resume.base.json', baseUrl);
+            })().toString();
+            const resumeElement = document.createElement('json-resume')
+            resumeElement.setAttribute('src', resume);
+            document.body.appendChild(resumeElement);
+        </script>
     </head>
 
     <body class="tw-my-2 print:tw-my-0">
-        <json-resume></json-resume>
     </body>
 
 </html>
