@@ -37,7 +37,7 @@ class JsonResumeElement extends styles.withInjectedStyles(HTMLElement)({
     // language=html
     template.innerHTML = `
             <main
-                class="${clsx('tw-container tw-mx-auto tw-my-2 tw-rounded-md tw-border-t-4 tw-border-t-primary tw-bg-gray-50 tw-px-1 md:tw-px-4 print:tw-my-0')}">
+                class="${clsx('tw-container tw-mx-auto  tw-rounded-md tw-border-t-4 tw-border-t-primary tw-bg-gray-50 tw-px-1 md:tw-px-4')}">
                 <resume-header data='${json.withQuoteEscape(JSON.stringify)(resume.basics)}'></resume-header>
 
                 <section class="${clsx('tw-grid tw-gap-2 md:tw-grid-cols-[16rem_minmax(0,1fr)] md:tw-gap-8 ')}">
