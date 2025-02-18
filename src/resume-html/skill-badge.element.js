@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { styles } from '../helpers.js';
+import { styles } from './helpers.js';
 
 class SkillBadgeElement extends styles.withInjectedStyles(HTMLElement)({
   mode: 'open',
