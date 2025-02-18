@@ -1,23 +1,9 @@
 import css from './main.css?url';
 
-export const json = {
-  withQuoteEscape(stringifyFunction) {
-    return function stringifyFunctionWithQuoteEscape(primitive) {
-      return stringifyFunction(primitive, (_, value) => {
-        if (typeof value === 'string') {
-          if (value.includes("'")) {
-            return value.replace(/'/g, '&apos;');
-          }
-          if (value.includes('"')) {
-            return value.replace(/"/g, '&quot;');
-          }
-          return value;
-        }
-        return value;
-      });
-    };
-  },
-};
+export const baseUrl = `${new URL(
+  import.meta.env.BASE_URL,
+  new URL(import.meta.url).origin,
+).toString()}/`;
 
 export const date = {
   formatDate(dateStr) {
@@ -37,15 +23,9 @@ export const styles = {
         constructor() {
           super();
           this.attachShadow(options);
-          const isDev = import.meta.env.MODE === 'development';
           const link = document.createElement('link');
           link.setAttribute('rel', 'stylesheet');
-          link.setAttribute(
-            'href',
-            isDev
-              ? css
-              : new URL(css, 'https://neviaumi.github.io/').toString(),
-          );
+          link.setAttribute('href', new URL(css, baseUrl).toString());
           this.shadowRoot.appendChild(link);
         }
       };
