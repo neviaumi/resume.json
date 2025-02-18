@@ -4,6 +4,10 @@ export default defineConfig(({ mode }) => {
   return {
     base: mode === 'development' ? '/' : '/resume.json',
     build: {
+      lib: {
+        entry: ['./src/resume-html/json-resume.element.js', './index.html'],
+        formats: ['es'],
+      },
       manifest: true,
     },
     define: {
