@@ -5,7 +5,7 @@ import envelopeIcon from '../icons/envelope.svg?url';
 import wwwIcon from '../icons/globe-alt.svg?url';
 import printerIcon from '../icons/printer.svg?url';
 
-export function renderResumeHeader({ email, label, name, picture }) {
+export function renderResumeHeader({ email, image, label, name, picture }) {
   return `
     <header class="${clsx('tw-mb-2 tw-flex tw-flex-wrap-reverse tw-justify-between tw-px-2 tw-pb-1 tw-pt-2')}">
       <div class="${clsx('tw-flex tw-flex-col tw-justify-between print:tw-break-inside-avoid')}">
@@ -30,6 +30,6 @@ export function renderResumeHeader({ email, label, name, picture }) {
           </a>
         </div>
       </div>
-      <img alt="picture" class="${clsx('tw-h-21 tw-rounded-full tw-border-2 tw-border-primary tw-p-0.5')}" src="${picture}"/>
+      <img alt="picture" class="${clsx('tw-h-21 tw-rounded-full tw-border-2 tw-border-primary tw-p-0.5')}" src="${image || picture}"/>
     </header>`;
 }

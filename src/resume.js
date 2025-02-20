@@ -1,13 +1,9 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-
-import { PUBLIC_ASSETS_FOLDER } from './workspace.js';
-
-export const resume = await fs
-  .readFile(path.join(PUBLIC_ASSETS_FOLDER, 'resume.base.json'), {
-    encoding: 'utf-8',
-  })
-  .then(resume => JSON.parse(resume));
+export const resume = await import(
+  'https://neviaumi.github.io/portfolio/resume.json',
+  {
+    assert: { type: 'json' },
+  }
+).then(resume => JSON.parse(resume));
 
 export function listAllKeywordsFromResume(resume) {
   return Array.from(

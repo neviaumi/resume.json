@@ -4,7 +4,7 @@ import { withSpacing } from '@busybox/tailwindcss-config/themes/spacing';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ['./src/**/*.js', './index.html'],
+  content: ['./web-components/**/*.js', './index.html'],
   presets: [withSpacing(withColors(tailwindCssConfig))],
   theme: {
     fontWeight: {
