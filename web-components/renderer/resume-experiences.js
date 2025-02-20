@@ -18,6 +18,7 @@ export function renderExperiencesSection({ highlightedSkills, skills, works }) {
             position,
             startDate,
             summary,
+            url,
             website,
           } = work;
 
@@ -49,7 +50,7 @@ export function renderExperiencesSection({ highlightedSkills, skills, works }) {
               <a 
                 class="${clsx(
                   'tw-flex tw-flex-col tw-rounded-xl tw-bg-gray-100 tw-px-3 tw-py-2',
-                )}" href="${website}" target="_blank">
+                )}" href="${url || website}" target="_blank">
                 <span class="${clsx(
                   'tw-flex tw-flex-wrap tw-items-center tw-justify-between',
                 )}">

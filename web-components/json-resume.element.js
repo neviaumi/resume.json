@@ -29,15 +29,15 @@ class JsonResumeElement extends styles.withInjectedStyles(HTMLElement)({
     const template = document.createElement('template');
     // language=html
     template.innerHTML = wrappingWithContainer(`
-                ${renderResumeHeader({ email: resume.basics.email, label: resume.basics.label, name: resume.basics.name, picture: resume.basics.picture })}
+                ${renderResumeHeader({ email: resume.basics.email, image: resume.basics.image, label: resume.basics.label, name: resume.basics.name, picture: resume.basics.picture })}
                 <section class="${clsx('tw-grid tw-gap-2 md:tw-grid-cols-[16rem_minmax(0,1fr)] md:tw-gap-8 ')}">
                     <div class="${clsx('tw-flex tw-flex-col tw-gap-3')}">
                         ${renderAboutSection({
-                          birthday: resume.basics.birthday,
                           countryCode: resume.basics.location.countryCode,
                           name: resume.basics.name,
                           profiles: resume.basics.profiles,
                           region: resume.basics.location.region,
+                          url: resume.basics.url,
                           website: resume.basics.website,
                         })}
                         ${renderSkillExplainedSection({
