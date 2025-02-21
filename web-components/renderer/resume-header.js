@@ -1,9 +1,6 @@
 import clsx from 'clsx';
 
-import { baseUrl } from '../helpers.js';
 import envelopeIcon from '../icons/envelope.svg?url';
-import wwwIcon from '../icons/globe-alt.svg?url';
-import printerIcon from '../icons/printer.svg?url';
 
 export function renderResumeHeader({ email, image, label, name, picture }) {
   return `
@@ -20,14 +17,15 @@ export function renderResumeHeader({ email, image, label, name, picture }) {
             <img class="${clsx('tw-h-3')}" src="${envelopeIcon}" alt="email-icon">
             ${email}
           </a>
-          <a href="${new URL('resume.pdf', baseUrl).toString()}" target="_blank" class="${clsx('tw-flex tw-gap-2 tw-text-base tw-font-medium  tw-no-underline print:tw-hidden')}">
-            <img class="${clsx('tw-h-3')}" src="${printerIcon}" alt="printer-icon">
-            <span>PDF version</span>
-          </a>
-          <a href="https://neviaumi.github.io/resume.json/" target="_blank" class="${clsx('tw-hidden tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-no-underline print:tw-flex')}">
-            <img class="${clsx('tw-h-3')}" src="${wwwIcon}" alt="www-icon">
-            <span>Web version</span>
-          </a>
+          <aside  class="${clsx('tw-flex tw-gap-2 tw-text-base tw-font-medium  tw-no-underline print:tw-hidden')}">
+            <slot name="pdf-version-navigate-link" >
+            </slot>
+          </aside>
+          <aside  class="${clsx('tw-hidden tw-content-center tw-items-center tw-gap-2 tw-text-base tw-font-medium tw-no-underline print:tw-flex')}">
+          <slot name="web-version-navigate-link" ></slot>
+            </slot>
+          </aside>
+
         </div>
       </div>
       <img alt="picture" class="${clsx('tw-h-21 tw-rounded-full tw-border-2 tw-border-primary tw-p-0.5')}" src="${image || picture}"/>

@@ -123,4 +123,5 @@ docs/jd.txt
 dist/
 
 public/*.pdf
+!public/resume.pdf
 public/resume.tailored.json

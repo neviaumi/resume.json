@@ -7,23 +7,34 @@
         <title>David resume</title>
         <link rel="stylesheet" href="./web-components/main.css" title="tailwind-css">
         <script type="module" src="./web-components/json-resume.element.js"></script>
-        <script type="module">
-            import {baseUrl} from "./web-components/helpers.js"
-            const shouldUseTailoredResume = import.meta.env.VITE_USE_TAILORED_RESUME;
-
-            const resume = (() => {
-                if (shouldUseTailoredResume) {
-                    return new URL('resume.tailored.json', baseUrl);
-                }
-                return new URL("https://neviaumi.github.io/portfolio/resume.json")
-            })().toString();
-            const resumeElement = document.createElement('json-resume')
-            resumeElement.setAttribute('src', resume);
-            document.body.appendChild(resumeElement);
-        </script>
+        <style>
+            json-resume a {
+                display: flex;
+                gap: 1rem;
+                font-family: "Roboto";
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+                text-decoration-line: none;
+                font-weight: 500;
+                align-items: center;
+            }
+            json-resume a svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        </style>
     </head>
 
     <body class="tw-my-2 print:tw-my-0">
+    <json-resume src="https://neviaumi.github.io/portfolio/resume.json">
+        <a slot="pdf-version-navigate-link" href="https://neviaumi.github.io/portfolio/resume.pdf" target="_blank" title="Open PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M360-460h40v-80h40q17 0 28.5-11.5T480-580v-40q0-17-11.5-28.5T440-660h-80v200Zm40-120v-40h40v40h-40Zm120 120h80q17 0 28.5-11.5T640-500v-120q0-17-11.5-28.5T600-660h-80v200Zm40-40v-120h40v120h-40Zm120 40h40v-80h40v-40h-40v-40h40v-40h-80v200ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
+            PDF Version
+        </a>
+        <a slot="web-version-navigate-link" href="https://neviaumi.github.io/portfolio/resume" target="_blank" title="Open Website">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h420v-140H160v140Zm500 0h140v-360H660v360ZM160-460h420v-140H160v140Z"/></svg>            PDF Version
+        </a>
+    </json-resume>
     </body>
 
 </html>
