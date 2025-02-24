@@ -77,7 +77,11 @@ class JsonResumeElement extends styles.withInjectedStyles(HTMLElement)({
                           educations: resume.education,
                         })}
                     </div>
-                </section>`);
+                </section>
+    <footer>
+        <slot name="footer"></slot>
+    </footer>
+    `);
     this.shadowRoot.querySelector('main').remove();
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
