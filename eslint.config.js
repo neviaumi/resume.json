@@ -3,7 +3,6 @@ import { useESModuleEslintConfig } from '@busybox/eslint-config-esm';
 import { useTailwindCSSEslintConfig } from '@busybox/eslint-config-tailwindcss';
 import {
   useJSONEslintConfig,
-  useMarkdownEslintConfig,
   usePackageJsonEslintConfig,
   useYamlEslintConfig,
 } from '@busybox/eslint-config-text-document';
@@ -33,5 +32,4 @@ export default [
   useYamlEslintConfig(),
   useJSONEslintConfig(),
   usePackageJsonEslintConfig(),
-  useMarkdownEslintConfig(),
 ].flat();

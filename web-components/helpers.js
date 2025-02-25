@@ -3,7 +3,7 @@ import css from './main.css?url';
 export const baseUrl = (() => {
   try {
     return `${new URL(
-      import.meta.env.BASE_URL ?? 'Something',
+      import.meta.env.BASE_URL,
       new URL(import.meta.url).origin,
     ).toString()}/`;
   } catch {
