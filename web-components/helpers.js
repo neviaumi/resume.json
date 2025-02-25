@@ -1,9 +1,15 @@
 import css from './main.css?url';
 
-export const baseUrl = `${new URL(
-  import.meta.env.BASE_URL,
-  new URL(import.meta.url).origin,
-).toString()}/`;
+export const baseUrl = (() => {
+  try {
+    return `${new URL(
+      import.meta.env.BASE_URL ?? 'Something',
+      new URL(import.meta.url).origin,
+    ).toString()}/`;
+  } catch {
+    return '';
+  }
+})();
 
 export const date = {
   formatDate(dateStr) {
