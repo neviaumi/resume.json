@@ -2,8 +2,6 @@
   "author": "David Ng <david.ng.dev@gmail.com>",
   "dependencies": {
     "clsx": "2.1.1",
-    "json-colorizer": "3.0.1",
-    "openai": "4.85.4",
     "playwright": "1.48.2",
     "vite": "6.2.0"
   },
