@@ -69,7 +69,7 @@ export function renderExperiencesSection({ highlightedSkills, skills, works }) {
 
             <section class="${clsx('tw-flex tw-flex-col tw-gap-1.5 tw-p-2')}">
               ${
-                shouldRenderExperienceInDetail
+                shouldRenderExperienceInDetail && summary
                   ? `<p class="${clsx(
                       'tw-text-xl tw-font-bold tw-text-primary',
                     )}" id="work-experience-${index}">
@@ -121,7 +121,7 @@ export function renderExperiencesSection({ highlightedSkills, skills, works }) {
               </ul>
 
               ${
-                shouldRenderExperienceInDetail
+                shouldRenderExperienceInDetail && highlights
                   ? `<ul class="${clsx(
                       'tw-flex tw-list-inside tw-list-disc tw-flex-col tw-gap-0.5 tw-px-3',
                     )}">
