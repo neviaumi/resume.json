@@ -11,7 +11,7 @@ jobs:
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/build.sh
       - name: Upload doc folder
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
       - id: deployment
