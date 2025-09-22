@@ -20,7 +20,7 @@
     "globals": "16.4.0",
     "husky": "9.1.7",
     "is-ci": "4.1.0",
-    "lint-staged": "16.1.6",
+    "lint-staged": "16.2.0",
     "postcss": "8.5.6",
     "prettier": "3.6.2",
     "resume-schema": "1.0.1",
