@@ -3,7 +3,7 @@
   "dependencies": {
     "clsx": "2.1.1",
     "playwright": "1.48.2",
-    "vite": "7.1.8"
+    "vite": "7.1.9"
   },
   "description": "David Ng personal resume",
   "devDependencies": {
