@@ -16,7 +16,7 @@ jobs:
           path: ./dist
       - id: deployment
         name: Deploy doc with PDF to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 name: deploy-github-page-after-push-master
 
 on:
