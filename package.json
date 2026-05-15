@@ -16,7 +16,7 @@
     "@busybox/tailwindcss-config": "2024.11.10-alpha.2150",
     "@commitlint/cli": "21.0.1",
     "autoprefixer": "10.5.0",
-    "eslint": "10.3.0",
+    "eslint": "10.4.0",
     "globals": "17.6.0",
     "husky": "9.1.7",
     "is-ci": "4.1.0",
