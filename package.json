@@ -14,7 +14,7 @@
     "@busybox/eslint-config-text-document": "2024.11.10-alpha.2150",
     "@busybox/prettier-config": "2024.11.10-alpha.2150",
     "@busybox/tailwindcss-config": "2024.11.10-alpha.2150",
-    "@commitlint/cli": "21.2.0",
+    "@commitlint/cli": "21.2.1",
     "autoprefixer": "10.5.2",
     "eslint": "10.6.0",
     "globals": "17.7.0",
